@@ -1,0 +1,7 @@
+<!-- pages/service/service.wxml -->
+<view id="help">
+  <van-cell-group>
+    <van-cell is-link link-type="navigateTo" title="意见与反馈" url="/pages/help/edit/edit" />
+    <van-cell is-link link-type="navigateTo" title="常见内容" url="/pages/help/list/list" />
+  </van-cell-group>
+</view>

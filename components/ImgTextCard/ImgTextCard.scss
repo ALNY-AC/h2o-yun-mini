@@ -1,0 +1,88 @@
+/* components/ImgTextCard/ImgTextCard.wxss */
+.img-text-card {
+    background-color: #fff;
+
+}
+
+.img-text-card-x {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: stretch;
+
+    .img {
+        background-color: #dddddd;
+        display: block;
+    }
+
+    .img-text-card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20rpx 0;
+        padding-left: 20rpx;
+
+        .card-body {
+            flex: 1;
+
+            .title {
+                margin-bottom: 10rpx;
+                font-size: 30rpx;
+            }
+
+            .info {
+                color: #999;
+                font-size: 26rpx;
+            }
+        }
+
+        .card-footer {}
+
+    }
+
+    .card-right {
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        padding: 20rpx 20rpx;
+    }
+}
+
+.img-text-card-y {
+    position: relative;
+    overflow: hidden;
+
+    .img {
+        // width: 100%;
+        // height: 280rpx;
+        background-color: #dddddd;
+        display: block;
+    }
+
+    .img-text-card-body {
+        padding: 15rpx;
+        padding-top: 20rpx;
+        display: flex;
+
+        .card-body {
+            flex: 1;
+
+            .title {
+                margin-bottom: 10rpx;
+                font-size: 30rpx;
+            }
+
+            .info {
+                color: #999;
+                font-size: 26rpx;
+                margin-bottom: 10rpx;
+            }
+        }
+
+        .card-footer {}
+
+        .card-right {}
+
+    }
+
+}

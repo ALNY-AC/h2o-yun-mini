@@ -1,0 +1,92 @@
+<view id="edit">
+  <!-- <cell-card model="input" title="收货地址：">
+    <view slot="label">
+      <view class="select-address">
+        <van-icon name="location-o" />
+        <input placeholder="点击选择" bind:tap="select" value="{{TagName}}" disabled="{{true}}" />
+      </view>
+    </view>
+    <view slot="right">
+      <van-icon name="arrow" />
+    </view>
+  </cell-card>
+  <cell-card model="input" title="门牌号：">
+    <view slot="label">
+      <input value="{{details}}" bindinput="o-model" data-model="details" placeholder="请填写门牌号" />
+    </view>
+  </cell-card>
+  <cell-card model="input" title="联系人：">
+    <view slot="label">
+      <input value="{{from.contacts}}" bindinput="o-model" data-model="from.contacts" placeholder="请填写收货人姓名" />
+    </view>
+  </cell-card>
+  <cell-card model="input">
+    <view slot="label">
+      <view class="btn-list">
+        <view class="edit-btn {{from.gender == 1 ? 'activ' : ''}}" style="margin-right:30rpx;" data-value="{{1}}" bind:tap="setSex">
+          男士
+        </view>
+        <view class="edit-btn {{from.gender == 0 ? 'activ' : ''}}" data-value="{{0}}" bind:tap="setSex">
+          女士
+        </view>
+      </view>
+    </view>
+  </cell-card>
+  <cell-card model="input" title="手机号：">
+    <view slot="label">
+      <input value="{{from.phone}}" bindinput="o-model" data-model="from.phone" placeholder="请填写收货人手机号" />
+    </view>
+  </cell-card> -->
+  <view class="edit-list">
+    <van-cell-group custom-class="fontsizerpx">
+      <van-field value="{{ TagName }}" readonly label="收货地址：" is-link placeholder="点击选择" bind:tap="select" />
+      <van-field value="{{ details }}" clearable label="门牌号：" bindinput="o-model" placeholder="请填写门牌号" data-model="details" />
+      <van-field value="{{ from.contacts }}" clearable label="联系人：" bindinput="o-model" placeholder="请填写收货人姓名" data-model="from.contacts" />
+      <view class="clie">
+        <view class="clie-body" style="padding-left: 90px;">
+          <view class="btn-list">
+            <view class="edit-btn {{from.gender == 1 ? 'activ' : ''}}" data-value="{{1}}" bind:tap="setSex">
+              男士
+            </view>
+            <view class="edit-btn {{from.gender == 0 ? 'activ' : ''}}" data-value="{{0}}" bind:tap="setSex">
+              女士
+            </view>
+          </view>
+        </view>
+      </view>
+      <van-field value="{{ from.phone }}" clearable label="手机号：" bindinput="o-model" placeholder="请填写收货人手机号" data-model="from.phone" />
+      <view class="clie">
+        <view class="clie-body">
+          <text class="label">标签：</text>
+          <view class="btn-list">
+            <!-- <view class="edit-btn {{from.gender == 1 ? 'activ' : ''}}" data-value="{{1}}" bind:tap="setSex">
+              男士
+            </view>
+            <view class="edit-btn {{from.gender == 0 ? 'activ' : ''}}" data-value="{{0}}" bind:tap="setSex">
+              女士
+            </view> -->
+            <view class="edit-btn {{from.tag == '家' ? 'activ' : ''}}" data-value="家" bind:tap="setSex2">
+              家
+            </view>
+            <view class="edit-btn {{from.tag == '公司' ? 'activ' : ''}}" data-value="公司" bind:tap="setSex2">
+              公司
+            </view>
+            <view class="edit-btn {{from.tag == '学校' ? 'activ' : ''}}" data-value="学校" bind:tap="setSex2">
+              学校
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-cell-group>
+  </view>
+  <view class="bottom-btn">
+    <van-button size="large" custom-class="btn-color" color="#FFC700" bind:click="conserve" type="primary">
+      保存
+    </van-button>
+  </view>
+  <view wx:if="{{!isAdd}}" class="bottom-btn">
+    <van-button size="large" custom-class="btn-color" style="color: #000;" color="#FFC700" bind:click="delete" plain>
+      删除
+    </van-button>
+  </view>
+</view>

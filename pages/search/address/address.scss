@@ -1,0 +1,80 @@
+page {
+  box-sizing: border-box;
+
+  #address {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .address-head {
+      border-bottom: 1px solid #ebedf0;
+      display: flex;
+      padding: 12rpx 30rpx;
+      align-items: center;
+
+      .location {
+        display: flex;
+        margin-right: 20rpx;
+        padding: 5px 0;
+
+        text {
+          font-size: 14px;
+          line-height: 15px;
+          margin: 0 8rpx;
+        }
+      }
+
+      .search {
+        padding: 5px 0;
+        display: flex;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        flex: 1;
+        border-radius: 4px;
+        font-size: 18px;
+        padding: 10rpx 10px;
+        align-items: center;
+
+        input {
+          font-size: 14px;
+          margin-left: 10rpx;
+        }
+      }
+    }
+
+    .address-body {
+      padding: 15px;
+      flex: 1;
+      overflow-x: auto;
+
+      .title {
+        display: flex;
+        color: #787878;
+        font-size: 28rpx;
+        align-items: center;
+
+        text {
+          margin-left: 10rpx;
+        }
+      }
+
+      .address-list {
+        padding: 10px;
+
+        .item {
+          border-bottom: 1px solid #ebeef5;
+          padding: 20rpx 0;
+
+          .item-title {
+            font-size: 32rpx;
+            margin-bottom: 10rpx;
+          }
+
+          .item-text {
+            font-size: 24rpx;
+            color: #8896b3;
+          }
+        }
+      }
+    }
+  }
+}

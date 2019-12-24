@@ -1,0 +1,255 @@
+page {
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    // height: 400rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 8rpx;
+    position: relative;
+
+
+    .head-title {
+        position: relative;
+        text-align: center;
+        background-color: #ffffff;
+        $head-img-height: 250rpx;
+
+        .head-bg {
+            position: absolute;
+            height: $head-img-height;
+            width: 100%;
+            z-index: 1;
+            background-color: #eee;
+            display: block;
+        }
+
+        .store-info {
+            position: relative;
+            z-index: 2;
+            margin-top: $head-img-height/2+120rpx/2;
+
+            .store-head {
+                width: 160rpx;
+                height: 160rpx;
+                margin-bottom: 20rpx;
+                box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+            }
+
+            .title {
+                color: rgba(16, 16, 16, 1);
+                font-size: 16px;
+            }
+        }
+    }
+
+
+    .tabs {
+        display: flex;
+        position: relative;
+        z-index: 2;
+        background-color: #ffffff;
+
+        .tab {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            .tab-btn {
+                padding: 5px 0;
+                padding-bottom: 10px;
+
+                .title {
+                    color: rgba(16, 16, 16, 1);
+                    font-size: 16px;
+                    padding: 5px 20px;
+                    padding-bottom: 0;
+                }
+
+                .sign {
+                    margin-top: -8rpx;
+                    height: 10rpx;
+                    background-color: #FFBD3F;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    overflow-y: auto;
+
+    .class-list {
+        min-width: 160rpx;
+        overflow: auto;
+        background-color: #f6f6f6;
+
+        .class-item {
+            padding: 50rpx 30rpx;
+            box-sizing: border-box;
+            font-size: 28rpx;
+            text-align: center;
+
+            &.active {
+                background-color: #fff;
+            }
+        }
+    }
+
+
+
+    .food-list {
+        flex: 1;
+        overflow: auto;
+        padding: 30rpx;
+        background-color: #ffffff;
+
+        .food-item {
+            position: relative;
+
+            .tool {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .price {
+                    color: #f66;
+                    flex: 1;
+                    font-size: 28rpx;
+                    font-weight: bold;
+                }
+            }
+            .stepper{
+                // position: absolute;
+                // right: 0rpx;
+                // bottom: 0rpx;
+            }
+        }
+    }
+
+    .f-tool {
+        position: fixed;
+        z-index: 20;
+        box-shadow: 1px 2px 20px 5px rgba($color: #000000, $alpha: 0.3);
+        bottom: 60rpx;
+        max-width: 80%;
+        width: 80%;
+        background-color: #333333;
+        color: #fff;
+        display: flex;
+        align-items: stretch;
+        border-radius: 50rpx;
+        overflow: hidden;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+
+        .price {
+            flex: 1;
+            padding: 30rpx 30rpx;
+            font-size: 36rpx;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, rgba(255, 207, 89, 1) 0%, rgba(254, 184, 28, 1) 100%);
+            font-size: 32rpx;
+            padding: 30rpx 30rpx;
+            display: flex;
+            align-items: center;
+            line-height: normal;
+        }
+    }
+
+    .btn-class {
+        width: 50rpx !important;
+        height: 50rpx !important;
+        background-color: #FDBC41 !important;
+        color: #000 !important;
+        border-radius: 100% !important;
+    }
+
+    .input-class {
+        background-color: transparent !important;
+        color: #FA4F45 !important;
+    }
+
+
+}
+
+.store-body {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    .shops-info {
+        flex:1;
+        background-color: #fff;
+        padding: 40rpx;
+        margin-bottom: 20rpx;
+
+        .title {
+            color: rgba(16, 16, 16, 1);
+            font-size: 28rpx;
+            margin-bottom: 20rpx;
+        }
+
+        .shops-img {
+            display: flex;
+            margin-bottom: 20rpx;
+
+            .img {
+                width: 160rpx;
+                height: 160rpx;
+                margin-right: 20rpx;
+            }
+        }
+
+        .text {
+
+            color: rgba(16, 16, 16, 1);
+            font-size: 24rpx;
+
+        }
+    }
+
+    .info-list {
+        margin-bottom: 20rpx;
+
+        .info-item {
+            color: rgba(16, 16, 16, 1);
+            font-size: 28rpx;
+
+            .van-cell__title {
+                flex: none;
+
+                .van-cell__label {
+                    color: rgba(136, 136, 136, 1);
+                    font-size: 28rpx;
+                }
+            }
+
+            .van-cell__value {
+                color: rgba(16, 16, 16, 1);
+            }
+        }
+    }
+
+    .shops-footer {
+        margin-bottom: 20rpx;
+
+        .info-item {
+            color: rgba(16, 16, 16, 1);
+            font-size: 28rpx;
+        }
+    }
+}

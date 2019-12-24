@@ -1,0 +1,36 @@
+page {
+    background-color: #f6f6f6;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .user-head {
+        width: 200rpx;
+        height: 200rpx;
+        border-radius: 100%;
+        background-color: #dddddd;
+    }
+
+    .user-name {
+        margin: 50rpx 0;
+        font-size: 36rpx;
+        color: #333;
+    }
+
+    .button {
+        border: none;
+        outline: none;
+        line-height: 1;
+        padding: 30rpx 80rpx;
+        text-align: center;
+        font-size: 38rpx;
+        background-color: #38ac7f;
+        color: #fff;
+    }
+
+}

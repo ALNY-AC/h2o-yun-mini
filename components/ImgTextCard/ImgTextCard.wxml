@@ -1,0 +1,38 @@
+<block wx:if="{{model=='x'}}">
+    <view class="img-text-card img-text-card-x" style="{{style}}">
+        <image class="img" src="{{imgUrl}}" mode="aspectFill" style="border-radius: 5px; width:{{imgSize[0]}};height:{{imgSize[1]}}"></image>
+        <view class="img-text-card-body">
+            <view class="card-body">
+                <view class="title van-ellipsis">{{title}}</view>
+                <view class="info">
+                    <view class="van-ellipsis" wx:for="{{infos}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+            </view>
+            <view class="card-footer">
+                <slot name="footer"></slot>
+            </view>
+        </view>
+        <view class="card-right" wx:if="{{rightSlot}}">
+            <slot name="right"></slot>
+        </view>
+    </view>
+</block>
+<block wx:if="{{model=='y'}}">
+    <view class="img-text-card img-text-card-y" style="{{style}}">
+        <image class="img" src="{{imgUrl}}" style="width:{{imgSize[0]}};height:{{imgSize[1]}}"></image>
+        <view class="img-text-card-body">
+            <view class="card-body">
+                <view class="title van-ellipsis">{{title}}</view>
+                <view class="info">
+                    <view class="van-ellipsis" wx:for="{{infos}}" wx:key="{{index}}">{{item}}</view>
+                </view>
+                <view class="card-footer">
+                    <slot name="footer"></slot>
+                </view>
+            </view>
+            <view class="card-right">
+                <slot name="right"></slot>
+            </view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,11 @@
+<view class="panel">
+    <view class="title">商家从业资格</view>
+    <view class="footer">
+        <view class="left">
+            <image bind:tap="fangda" data-index="{{0}}" class="img" mode="aspectFit" src="{{info.qy_business}}"></image>
+        </view>
+        <view class="left">
+            <image  bind:tap="fangda" data-index="{{1}}" class="img" mode="aspectFit" src="{{info.qy_licence}}"></image>
+        </view>
+    </view>
+</view>

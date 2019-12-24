@@ -1,0 +1,43 @@
+<view class="page-s">
+    <view class="address-panel" bind:tap="Choice">
+        <view class="empty" wx:if="{{!addressinfo}}">选择收货地址</view>
+        <view class="address-box">
+            <view class="location" wx:if="{{addressinfo}}">{{addressinfo.address}}</view>
+            <view class="contacts-box" wx:if="{{addressinfo}}">
+                <view class="name">{{addressinfo.contacts}}</view>
+                <view class="name">{{addressinfo.gender? '男士':'女士'}}</view>
+                <view class="phone">{{addressinfo.phone}}</view>
+            </view>
+        </view>
+        <van-icon color="#777" name="arrow" />
+    </view>
+    <view class="food-list">
+        <view class="food-item" wx:for="{{list}}" wx:key="{{index}}">
+            <img-text-card radius="0" img-url="{{item.goods_head}}" right-slot="{{true}}" title="{{item.title}}" img-size="{{['80px','80px']}}" margin-b="10px">
+                <view slot="right">
+                    <view class="price">￥{{item.select_value*item.price}}</view>
+                </view>
+                <view slot="footer" class="tool">
+                    <view class="num">x{{item.select_value}}</view>
+                </view>
+            </img-text-card>
+        </view>
+        <!-- <view class="delivery">
+            <text>配送费</text>
+            <text>￥{{deliveryPrice}}</text>
+        </view> -->
+        <van-cell title="抵用卷" custom-class="box" is-link default title-class="title-class" bind:tap="o-router" data-url="/pages/fenxiao/index">
+            <view>
+                <view  class="value-class" wx:if="{{lei==1}}">2个可用</view>
+                     <view  class="value-class-1" wx:if="{{lei==2}}">-￥{{coupons.price}}</view>
+            </view>
+        </van-cell>
+    </view>
+    <view class="cell">
+        <textarea class="textarea" maxlength="-1" value="{{remarks}}" bindinput="o-model" data-model="remarks" name="" id="" cols="30" placeholder="备注信息" rows="10"></textarea>
+    </view>
+</view>
+<view class="f-tool">
+    <view class="price">￥{{totalPrice}}</view>
+    <view class="btn" bindtap="submit">提交订单</view>
+</view>

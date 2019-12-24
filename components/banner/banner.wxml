@@ -1,0 +1,9 @@
+<view class="swiper-box" style="{{style}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}">
+        <block wx:for="{{list}}" wx:key="*this">
+            <swiper-item class="swiper-item">
+                <view class="swiper-item-view">{{item}}</view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>

@@ -1,0 +1,88 @@
+<view id="list">
+  <van-collapse value="{{ activeNames }}" custom-class="collapse-box" bind:change="change">
+    <van-collapse-item title="支付问题" name="1">
+      <view class="list-panel">
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+      </view>
+    </van-collapse-item>
+    <van-collapse-item title="外面配送" name="2">
+      <view class="list-panel">
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+      </view>
+    </van-collapse-item>
+    <van-collapse-item title="订单取消" name="3">
+      <view class="list-panel">
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+        <view class="item">
+          <view class="title">Q.为什么1234567899</view>
+          <view class="text">卧槽11111111</view>
+        </view>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+</view>

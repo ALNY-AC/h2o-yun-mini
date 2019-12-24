@@ -1,0 +1,169 @@
+page {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page-s {
+  overflow: auto;
+  height: 100vh;
+  padding: 40rpx;
+  background-image: linear-gradient(180deg, #FFC700, rgba(240, 240, 240, 1) 100%);
+}
+
+.address-panel {
+  border-radius: 5px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+
+  .address-box {
+    flex: 1;
+
+    .location {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .contacts-box {
+      display: flex;
+      color: #666;
+
+      .name {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .empty {
+    color: #777;
+    font-size: 20px;
+    flex: 1;
+  }
+}
+
+.food-list {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  .price {
+    color: #000;
+    font-size: 16px;
+    flex: 1;
+  }
+
+  .food-item {
+    .tool {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+
+      .num {
+        color: #777;
+      }
+
+    }
+  }
+  .box{
+    padding: 30rpx 0;
+  }
+  .title-class{
+    font-size: 40rpx;
+    font-weight: bold;
+  }
+  .value-class{
+    background-color:red;
+    color: white;
+    font-size: 28rpx;
+    display:inline-block;
+    padding: 0 10rpx;
+    border-radius: 10rpx;
+
+  }
+  .value-class-1{
+
+    color: red;
+    font-size: 28rpx;
+ 
+
+  }
+  .delivery,
+  .total {
+    padding: 15rpx 8rpx;
+    border-top: 2px solid rgba(247, 247, 247, 1);
+  }
+
+  .delivery {
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 22px;
+    color: rgba(74, 74, 74, 1);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .total {
+    text-align: right;
+    font-size: 12rpx;
+
+    text {
+      font-size: 40rpx;
+      font-weight: bold;
+      line-height: 56rpx;
+      color: rgba(241, 103, 97, 1);
+    }
+  }
+
+}
+.cell{
+  margin-bottom: 220rpx;
+  border-radius: 8rpx;
+  margin-top: 32rpx;
+  background: white;
+
+  display: flex;
+  padding: 20rpx;
+  .textarea{
+    flex: 1;
+    height: 100px;
+  }
+}
+
+.f-tool {
+  position: fixed;
+  z-index: 20;
+  box-shadow: 1px 2px 20px 5px rgba($color: #000000, $alpha: 0.3);
+  bottom: 30px;
+  max-width: 80%;
+  width: 80%;
+  background-color: #333333;
+  color: #fff;
+  display: flex;
+  align-items: stretch;
+  border-radius: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+
+  .price {
+    flex: 1;
+    padding: 15px 15px;
+    font-size: 18px;
+  }
+
+  .btn {
+    background: linear-gradient(90deg, rgba(255, 207, 89, 1) 0%, rgba(254, 184, 28, 1) 100%);
+    font-size: 16px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+  }
+}

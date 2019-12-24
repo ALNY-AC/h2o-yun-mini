@@ -1,0 +1,24 @@
+<view wx:if="{{userInfo}}">
+    <view class="user-info-card">
+        <view class="user-head">
+            <image src="{{userInfo.head_img}}"></image>
+        </view>
+        <view class="user-name">
+            <view>{{userInfo.name}}</view>
+        </view>
+    </view>
+    <view class="usercell">
+        <van-cell-group>
+            <van-cell is-link title="收货地址" link-type="navigateTo" url="/pages/address/list/list" />
+            <van-cell is-link title="优惠卷" link-type="navigateTo" url="/pages/fenxiao/index" />
+            <van-cell is-link title="邀请好友" link-type="navigateTo" url="/pages/help/help" />
+            <!-- <van-cell is-link title="修改手机号" link-type="navigateTo" value="189****5539" url="/pages/" /> -->
+        </van-cell-group>
+    </view>
+</view>
+ <view wx:else class="login">
+   <button bind:tap="o-router" data-url="/pages/auth/auth" class="button">请登录</button>
+  </view>
+<!-- <view>
+    <van-button type="default" size="large" bindtap="quit">退出账号</van-button>
+</view> -->

@@ -1,0 +1,7 @@
+<view class="login-box">
+    <image src="{{userInfo.head_img}}" class="user-head"></image>
+    <view class="user-name">{{userInfo.name}}</view>
+    <button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!userInfo}}">授权登录</button>
+    <!-- <button class="button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button> -->
+    <button class="button" bindtap="back" wx:if="{{!!userInfo}}">返回</button>
+</view>

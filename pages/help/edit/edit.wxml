@@ -1,0 +1,9 @@
+<view id="edit">
+  <view class="text-box" style="min-height: 300rpx;">
+    <textarea bindblur="bindTextAreaBlur" style="width:100%" auto-height placeholder="请留下您的宝贵意见或建议，我们将努力改进" />
+  </view>
+  <view class="text-box">
+    <van-field placeholder="请留下电话号码，以便我们回复您" border="{{ false }}" />
+  </view>
+  <van-button type="primary" color="#FFC700" size="large">大号按钮</van-button>
+</view>

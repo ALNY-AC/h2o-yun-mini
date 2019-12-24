@@ -1,0 +1,38 @@
+.address-item {
+  border-bottom: solid 1px #ebedf0;
+  box-sizing: border-box;
+  color: #323233;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 16px;
+
+  .hairline--bottom {
+    height: 1px;
+    background-color: #ebedf0;
+    margin:10rpx 0;
+  }
+
+  .item-body {
+    flex: 1;
+
+    &.input-layout {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .address-label {
+      margin-top: 3px;
+      color: #969799;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  .address-icon {
+    color: #f00;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,29 @@
+<block wx:if="{{model == 'text'}}">
+  <view class="address-item">
+    <view class="item-body">
+      <text style="font-size:{{titleSize}}">{{title}}</text>
+      <view class="address-label">
+        <slot name="label"></slot>
+      </view>
+    </view>
+    <view class="hairline--bottom"></view>
+    <view class="address-icon">
+      <slot name="right"></slot>
+    </view>
+  </view>
+</block>
+<block wx:if="{{model == 'input'}}">
+  <view class="address-item" style="flex-direction: row; padding: 16px 0;">
+    <view class="item-body input-layout">
+      <view style="min-width: 100rpx;">
+        <text>{{title}}</text>
+      </view>
+      <view>
+        <slot name="label"></slot>
+      </view>
+    </view>
+    <view class="address-icon">
+      <slot name="right"></slot>
+    </view>
+  </view>
+</block>

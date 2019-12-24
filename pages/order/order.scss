@@ -1,0 +1,44 @@
+/* pages/order/order.wxss */
+#order {
+
+  .tab-list {
+    display: flex;
+    flex-direction: column;
+    padding: 40rpx 30rpx; 
+
+  }
+
+  .goodsbtnlist {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+    .button {
+      border: none;
+      outline: none;
+      line-height: 1;
+      padding: 30rpx 80rpx;
+      text-align: center;
+      font-size: 38rpx;
+      background-color: #38ac7f;
+      color: #fff;
+    }
+  }
+  .xianshi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+page {
+  // padding: 20px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}

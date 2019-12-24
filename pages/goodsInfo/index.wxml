@@ -1,0 +1,10 @@
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%;white-space: nowrap">
+    <view class="head-title">
+        <image class="head-bg" mode="aspectFill"  wx:for="{{info.goods_head}}" wx:key="{{index}}" data-index="{{index}}" src="{{item}}"></image>
+    </view>
+</scroll-view>
+<view class="info">
+    <view class="title">{{info.title}}</view>
+    <view class="price">￥{{info.price}}</view>
+    <view class="info">{{info.sub_title}}</view>
+</view>

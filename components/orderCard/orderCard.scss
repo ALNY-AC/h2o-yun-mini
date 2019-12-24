@@ -1,0 +1,44 @@
+.order-card {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+    border-radius: 24rpx;
+    // padding: 0 20rpx;
+
+    .order-card-head {
+        display: flex;
+        padding: 25rpx;
+        border-bottom: 1px solid #f1f1f1;
+
+        .order-title {
+            font-size: 27rpx;
+            flex: 1;
+        }
+
+        .order-state {
+            color: #f66;
+            font-size: 28rpx;
+        }
+    }
+
+    .order-card-body {
+        padding: 25rpx;
+
+        .goods-bottom-box {
+            margin-top: 20rpx;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .order-card-footer {
+        display: flex;
+        padding: 25rpx;
+        border-top: 1px solid #f1f1f1;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+
+}

@@ -1,0 +1,57 @@
+<view id="setaddress">
+  <!-- <cell-card model="text" wx:for="{{listarr}}" title="{{item.address}}" bind:tap="Choice" data-value="{{item.id}}" wx:key="{{index}}">
+    <view slot="label">
+      <text style="margin-right:10px;">{{item.contacts}}</text>
+      <text style="margin-right:10px;">{{item.gender == 0 ? '女士':'男士'}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+    <view slot="right" class="operate-panel">
+       <van-button type="danger" custom-class="operate-btn" wx:if="{{item.is_default == 1}}" round size="mini">
+        默认地址
+      </van-button>
+      <van-button custom-class="operate-btn" catch:tap="setup" data-item="{{item}}" color="#999999" wx:else round size="mini">
+        设为默认
+      </van-button>
+      <view class="operate">
+        <view catch:tap="editaddress" style="margin-right: 10rpx;" data-item="{{item}}">
+          <van-icon name="edit" />
+          编辑
+        </view>
+        <view catch:tap="deleteaddress" data-item="{{item}}">
+          <van-icon name="delete" />
+          删除
+        </view>
+      </view>
+    </view>
+  </cell-card> -->
+  <block wx:for="{{listarr}}" wx:key="{{index}}">
+    <van-panel style="margin-bottom:30rpx;" data-value="{{item.id}}" bind:tap="Choice">
+      <view class="fontsizerpx" slot="header">
+        <view class="header-body">
+          <view class="top">
+            <view>{{item.contacts+' '+ item.phone}}</view>
+            <van-tag wx:if="{{item.tag}}" custom-class="tags">{{item.tag}}</van-tag>
+          </view>
+          <view class="bottom">{{item.address}}</view>
+        </view>
+      </view>
+      <view class="operate-panel">
+        <view class="operate-btn btn-color" wx:if="{{item.is_default == 1}}">默认地址</view>
+        <view class="operate-btn" catch:tap="setup" data-item="{{item}}" wx:else>设为默认</view>
+        <view style="display: flex;">
+          <view class="operate" catch:tap="editaddress" data-item="{{item}}">
+            <van-icon name="edit" style="font-size: 36rpx;" custom-class="icon-block" />
+            编辑
+          </view>
+          <view class="operate" catch:tap="deleteaddress" data-item="{{item}}">
+            <van-icon name="delete" style="font-size: 36rpx;" custom-class="icon-block" />
+            删除
+          </view>
+        </view>
+      </view>
+    </van-panel>
+  </block>
+  <view class="address-bottom" bindtap="o-router" data-url="/pages/address/edit/edit">
+    <text>新增收货地址</text>
+  </view>
+</view>

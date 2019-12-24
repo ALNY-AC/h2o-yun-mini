@@ -1,0 +1,28 @@
+<view id="address">
+  <view class="address-head">
+    <view class="location" bind:tap="select">
+      <van-icon custom-class="icon-block" name="location-o" />
+      <text>{{addresstitle}}</text>
+      <van-icon custom-class="icon-block" name="arrow-down" />
+    </view>
+    <view class="search">
+      <van-icon name="search" custom-class="icon-block" />
+      <input type="text" confirm-type="search" bindconfirm="Obtaintips" bindinput="o-model" data-model="keyword" placeholder="请输入收货地址" />
+    </view>
+  </view>
+  <view class="address-body">
+    <view class="title">
+      <van-icon custom-class="icon-block" name="location-o" />
+      <text>附近地址</text>
+    </view>
+    <view class="address-list">
+      <view class="item" wx:for="{{TipsArr}}" wx:key="{{index}}" bind:tap="choice" data-item="{{item}}">
+        <view class="item-title">{{item.name}}</view>
+        <view class="item-text">{{item.district+item.address}}</view>
+      </view>
+    </view>
+  </view>
+  <van-popup show="{{ show }}" position="bottom">
+    <van-area area-list="{{ areaList }}" value="{{areaval}}" bind:confirm="selectaddress" bind:cancel="canceladdress" />
+  </van-popup>
+</view>

@@ -1,0 +1,20 @@
+/* components/banner/banner.wxss */
+.swiper-box {
+    overflow: hidden;
+
+    .swiper-item {
+        background-color: #eee;
+        display: block;
+        width: 100%;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        // border-radius: 5px;
+
+        .swiper-item-view {
+            color: #333;
+            font-size: 50rpx;
+        }
+    }
+}
