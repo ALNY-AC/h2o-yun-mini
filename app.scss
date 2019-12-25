@@ -1,68 +1,12 @@
 /**app.wxss**/
-// @import "node_modules/vant-weapp/dist/common/index.wxss"; 
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-}
+@import "node_modules/vant-weapp/dist/common/index.wxss";
 
 page {
   box-sizing: border-box;
 }
 
-.page {
-  // padding: 0 20px;
-  padding: 30rpx;
-}
 
-.demo-title {
-  font-size: 16px;
-  margin: 20px 0;
-  color: #777;
-}
-
-.demo-title-lg {
-  font-size: 18px;
-  margin: 20px 0;
-  color: #333;
-}
-
-.demo-tool {
-  background-color: #ffffff;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  flex-wrap: wrap;
-
-  .tool-item {
-    font-size: 14px;
-    display: flex;
-    margin-right: 10px;
-    align-items: center;
-    color: #777;
-    line-height: 1;
-  }
-}
-
-.m-b {
-  margin-bottom: 20px;
-}
 
 .text-right {
   text-align: right;
-}
-
-
-.hide {
-  display: none !important;
-}
-.icon-block{
-  display: block !important;
 }

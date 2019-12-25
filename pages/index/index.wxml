@@ -1,67 +1,43 @@
-<view class="head">
-    <view class="head-title">
-        <image mode="aspectFill" class="head-bg" src="{{info.store_bg}}"></image>
-        <view class="store-info">
-            <image class="store-head" src="{{info.logo}}"></image>
-            <view class="title">{{info.name}}</view>
-        </view>
-    </view>
-    <view class="tabs">
-        <view class="tab">
-            <view class="tab-btn" bindtap="o-model" data-model="TabActive" data-value="{{0}}">
-                <view class="title">点餐</view>
-                <view wx:if="{{TabActive == 0}}" class="sign"></view>
+<view id="j_page">
+    <swiper class="banner" indicator-dots="{{true}}">
+        <swiper-item wx:for="{{list}}" wx:key="index">
+            <image src="{{item}}" class="banner-item"></image>
+        </swiper-item>
+    </swiper>
+    <view class="add-panel">
+        <view class="local-box">
+            <view class="local-icon">
+                <van-icon name="location-o" size="20px" />
+            </view>
+            <view class="local-info">
+                <view class="local-name">汤臣一品</view>
+                <view class="local-dis">距您225m</view>
             </view>
         </view>
-        <view class="tab">
-            <view class="tab-btn" bindtap="o-model" data-model="TabActive" data-value="{{1}}">
-                <view class="title">店铺</view>
-                <view wx:if="{{TabActive == 1}}" class="sign"></view>
+        <view class="out-mod">
+            <view class="out-mod-item {{outMod==0?'active':''}}" bind:tap="o-model" data-value="{{0}}" data-model="outMod">
+                自提
+            </view>
+            <view class="out-mod-item {{outMod==1?'active':''}}" bind:tap="o-model" data-value="{{1}}" data-model="outMod">
+                配送
             </view>
         </view>
     </view>
-</view>
-<view class="body" wx:if="{{TabActive == 0}}">
-    <view class="class-list">
-        <view class="class-item {{active==item.id?'active':''}}" bindtap="o-model" data-value="{{item.id}}" data-model="active" wx:for="{{goodsclass}}" wx:key="{{item.name}}">
-            {{item.name}}
+    <view class="logo-list" wx:for="{{counts}}" wx:for-index="idx">
+        <view class="item" wx:for="{{item}}" wx:key="index">
+            <image class="logo" mode="widthFix" src="/assets/images/logo.png"></image>
         </view>
     </view>
-    <view class="food-list">
-        <view class="food-item" wx:for="{{classTree}}" wx:key="{{index}}" wx:if="{{item.id==active}}">
-            <block wx:for="{{item.child}}" wx:for-index="j" wx:key="{{j}}" wx:for-item="el">
-                <img-text-card radius="0" right-slot="{{false}}" bind:tap="o-router" data-url="/pages/goodsInfo/index?id={{el.id}}" img-url="{{el.goods_head_list[0]}}" title="{{el.title}}" img-size="{{['150rpx','150rpx']}}" margin-b="10px">
-                    <view slot="footer" class="tool">
-                        <view class="price">￥{{el.price}}</view>
-                            <van-stepper catch:tap="kong" show-minus="{{el.select_value>0}}" custom-class="stepper" plus-class="btn-class" minus-class="btn-class " input-class="input-class {{el.select_value>0?'':'hide'}}" disable-input button-size="25px" min="{{0}}" value="{{ el.select_value }}" data-method="setTotal" bind:change="o-model" data-model="classTree[{{index}}].child[{{j}}].select_value" />
-                    </view>
-                </img-text-card>
-            
-            </block>
+    <!-- <view class="logo-list" wx:if="{{count>count%5}}">
+    <image wx:for="{{count}}" wx:key="index" class="logo" mode="widthFix" src="/assets/images/logo.png"></image>
+</view> -->
+    <view class="tep">
+        <view class="item dev">
+            <van-icon class="icon" name="arrow-left" bind:tap="o-model" data-value="{{count-1}}" data-model="count" />
         </view>
-    </view>
-    <view class="f-tool">
-        <view class="price">￥{{totalPrice}}</view>
-        <view class="btn" bindtap="submit">去支付</view>
-    </view>
-</view>
-<view class="store-body" wx:if="{{TabActive == 1}}">
-    <view class="shops-info">
-        <view class="title">商家信息</view>
-        <view class="shops-img">
-            <image bind:tap="fangda" data-index="{{index}}" class="img" wx:for="{{info.store_img}}" wx:key="{{index}}" src="{{item}}"></image>
+        <view class="value">{{count}}</view>
+        <view class="item push">
+            <van-icon class="icon" name="arrow" bind:tap="o-model" data-value="{{count+1}}" data-model="count" />
         </view>
-        <view class="text">{{info.info}}</view>
-    </view>
-    <view class="info-list">
-        <van-cell-group>
-            <van-cell custom-class="info-item" title="商家名称" value="{{info.name}}" />
-            <van-cell custom-class="info-item" title="商家地址" value="{{info.address}}" />
-            <van-cell custom-class="info-item" title="商家电话" value="{{info.phone}}" />
-            <van-cell custom-class="info-item" title="营业时间" value="09:00-00:00" label="{{info.week}}" border="{{ false }}" />
-        </van-cell-group>
-    </view>
-    <view class="shops-footer">
-        <van-cell is-link custom-class="info-item" class="" title="营业资质" link-type="navigateTo" url="/pages/dashboard/index" />
     </view>
 </view>

@@ -1,29 +1,10 @@
 {
   "pages": [
-  
     "pages/index/index",
-    "pages/fenxiao/index",
-    "pages/dashboard/index",
-    "pages/home/home",
     "pages/login/login",
-    "pages/form/form",
     "pages/order/order",
-    "pages/goods/goods",
-    "pages/goodsInfo/index",
-    "pages/notice/notice",
     "pages/user/user",
-    "pages/payInfo/payInfo",
-    "pages/auth/auth",
-    "pages/address/edit/edit",
-    "pages/address/list/list",
-    "components/cellCard/cellCard",
-    "pages/address/select/select",
-    "pages/search/address/address",
-    "pages/order/orderInfo/orderInfo",
-    "pages/service/service",
-    "pages/help/help",
-    "pages/help/edit/edit",
-    "pages/help/list/list"
+    "pages/auth/auth"
   ],
   "permission": {
     "scope.userLocation": {
@@ -66,16 +47,20 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#a2a2a2",
-    "selectedColor": "#ffaf00",
+    "selectedColor": "#313999",
     "borderStyle": "black",
     "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "订餐"
+        "text": "首页"
       },
       {
         "pagePath": "pages/order/order",
+        "text": "菜单"
+      },
+      {
+        "pagePath": "pages/user/user",
         "text": "订单"
       },
       {

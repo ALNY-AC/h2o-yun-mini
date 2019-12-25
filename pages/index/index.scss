@@ -1,255 +1,131 @@
 page {
-    box-sizing: border-box;
     background-color: #f6f6f6;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-.head {
-    // height: 400rpx;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 8rpx;
-    position: relative;
+.banner {
 
-
-    .head-title {
-        position: relative;
-        text-align: center;
-        background-color: #ffffff;
-        $head-img-height: 250rpx;
-
-        .head-bg {
-            position: absolute;
-            height: $head-img-height;
-            width: 100%;
-            z-index: 1;
-            background-color: #eee;
-            display: block;
-        }
-
-        .store-info {
-            position: relative;
-            z-index: 2;
-            margin-top: $head-img-height/2+120rpx/2;
-
-            .store-head {
-                width: 160rpx;
-                height: 160rpx;
-                margin-bottom: 20rpx;
-                box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
-            }
-
-            .title {
-                color: rgba(16, 16, 16, 1);
-                font-size: 16px;
-            }
-        }
+    .banner-item {
+        background-color: #ddd;
+        display: block;
+        height: 400px;
+        width: 100%;
     }
+}
 
+.add-panel {
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
 
-    .tabs {
+    .local-box {
+        flex: 1;
         display: flex;
-        position: relative;
-        z-index: 2;
-        background-color: #ffffff;
+        align-items: flex-end;
 
-        .tab {
-            flex: 1;
-            display: flex;
-            justify-content: center;
+        .local-icon {
+            line-height: 1;
+            padding: 0 5px;
+        }
 
-            .tab-btn {
-                padding: 5px 0;
-                padding-bottom: 10px;
+        .local-info {
 
-                .title {
-                    color: rgba(16, 16, 16, 1);
-                    font-size: 16px;
-                    padding: 5px 20px;
-                    padding-bottom: 0;
-                }
+            .local-name {
+                font-size: 15px;
+                color: #333;
+            }
 
-                .sign {
-                    margin-top: -8rpx;
-                    height: 10rpx;
-                    background-color: #FFBD3F;
-                    border-radius: 10px;
-                }
+            .local-dis {
+                font-size: 12px;
+                color: #777;
             }
         }
     }
-}
 
-.body {
-    flex: 1;
-    display: flex;
-    overflow-y: auto;
+    .out-mod {
+        background-color: #313999;
+        border-radius: 25px;
+        display: block;
+        padding: 1px;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        position: relative;
 
-    .class-list {
-        min-width: 160rpx;
-        overflow: auto;
-        background-color: #f6f6f6;
 
-        .class-item {
-            padding: 50rpx 30rpx;
-            box-sizing: border-box;
-            font-size: 28rpx;
-            text-align: center;
+        .out-mod-item {
+            color: #fff;
+            font-size: 14px;
+            padding: 10px;
 
             &.active {
-                background-color: #fff;
+                color: #313999;
+                background-color: #ffffff;
+                border-radius: 25px;
             }
         }
+
     }
-
-
-
-    .food-list {
-        flex: 1;
-        overflow: auto;
-        padding: 30rpx;
-        background-color: #ffffff;
-
-        .food-item {
-            position: relative;
-
-            .tool {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-
-                .price {
-                    color: #f66;
-                    flex: 1;
-                    font-size: 28rpx;
-                    font-weight: bold;
-                }
-            }
-            .stepper{
-                // position: absolute;
-                // right: 0rpx;
-                // bottom: 0rpx;
-            }
-        }
-    }
-
-    .f-tool {
-        position: fixed;
-        z-index: 20;
-        box-shadow: 1px 2px 20px 5px rgba($color: #000000, $alpha: 0.3);
-        bottom: 60rpx;
-        max-width: 80%;
-        width: 80%;
-        background-color: #333333;
-        color: #fff;
-        display: flex;
-        align-items: stretch;
-        border-radius: 50rpx;
-        overflow: hidden;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
-
-        .price {
-            flex: 1;
-            padding: 30rpx 30rpx;
-            font-size: 36rpx;
-            font-weight: bold;
-        }
-
-        .btn {
-            background: linear-gradient(90deg, rgba(255, 207, 89, 1) 0%, rgba(254, 184, 28, 1) 100%);
-            font-size: 32rpx;
-            padding: 30rpx 30rpx;
-            display: flex;
-            align-items: center;
-            line-height: normal;
-        }
-    }
-
-    .btn-class {
-        width: 50rpx !important;
-        height: 50rpx !important;
-        background-color: #FDBC41 !important;
-        color: #000 !important;
-        border-radius: 100% !important;
-    }
-
-    .input-class {
-        background-color: transparent !important;
-        color: #FA4F45 !important;
-    }
-
 
 }
 
-.store-body {
+.logo-list {
     display: flex;
-    overflow: auto;
-    flex-direction: column;
-    .shops-info {
-        flex:1;
-        background-color: #fff;
-        padding: 40rpx;
-        margin-bottom: 20rpx;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
 
-        .title {
-            color: rgba(16, 16, 16, 1);
-            font-size: 28rpx;
-            margin-bottom: 20rpx;
+    .item {
+        flex: 1;
+        max-width: 150px;
+        margin: 0 auto;
+        margin-top: 50px;
+        display: block;
+
+        &:not(:first-child) {
+            margin-left: -100px;
         }
 
-        .shops-img {
-            display: flex;
-            margin-bottom: 20rpx;
-
-            .img {
-                width: 160rpx;
-                height: 160rpx;
-                margin-right: 20rpx;
-            }
-        }
-
-        .text {
-
-            color: rgba(16, 16, 16, 1);
-            font-size: 24rpx;
-
+        .logo {
+            width: 150px;
+            display: block;
         }
     }
+}
 
-    .info-list {
-        margin-bottom: 20rpx;
+.tep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
 
-        .info-item {
-            color: rgba(16, 16, 16, 1);
-            font-size: 28rpx;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
-            .van-cell__title {
-                flex: none;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 25px;
+    // padding: 5px 10px;
 
-                .van-cell__label {
-                    color: rgba(136, 136, 136, 1);
-                    font-size: 28rpx;
-                }
-            }
+    .item {
+        line-height: 1;
+        font-size: 20px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: #32A1EE;
+        color: #fff;
+        border-radius: 100%;
+        text-align: center;
 
-            .van-cell__value {
-                color: rgba(16, 16, 16, 1);
-            }
-        }
+        .icon {}
     }
 
-    .shops-footer {
-        margin-bottom: 20rpx;
-
-        .info-item {
-            color: rgba(16, 16, 16, 1);
-            font-size: 28rpx;
-        }
+    .value {
+        font-size: 30px;
+        color: #fff;
+        padding: 0 20px;
     }
 }
