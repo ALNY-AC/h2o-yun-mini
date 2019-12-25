@@ -39,12 +39,17 @@ class Page {
   }
   watch = {
     count() {
-      wx.createSelectorQuery().select('#j_page').boundingClientRect(function (rect) {
-        // 使页面滚动到底部
-        wx.pageScrollTo({
-          scrollTop: rect.height
-        })
-      }).exec()
+      if (this.data.count % (5) == 0) {
+        return false;
+      }
+      setTimeout(() => {
+        wx.createSelectorQuery().select('#j_page').boundingClientRect((rect) => {
+          wx.pageScrollTo({
+            scrollTop: rect.height,
+          })
+        }).exec();
+      }, 100);
+
     }
   }
 

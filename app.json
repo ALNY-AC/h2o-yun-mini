@@ -13,9 +13,9 @@
   },
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#FFC700",
-    "navigationBarTitleText": "莎姐炒饭",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#32A1EE",
+    "navigationBarTitleText": "起源送水",
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "van-button": "vant-weapp/button",

@@ -32,12 +32,12 @@
     <image wx:for="{{count}}" wx:key="index" class="logo" mode="widthFix" src="/assets/images/logo.png"></image>
 </view> -->
     <view class="tep">
-        <view class="item dev">
-            <van-icon class="icon" name="arrow-left" bind:tap="o-model" data-value="{{count-1}}" data-model="count" />
+        <view class="item dev" bind:tap="o-model" data-value="{{count-1}}" data-model="count">
+            <van-icon class="icon" name="arrow-left" />
         </view>
         <view class="value">{{count}}</view>
-        <view class="item push">
-            <van-icon class="icon" name="arrow" bind:tap="o-model" data-value="{{count+1}}" data-model="count" />
+        <view class="item push" bind:tap="o-model" data-value="{{count+1}}" data-model="count">
+            <van-icon class="icon" name="arrow" />
         </view>
     </view>
 </view>
