@@ -1,43 +1,44 @@
-<view id="j_page">
-    <swiper class="banner" indicator-dots="{{true}}">
-        <swiper-item wx:for="{{list}}" wx:key="index">
-            <image src="{{item}}" class="banner-item"></image>
-        </swiper-item>
-    </swiper>
-    <view class="add-panel">
-        <view class="local-box">
-            <view class="local-icon">
-                <van-icon name="location-o" size="20px" />
-            </view>
-            <view class="local-info">
-                <view class="local-name">汤臣一品</view>
-                <view class="local-dis">距您225m</view>
-            </view>
+<swiper class="banner" indicator-dots="{{true}}">
+    <swiper-item wx:for="{{banners}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix" class="banner-item"></image>
+    </swiper-item>
+</swiper>
+<view class="add-panel">
+    <view class="local-box">
+        <view class="local-icon">
+            <van-icon name="location-o" size="20px" />
         </view>
-        <view class="out-mod">
-            <view class="out-mod-item {{outMod==0?'active':''}}" bind:tap="o-model" data-value="{{0}}" data-model="outMod">
-                自提
-            </view>
-            <view class="out-mod-item {{outMod==1?'active':''}}" bind:tap="o-model" data-value="{{1}}" data-model="outMod">
-                配送
-            </view>
+        <view class="local-info">
+            <view class="local-name">您所在地区暂未开通</view>
+            <!-- <view class="local-dis">距您225m</view> -->
         </view>
     </view>
-    <view class="logo-list" wx:for="{{counts}}" wx:for-index="idx">
-        <view class="item" wx:for="{{item}}" wx:key="index">
-            <image class="logo" mode="widthFix" src="/assets/images/logo.png"></image>
+    <view class="out-mod">
+        <view class="out-mod-item {{outMod==0?'active':''}}" bind:tap="o-model" data-value="{{0}}" data-model="outMod">
+            自提
+        </view>
+        <view class="out-mod-item {{outMod==1?'active':''}}" bind:tap="o-model" data-value="{{1}}" data-model="outMod">
+            配送
         </view>
     </view>
-    <!-- <view class="logo-list" wx:if="{{count>count%5}}">
-    <image wx:for="{{count}}" wx:key="index" class="logo" mode="widthFix" src="/assets/images/logo.png"></image>
-</view> -->
-    <view class="tep">
-        <view class="item dev" bind:tap="o-model" data-value="{{count-1}}" data-model="count">
-            <van-icon class="icon" name="arrow-left" />
+</view>
+<!-- <image class="logo" mode="widthFix" src="/assets/images/logo.png"></image> -->
+<view class="select-panel">
+    <view class="class-list">
+        <view class="class-item {{classActive==index?'active':''}}" bind:tap="o-model" data-model="classActive" data-value="{{index}}" wx:for="{{classList}}" wx:key="index">
+            {{item.name}}
         </view>
-        <view class="value">{{count}}</view>
-        <view class="item push" bind:tap="o-model" data-value="{{count+1}}" data-model="count">
-            <van-icon class="icon" name="arrow" />
+    </view>
+    <view class="goods-list">
+        <view class="goods-item" wx:for="{{20}}" wx:key="index">
+            <image class="goods-head" mode="widthFix" src="/assets/images/goods.jpg"></image>
+            <view class="goods-info">
+                <view class="goods-title">冰露山泉</view>
+                <view class="goods-price">10¥</view>
+            </view>
+            <view class="goods-tool">
+                <van-icon class="push" bind:tap="submit" name="add" />
+            </view>
         </view>
     </view>
 </view>

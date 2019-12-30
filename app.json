@@ -14,7 +14,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#32A1EE",
-    "navigationBarTitleText": "起源送水",
+    "navigationBarTitleText": "h2o",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
@@ -47,25 +47,21 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#a2a2a2",
-    "selectedColor": "#313999",
+    "selectedColor": "#32A1EE",
     "borderStyle": "black",
     "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/order/order",
-        "text": "菜单"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "text": "订单"
+        "text": "首页",
+        "iconPath": "/assets/images/nav/home.png",
+        "selectedIconPath": "/assets/images/nav/home.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "/assets/images/nav/my.png",
+        "selectedIconPath": "/assets/images/nav/my.png"
       }
     ]
   }

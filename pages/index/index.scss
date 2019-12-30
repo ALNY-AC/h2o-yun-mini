@@ -1,5 +1,10 @@
 page {
     background-color: #f6f6f6;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .banner {
@@ -17,7 +22,6 @@ page {
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    margin-bottom: 20px;
 
     .local-box {
         flex: 1;
@@ -72,61 +76,76 @@ page {
 
 }
 
-.logo-list {
+.select-panel {
     display: flex;
-    align-items: center;
-    max-width: 100%;
     overflow: hidden;
+    flex: 1;
+    background-color: #f6f6f6;
 
-    .item {
+    .class-list {
+        width: 200rpx;
+        padding: 10px;
+        overflow: auto;
+
+        .class-item {
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 5px;
+
+            &.active {
+                background-color: #ffffff;
+            }
+
+        }
+    }
+
+    .goods-list {
         flex: 1;
-        max-width: 150px;
-        margin: 0 auto;
-        display: block;
+        padding: 10px;
+        overflow: auto;
 
-        &:not(:first-child) {
-            margin-left: -100px;
+        .goods-item {
+            display: flex;
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+
+            .goods-head {
+                display: block;
+                width: 200rpx;
+                height: 200rpx;
+            }
+
+            .goods-info {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                .goods-title {
+                    flex: 1;
+                }
+
+                .goods-price {
+                    color: #f66;
+                }
+
+
+            }
+
+            .goods-tool {
+                display: flex;
+
+                .push {
+                    color: #32A1EE;
+                    font-size: 30px;
+                    align-self: flex-end;
+                }
+            }
         }
-
-        .logo {
-            width: 150px;
-            display: block;
-        }
-    }
-}
-
-.tep {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: rgba($color: #000000, $alpha: 0.5);
-    border-radius: 25px;
-
-    .item {
-        line-height: 1;
-        font-size: 20px;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // background-color: #32A1EE;
-        color: #fff;
-        border-radius: 100%;
-        text-align: center;
-
-        .icon {}
     }
 
-    .value {
-        font-size: 30px;
-        color: #fff;
-        padding: 0 20px;
-    }
+
+
 }

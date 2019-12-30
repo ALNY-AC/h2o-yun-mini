@@ -18,7 +18,7 @@ class Page {
         userInfo: wx.getStorageSync('wx_userInfo')
       })
     }
-  
+
 
   }
   onShow() {
@@ -34,7 +34,7 @@ class Page {
 
   onPageScroll({
     scrollTop
-  }) {}
+  }) { }
   quit() {
     wx.loadFontFace({
       family: 'Bitstream Vera Serif Bold',

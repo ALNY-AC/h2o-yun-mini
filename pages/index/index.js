@@ -8,49 +8,22 @@ const computedBehavior = require('miniprogram-computed')
 class Page {
   behaviors = [computedBehavior]
   data = {
-    list: [
-      '1',
-      '2',
-      '3',
-    ],
+    classActive: 0,
     outMod: 0,
-    count: 1,
+    classList: [
+      { id: 1, name: '企业专送' },
+      { id: 2, name: '门面专送' },
+      { id: 3, name: '居家专送' },
+    ],
+    banners: [
+      '/assets/images/banner1.jpg',
+      '/assets/images/banner2.jpg',
+    ]
   }
   computed = {
-    counts(data) {
 
-      let count = data.count;
-      let arr = [];
-      let tot = 1;
-      let newItem = [];
-
-      for (let i = 0; i < count; i++) {
-
-        if (i % 5 == 0) {
-          newItem = [];
-          arr.push(newItem);
-          tot += 1;
-        }
-        newItem.push(i + '' + tot);
-
-      }
-      return arr;
-    }
   }
   watch = {
-    count() {
-      if (this.data.count % (5) == 0) {
-        return false;
-      }
-      setTimeout(() => {
-        wx.createSelectorQuery().select('#j_page').boundingClientRect((rect) => {
-          wx.pageScrollTo({
-            scrollTop: rect.height,
-          })
-        }).exec();
-      }, 100);
-
-    }
   }
 
   /**
@@ -61,7 +34,9 @@ class Page {
   async update() {
 
   }
+  submit() {
 
+  }
 }
 
 origin(Page);
