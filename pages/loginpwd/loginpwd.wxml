@@ -1,0 +1,11 @@
+<view class="login-head">
+    <view class="title">欢迎使用云水管理系统</view>
+    <view class="sub-title">登陆以管理您的订单</view>
+</view>
+<view class="form-box">
+    <view class="title">账户：</view>
+    <input type="text" bindinput="o-model" placeholder="请输入账户" data-model="id" />
+    <view class="title">密码：</view>
+    <input type="password" bindinput="o-model" placeholder="请输入密码" data-model="pwd" />
+    <van-button bind:tap="submit" block>登陆</van-button>
+</view>

@@ -9,7 +9,8 @@
     "pages/order/unOrder/index",
     "pages/order/order/index",
     "pages/user/user",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/loginpwd/loginpwd"
   ],
   "permission": {
     "scope.userLocation": {

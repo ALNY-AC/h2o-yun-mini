@@ -76,6 +76,13 @@
 					"id": -1,
 					"name": "pages/order/unOrder/index",
 					"pathName": "pages/order/unOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginpwd/loginpwd",
+					"pathName": "pages/loginpwd/loginpwd",
 					"scene": null
 				}
 			]
