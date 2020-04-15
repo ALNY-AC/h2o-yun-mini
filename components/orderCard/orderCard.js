@@ -11,6 +11,10 @@ class Banner {
     title: String,
     state: String,
     totalPrice: String,
+    info:{
+      type:Object,
+      default:null
+    }
   }
   computed = {
     style(data) {
@@ -21,10 +25,13 @@ class Banner {
       return style.join(';');
     }
   }
+  
   data = {
 
+    
   }
   onStart() {
+    console.log(info)
     console.warn('Banner');
   }
 }

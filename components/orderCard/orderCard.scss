@@ -23,22 +23,29 @@
     }
 
     .order-card-body {
-        padding: 25rpx;
 
-        .goods-bottom-box {
-            margin-top: 20rpx;
-            display: flex;
-            justify-content: flex-end;
+        .good-card{
+            background-color: #ffffff;
+        }
+
+        .order-title {
+            font-size: 32rpx;
+        }
+
+        .order-price {
+            font-size: 40prx;
+            font-weight: 500;
+            color: #ff870d;
+        }
+
+        .order-time {
+            font-size: 32rpx;
+            font-weight: 500;
+            color: #768767;
+
         }
     }
 
-    .order-card-footer {
-        display: flex;
-        padding: 25rpx;
-        border-top: 1px solid #f1f1f1;
-        justify-content: flex-end;
-        align-items: center;
 
-    }
 
 }

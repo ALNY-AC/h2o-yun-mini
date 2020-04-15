@@ -4,12 +4,15 @@ page {
 }
 
 .user-info-card {
+    width: 100%;
     background-color: #fff;
     color: #333;
     display: flex;
 
     padding: 10px;
-
+    .good-card{
+        background-color: #ffffff;
+    }
     .user-head {
         width: 80px;
         height: 80px;

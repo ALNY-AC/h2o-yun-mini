@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/user/index",
     "pages/store/index",
     "pages/index/index",
     "pages/login/login",
@@ -45,6 +44,7 @@
     "van-panel": "vant-weapp/panel",
     "van-collapse": "vant-weapp/collapse",
     "van-collapse-item": "vant-weapp/collapse-item",
+    "van-card": "vant-weapp/card/index",
     "img-text-card": "/components/ImgTextCard/ImgTextCard",
     "banner": "/components/banner/banner",
     "order-card": "/components/orderCard/orderCard",
@@ -59,13 +59,13 @@
     "list": [
       {
         "pagePath": "pages/order/unOrder/index",
-        "text": "未处理订单",
+        "text": "订单",
         "iconPath": "/assets/images/nav/home.png",
         "selectedIconPath": "/assets/images/nav/home.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的",
+        "text": "我的店铺",
         "iconPath": "/assets/images/nav/my.png",
         "selectedIconPath": "/assets/images/nav/my.png"
       }
