@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/loginpwd/loginpwd",
     "pages/home/index",
     "pages/store/index",
     "pages/index/index",
@@ -9,7 +8,8 @@
     "pages/order/unOrder/index",
     "pages/order/order/index",
     "pages/user/user",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/loginpwd/loginpwd"
   ],
   "permission": {
     "scope.userLocation": {
