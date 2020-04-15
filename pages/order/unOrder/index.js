@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    list: [
+      {
+      title: "待支付",
+      state: 0,
+      songfei: 6,
+      price: 1980,
+      ma: 51004,
+      num: 1,
+      desc: "",
+      time: "2020-4-10 23:10:11",
+      remark: "手机不错，看起来挺漂亮",
+      imageURL: "https://img.yzcdn.cn/vant/ipad.jpeg"
+    },
 
+
+  ]
   },
 
   /**

@@ -44,6 +44,7 @@
     "van-panel": "vant-weapp/panel",
     "van-collapse": "vant-weapp/collapse",
     "van-collapse-item": "vant-weapp/collapse-item",
+    "van-card": "vant-weapp/card/index",
     "img-text-card": "/components/ImgTextCard/ImgTextCard",
     "banner": "/components/banner/banner",
     "order-card": "/components/orderCard/orderCard",

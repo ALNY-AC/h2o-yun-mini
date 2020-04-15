@@ -1,16 +1,14 @@
 <view class="order-card">
     <view class="order-card-head">
-        <view class="order-title">待支付</view>
+        <view class="order-title">{{info.state}}</view>
         <!-- <view class="order-state">111</view> -->
     </view>
     <view class="order-card-body">
-        <van-card num="2" price="2.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" />
-        <view class="goods-bottom-box">
-            <view style="font-size:25rpx">
-                <text>总价：</text>
-                <text style="color:#f66">11</text>
-            </view>
-            <!-- <slot name="goods-bottom-box"></slot> -->
-        </view>
+        <van-card num="2" price="{{info.price}}" desc="{{info.desc}}" title="{{info.title}}" origin-price='{{info.oprice}}' thumb="{{ info.imageURL }}" />
+        <van-cell title="配送费" value="￥{{info.price}}" title-class='order-title' size="large" />
+        <van-cell title="实付金额" title-class='order-title' value="￥{{info.price}}" value-class='order-price' size="large" />
+        <van-cell title="取货码" title-class='order-title' value="{{info.ma}}" size="large" />
+        <van-cell title="下单时间" title-class='order-title' value-class='order-time' value="{{info.time}}" size="large" />
+        <van-cell title="订单备注" title-class='order-title' value="{{info.remark}}" size="large" />
     </view>
 </view>
