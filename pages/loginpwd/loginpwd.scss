@@ -1,0 +1,47 @@
+.login-head {
+    background-color: #32A1EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 0;
+
+    .title {
+        color: #fff;
+        font-size: 25px;
+        display: block;
+    }
+
+    .sub-title {
+        display: block;
+        color: #fff;
+    }
+
+
+}
+
+.form-box {
+    padding: 10px;
+}
+
+
+.title {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+input {
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.sub-title {
+    font-size: 14px;
+    color: #666
+}
