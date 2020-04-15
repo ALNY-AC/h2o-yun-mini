@@ -1,17 +1,5 @@
 const Url = require('./Url')
 const Middleware = require('./middleware/Middleware')
-const config = require('./config')
-function to() {
-    return Object.keys(config).map(k => {
-        let v = '';
-        if (typeof config[k] == 'function') {
-            v = `${k}=${config[k]()}`;
-        } else {
-            v = `${k}=${config[k]}`;
-        }
-        return v;
-    }).join(';');
-}
 module.exports = class Http {
 
     baseUrl = Url.apiUrl;
@@ -31,7 +19,7 @@ module.exports = class Http {
 
         this.use(async (request, next) => {
             // console.warn(to(config));
-            request.header.Authorization = to(config);
+            request.header.Authorization = wx.getStorageSync('jwt');
             let response = await next(request);
             return response.data;
         });
