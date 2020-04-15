@@ -8,6 +8,10 @@ class Page {
     msg: '',
     userInfo: null,
   }
+
+  code = null;
+  userInfo = null;
+
   /**
    * 监听data数据变化
    */
@@ -24,7 +28,12 @@ class Page {
    * 在onLoad后立即调用
    */
   onStart() {
-
+    wx.login({
+      success: (e) => {
+        console.warn(e);
+        this.code = e.code;
+      }
+    });
     // this.$router.push('/index/index', { a: 1, b: 2 });
 
     // console.warn(this.$route.query);
@@ -34,9 +43,18 @@ class Page {
 
   }
 
-  getUserInfo(e) {
+  async getUserInfo(e) {
     this.setData({ userInfo: e.detail.userInfo });
-    console.warn(e.detail);
+    this.userInfo = e.detail;
+  }
+
+  async getPhoneNumber(e) {
+    const res = await this.$http.post('/auth/login', {
+      phone_info: e.detail,
+      user_info: this.userInfo,
+      code: this.code
+    });
+    console.warn(res);
   }
 
 }
