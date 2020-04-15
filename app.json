@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loginpwd/loginpwd",
     "pages/home/index",
     "pages/store/index",
     "pages/index/index",
@@ -8,8 +9,7 @@
     "pages/order/unOrder/index",
     "pages/order/order/index",
     "pages/user/user",
-    "pages/auth/auth",
-    "pages/loginpwd/loginpwd"
+    "pages/auth/auth"
   ],
   "permission": {
     "scope.userLocation": {
@@ -19,7 +19,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#32A1EE",
-    "navigationBarTitleText": "h2o",
+    "navigationBarTitleText": "云水cloud管理系统",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
@@ -45,6 +45,8 @@
     "van-collapse": "vant-weapp/collapse",
     "van-collapse-item": "vant-weapp/collapse-item",
     "van-card": "vant-weapp/card/index",
+    "van-grid": "vant-weapp/grid/index",
+    "van-grid-item": "vant-weapp/grid-item/index",
     "img-text-card": "/components/ImgTextCard/ImgTextCard",
     "banner": "/components/banner/banner",
     "order-card": "/components/orderCard/orderCard",
@@ -57,6 +59,12 @@
     "borderStyle": "black",
     "backgroundColor": "#fff",
     "list": [
+      {
+        "pagePath": "pages/store/index",
+        "text": "店铺",
+        "iconPath": "/assets/images/nav/home.png",
+        "selectedIconPath": "/assets/images/nav/home.png"
+      },
       {
         "pagePath": "pages/order/unOrder/index",
         "text": "订单",
