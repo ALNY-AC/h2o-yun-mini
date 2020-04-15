@@ -11,6 +11,15 @@ App({
     } else {
       this.globalData.userInfo = null;
     }
+
+    if (!wx.getStorageSync('jwt')) {
+      wx.reLaunch({
+        url: '/pages/login/login'
+      })
+    }
+
+
+
     // wx.login({
     //   success: res => {
     //     // 发送 res.code 到后台换取 openId, sessionKey, unionId

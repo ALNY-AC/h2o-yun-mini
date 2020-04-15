@@ -148,11 +148,8 @@ class HandlePage {
         const setData = vm.setData;
         vm.setData = function (opt) {
 
-            console.warn('setData');
             return new Promise((resolve, reject) => {
                 setData.call(vm, opt, (e) => {
-                    console.warn('setData ok');
-
                     resolve(e)
                 });
             });
