@@ -47,7 +47,9 @@ class Page {
   }
 
   async getUserInfo(e) {
-    this.setData({ userInfo: e.detail.userInfo });
+    this.setData({
+      userInfo: e.detail.userInfo
+    });
     this.userInfo = e.detail;
   }
 
@@ -60,9 +62,24 @@ class Page {
     wx.setStorageSync('jwt', res.jwt);
     wx.setStorageSync('userInfo', res.userInfo);
 
-    wx.switchTab({
-      url: '/pages/home/index'
-    });
+    if (res.storeCount <= 0) {
+      wx.showModal({
+        showCancel: false,
+        title: '您还没有店铺，请先创建',
+        success: (res) => {
+          if (res.confirm) {
+            wx.reLaunch({
+              url: '/pages/store/storeInfo/index'
+            })
+          }
+        }
+      })
+    } else {
+      wx.switchTab({
+        url: '/pages/home/index'
+      });
+    }
+
     // console.warn(res);
 
   }

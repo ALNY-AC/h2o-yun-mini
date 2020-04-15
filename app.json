@@ -1,15 +1,17 @@
 {
   "pages": [
+    "pages/loginpwd/loginpwd",
     "pages/home/index",
     "pages/store/index",
+    "pages/store/store/index",
+    "pages/store/storeInfo/index",
     "pages/index/index",
     "pages/login/login",
     "pages/order/orderInfo/index",
     "pages/order/unOrder/index",
     "pages/order/order/index",
     "pages/user/user",
-    "pages/auth/auth",
-    "pages/loginpwd/loginpwd"
+    "pages/auth/auth"
   ],
   "permission": {
     "scope.userLocation": {
@@ -62,32 +64,32 @@
       {
         "pagePath": "pages/home/index",
         "text": "首页",
-        "iconPath": "/assets/images/nav/home.png",
-        "selectedIconPath": "/assets/images/nav/home.png"
+        "iconPath": "/assets/images/icon/home-o.png",
+        "selectedIconPath": "/assets/images/icon/home-n.png"
       },
       {
         "pagePath": "pages/order/unOrder/index",
         "text": "预订单",
-        "iconPath": "/assets/images/nav/home.png",
-        "selectedIconPath": "/assets/images/nav/home.png"
+        "iconPath": "/assets/images/icon/unorder-o.png",
+        "selectedIconPath": "/assets/images/icon/unorder-n.png"
       },
       {
         "pagePath": "pages/order/order/index",
         "text": "订单",
-        "iconPath": "/assets/images/nav/home.png",
-        "selectedIconPath": "/assets/images/nav/home.png"
+        "iconPath": "/assets/images/icon/order-o.png",
+        "selectedIconPath": "/assets/images/icon/order-n.png"
       },
       {
         "pagePath": "pages/store/index",
         "text": "店铺",
-        "iconPath": "/assets/images/nav/home.png",
-        "selectedIconPath": "/assets/images/nav/home.png"
+        "iconPath": "/assets/images/icon/store-o.png",
+        "selectedIconPath": "/assets/images/icon/store-n.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的",
-        "iconPath": "/assets/images/nav/my.png",
-        "selectedIconPath": "/assets/images/nav/my.png"
+        "text": "我的店铺",
+        "iconPath": "/assets/images/icon/my-o.png",
+        "selectedIconPath": "/assets/images/icon/my-n.png"
       }
     ]
   }
