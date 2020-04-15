@@ -1,0 +1,5 @@
+<view class="list">
+    <view class="item">
+      <order-card></order-card>
+    </view>
+</view>

@@ -1,19 +1,16 @@
 <view class="order-card">
     <view class="order-card-head">
-        <view class="order-title">{{title}}</view>
-        <view class="order-state">{{state}}</view>
+        <view class="order-title">待支付</view>
+        <!-- <view class="order-state">111</view> -->
     </view>
     <view class="order-card-body">
-        <slot></slot>
+        <van-card num="2" price="2.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" />
         <view class="goods-bottom-box">
-            <view style="font-size:25rpx" wx:if="{{totalPrice}}">
+            <view style="font-size:25rpx">
                 <text>总价：</text>
-                <text style="color:#f66">{{totalPrice}}￥</text>
+                <text style="color:#f66">11</text>
             </view>
             <!-- <slot name="goods-bottom-box"></slot> -->
         </view>
-    </view>
-    <view class="order-card-footer">
-        <slot name="footer"></slot>
     </view>
 </view>
