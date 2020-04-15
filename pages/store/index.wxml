@@ -1,2 +1,10 @@
-<!--pages/store/index.wxml-->
-<text>pages/store/index.wxml</text>
+<view class="store">
+    <view class="store-header">
+        <van-card custom-class='good-card' title="超牛送水" thumb="{{ imageURL }}" />
+    </view>
+    <view class="store-set">
+        <van-grid column-num="3">
+            <van-grid-item icon="photo-o" text="文字" wx:for="{{ 6 }}" />
+        </van-grid>
+    </view>
+</view>

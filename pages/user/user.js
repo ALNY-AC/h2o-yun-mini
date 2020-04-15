@@ -11,7 +11,7 @@ class Page {
     height: '',
     userInfo: null,
     info:{
-      imageURL:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586957499534&di=3c0fd447b32828d8c0877c35f9c2c39e&imgtype=0&src=http%3A%2F%2Fimg000.hc360.cn%2Fm8%2FM01%2F04%2FE0%2FwKhQplVWs5OEaKF2AAAAAPUPHzk191.jpg",
+      imageURL:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586959101945&di=32abe40e797263ba2759dd62db50f059&imgtype=0&src=http%3A%2F%2Ffile.youboy.com%2Fa%2F94%2F48%2F26%2F7%2F772677s.jpg",
       title:"集贤水站(平高世贸店)"
     }
   }
