@@ -60,20 +60,32 @@
     "backgroundColor": "#fff",
     "list": [
       {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/assets/images/nav/home.png",
+        "selectedIconPath": "/assets/images/nav/home.png"
+      },
+      {
+        "pagePath": "pages/order/unOrder/index",
+        "text": "预订单",
+        "iconPath": "/assets/images/nav/home.png",
+        "selectedIconPath": "/assets/images/nav/home.png"
+      },
+      {
+        "pagePath": "pages/order/order/index",
+        "text": "订单",
+        "iconPath": "/assets/images/nav/home.png",
+        "selectedIconPath": "/assets/images/nav/home.png"
+      },
+      {
         "pagePath": "pages/store/index",
         "text": "店铺",
         "iconPath": "/assets/images/nav/home.png",
         "selectedIconPath": "/assets/images/nav/home.png"
       },
       {
-        "pagePath": "pages/order/unOrder/index",
-        "text": "订单",
-        "iconPath": "/assets/images/nav/home.png",
-        "selectedIconPath": "/assets/images/nav/home.png"
-      },
-      {
         "pagePath": "pages/user/user",
-        "text": "我的店铺",
+        "text": "我的",
         "iconPath": "/assets/images/nav/my.png",
         "selectedIconPath": "/assets/images/nav/my.png"
       }
