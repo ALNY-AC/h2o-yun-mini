@@ -25,7 +25,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
+	"libVersion": "2.10.4",
 	"appid": "wxa8d21fe24928aca8",
 	"projectname": "h2o-yun-mini",
 	"debugOptions": {
