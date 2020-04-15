@@ -1,7 +1,8 @@
 <!-- pages/test/test.wxml -->
 <view class="test">
+    <view class="h1">请登录以管理您的订单</view>
     <image src="{{userInfo.avatarUrl}}"></image>
-    <view class="h2">{{userInfo.nickName?userInfo.nickName:'点击授权'}}</view>
+    <view class="h2">{{userInfo.nickName?userInfo.nickName:'请点击下方按钮授权登陆'}}</view>
     <view class="button-box">
         <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">
             授权登录

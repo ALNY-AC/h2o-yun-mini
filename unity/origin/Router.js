@@ -23,5 +23,9 @@ module.exports = class Router {
     tab(url) {
         wx.switchTab({ url: url, });
     }
+    
+    tab(url) {
+        wx.switchTab({ url: url, });
+    }
 
 }

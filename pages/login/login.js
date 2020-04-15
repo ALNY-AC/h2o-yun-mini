@@ -28,9 +28,12 @@ class Page {
    * 在onLoad后立即调用
    */
   onStart() {
+
+    wx.removeStorageSync('jwt');
+
+
     wx.login({
       success: (e) => {
-        console.warn(e);
         this.code = e.code;
       }
     });
@@ -54,7 +57,14 @@ class Page {
       user_info: this.userInfo,
       code: this.code
     });
-    console.warn(res);
+    wx.setStorageSync('jwt', res.jwt);
+    wx.setStorageSync('userInfo', res.userInfo);
+
+    wx.switchTab({
+      url: '/pages/home/index'
+    });
+    // console.warn(res);
+
   }
 
 }
