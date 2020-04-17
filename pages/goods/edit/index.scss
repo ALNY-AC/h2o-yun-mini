@@ -1,0 +1,14 @@
+
+.box{
+    height: 100vh;
+    background-color: #f6f6f6;
+    .storeTitle{
+        display: flex;
+        align-items: center;
+    }
+    .fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+}

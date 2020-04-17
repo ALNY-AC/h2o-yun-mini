@@ -1,1 +1,1 @@
-/* pages/goods/edit/index.wxss */
+.box{height:100vh;background-color:#f6f6f6}.box .storeTitle{display:flex;align-items:center}.box .fixed{position:fixed;bottom:0;left:0}

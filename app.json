@@ -56,6 +56,7 @@
     "van-swipe-cell": "vant-weapp/swipe-cell/index",
     "van-dialog": "vant-weapp/dialog/index",
     "van-uploader": "vant-weapp/uploader/index",
+    "van-picker": "vant-weapp/picker/index",
     "img-text-card": "/components/ImgTextCard/ImgTextCard",
     "banner": "/components/banner/banner",
     "order-card": "/components/orderCard/orderCard",

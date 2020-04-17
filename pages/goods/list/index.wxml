@@ -1,7 +1,7 @@
 <view class="box">
     <view class="list">
-        <view class="item">
-            <van-card custom-class='good-card' title="{{info.title}}" thumb="{{ info.img }}" />
+        <view class="item" wx:key="index" wx:for="{{list}}">
+            <van-card custom-class='good-card' title="{{item.title}}" img='{{item.goods_head_list[0]}}' />
         </view>
         
     </view>
