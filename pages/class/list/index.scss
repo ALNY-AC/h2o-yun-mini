@@ -1,0 +1,16 @@
+.box{
+    min-height: 100vh;
+    .list{
+        width: 100vw;
+        .item{
+            .btn-height{
+                height: 100%;
+            }
+        }
+    }
+    .fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+}

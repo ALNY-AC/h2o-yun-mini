@@ -1,0 +1,7 @@
+<van-cell-group>
+    <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="分类名称" placeholder="请输入分类名称" />
+    <van-cell center title="是否显示">
+        <van-switch checked="{{ form.is_up }}" bind:change="onChange" slot="right-icon" size="40" />
+    </van-cell>
+    <van-button type="primary" bind:tap="save" block>保存</van-button>
+</van-cell-group>

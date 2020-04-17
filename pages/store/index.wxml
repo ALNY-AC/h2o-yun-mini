@@ -4,11 +4,10 @@
     </view>
     <view class="store-set">
         <van-grid column-num="3">
-          
             <van-grid clickable column-num="3">
                 <van-grid-item icon="wap-home-o" link-type="navigateTo" url="/pages/store/storeInfo/index?id={{id}}" text="门店编辑" />
-                <van-grid-item icon="wap-nav" link-type="navigateTo" url="/pages/dashboard/index" text="分类" />
-                <van-grid-item icon="shopping-cart-o" link-type="navigateTo" url="/pages/dashboard/index" text="商品" />
+                <van-grid-item icon="wap-nav" link-type="navigateTo" url="/pages/class/list/index" text="分类" />
+                <van-grid-item icon="shopping-cart-o" link-type="navigateTo" url="/pages/good/list/index" text="商品" />
             </van-grid>
         </van-grid>
     </view>

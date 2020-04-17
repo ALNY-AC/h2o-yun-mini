@@ -1,0 +1,31 @@
+<view class="box">
+    <view class="list">
+        <view class="item">
+            <van-swipe-cell right-width="{{ 65 }}">
+                <van-cell-group>
+                    <van-cell title="农夫山泉" label='已隐藏'>
+                        <van-icon slot="right-icon" name="search" class="custom-icon" />
+                    </van-cell>
+                </van-cell-group>
+                <view slot="right" style="height:100%" class="van-swipe-cell__right">
+                    <van-button type="danger" custom-class='btn-height'>删除</van-button>
+                </view>
+            </van-swipe-cell>
+        </view>
+        <view class="item">
+            <van-swipe-cell right-width="{{ 65 }}">
+                <van-cell-group>
+                    <van-cell title="农夫山泉">
+                        <van-icon slot="right-icon" name="search" class="custom-icon" />
+                    </van-cell>
+                </van-cell-group>
+                <view slot="right" style="height:100%" class="van-swipe-cell__right">
+                    <van-button type="danger" custom-class='btn-height'>删除</van-button>
+                </view>
+            </van-swipe-cell>
+        </view>
+        <van-button type="primary" custom-class='fixed' data-url='/pages/class/edit/index' bind:tap='o-router' block>
+            添加分类
+        </van-button>
+    </view>
+</view>

@@ -97,6 +97,20 @@
 					"id": -1,
 					"name": "pages/store/storeInfo/index",
 					"pathName": "pages/store/storeInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/class/list/index",
+					"pathName": "pages/class/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/class/edit/index",
+					"pathName": "pages/class/edit/index",
 					"scene": null
 				}
 			]
