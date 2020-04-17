@@ -1,0 +1,8 @@
+<!-- pages/map/map.wxml -->
+<view class="map">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" bind:regionchange="regionchange">
+    <cover-view class="map-icon" style="background-image: url('../../assets/images/location.png');"></cover-view>
+  </map>
+  <van-field class="input" value="{{ value }}" placeholder="地址关键字搜索" border="{{ false }}" bind:change="onChange" />
+  <van-button type="primary" bind:tap="save" block>选择地址</van-button>
+</view>

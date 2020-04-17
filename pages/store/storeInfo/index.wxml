@@ -1,4 +1,5 @@
 <van-cell-group>
-    <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}'  clearable label="门店名称" icon="question-o" placeholder="请输入门店名称" />
+    <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="门店名称" icon="question-o" placeholder="请输入门店名称" />
+    <van-field clearable label="店铺网址" icon="arrow" disabled placeholder="选择位置" bind:tap="o-router" data-url="/pages/map/map" />
     <van-button type="primary" bind:tap="save" block>保存</van-button>
 </van-cell-group>

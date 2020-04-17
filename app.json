@@ -15,7 +15,8 @@
     "pages/order/unOrder/index",
     "pages/order/order/index",
     "pages/user/user",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/map/map"
   ],
   "permission": {
     "scope.userLocation": {
