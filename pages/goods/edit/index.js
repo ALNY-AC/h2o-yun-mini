@@ -7,8 +7,9 @@ class Page {
   data = {
     form:{
       name:"",
-      is_up:0,
-      store_id:2
+      price:0,
+      store_id:2,
+      sort:0
     }
   }
 
@@ -46,7 +47,7 @@ class Page {
     })
   }
   async save() {
-    const res = await this.$http.post('/class/save', this.data.form);
+    const res = await this.$http.post('/goods/save', this.data.form);
     if (res.code >= 0) {
       this.$toast('保存成功');
       this.$router.go(-1);

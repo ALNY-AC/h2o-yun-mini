@@ -5,15 +5,20 @@ class Page {
    * 声明data
    */
   data = {
-    form: {
-      page: 1,
-      page_size: 10,
-      store_id: 2
+    info: {
+      title: "好",
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586957304625&di=00265dca96f1ac4236b3ba1208620fd4&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fg6%2FM07%2F5D%2FAB%2FwKhQsVNsW6aEP0DZAAAAAMqPSDE457.jpg'
     },
-    list: []
+    list: [],
+    form:{
+      page:1,
+      page_size:10,
+      store_id:2
+    }
   }
 
-
+  code = null;
+  userInfo = null;
 
   /**
    * 监听data数据变化
@@ -24,8 +29,7 @@ class Page {
       // this.setData({
       // msg2: this.data.msg.split(' ')[1]
       // });
-    },
-
+    }
   }
   /**
    * 声明周期函数
@@ -34,14 +38,16 @@ class Page {
   async onStart() {
 
   }
+  //初始化list为空
   onShow() {
     this.setData({
       list:[]
     })
     this.update();
   }
+  //调用接口
   async update() {
-    const res = await this.$http.post('/class/list', this.data.form);
+    const res = await this.$http.post('/goods/list', this.data.form);
     if (res.code >= 0) {
       this.setData({
         list: [...this.data.list, ...res.data],
@@ -50,6 +56,7 @@ class Page {
     }
     wx.stopPullDownRefresh();
   }
+  //初始化数据
   updateInit() {
     this.setData({
       list: [],
@@ -57,9 +64,11 @@ class Page {
     })
     this.update()
   }
+  //下拉刷新
   onPullDownRefresh() {
     this.updateInit();
   }
+  //上拉加载
   onReachBottom() {
     this.setData({
       ['form.page']: ++this.data.form.page,
@@ -67,29 +76,12 @@ class Page {
     })
     this.update();
   }
-  del(e) {
-    wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
-      success: async(res) => {
-        if (res.confirm) {
-          const res1 = await this.$http.post('/class/del', {
-            id: e.currentTarget.dataset.id
-          });
-          if (res1.code >= 0) {
-            this.$toast('删除成功');
-            this.updateInit();
-          } else {
-            this.$toast(res1.msg);
-          }
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
 
 
-  }
+
+
+
+
 }
 
 origin(Page)

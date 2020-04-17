@@ -111,6 +111,14 @@
 					"id": -1,
 					"name": "pages/class/edit/index",
 					"pathName": "pages/class/edit/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/goods/list/index",
+					"pathName": "pages/goods/list/index",
+					"query": "",
 					"scene": null
 				}
 			]

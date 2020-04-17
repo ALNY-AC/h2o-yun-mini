@@ -1,0 +1,11 @@
+<view class="box">
+    <view class="list">
+        <view class="item">
+            <van-card custom-class='good-card' title="{{info.title}}" thumb="{{ info.img }}" />
+        </view>
+        
+    </view>
+    <van-button type="primary" custom-class='fixed' data-url='/pages/goods/edit/index' bind:tap='o-router' block>
+        添加商品
+    </van-button>
+</view>

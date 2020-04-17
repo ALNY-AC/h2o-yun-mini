@@ -1,5 +1,0 @@
-<view class="list">
-    <view class="item">
-        <van-card custom-class='good-card' title="{{info.title}}" thumb="{{ info.imageURL }}" />
-    </view>
-</view>

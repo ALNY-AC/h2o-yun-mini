@@ -1,0 +1,6 @@
+<van-cell-group>
+    <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="商品标题" placeholder="请输入价格商品标题" />
+    <van-field bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="价格" placeholder="请输入价格" />
+    <van-field bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
+    <van-button type="primary" bind:tap="save" block>保存</van-button>
+</van-cell-group>
