@@ -9,6 +9,7 @@ class Page {
     form: {
       name: "",
       id: 2,
+      location:""
     }
   }
 
