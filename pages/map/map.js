@@ -12,14 +12,6 @@ class Page {
     mapCtx: null,
     latitude: '',
     longitude: '',
-    markers: [{
-      iconPath: "../../assets/images/location.png",
-      id: 0,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 50,
-      height: 50
-    }],
   }
   computed = {
 
@@ -35,10 +27,8 @@ class Page {
       mapCtx: wx.createMapContext('map')
     })
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',
       success: (res) => {
-        console.warn(res);
-        
         this.setData({
           latitude: res.latitude,
           longitude: res.longitude,

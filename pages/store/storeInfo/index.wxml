@@ -8,7 +8,7 @@
             <van-field bind:input='o-model' data-model="form.logo" value='{{form.logo}}' clearable label="店铺图标" input-align="right" placeholder="请输入店铺名称" />
             <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="店铺名称" input-align="right" placeholder="请输入店铺名称" />
             <van-field bind:input='o-model' data-model="form.info" value='{{form.info}}' clearable label="店铺简介" input-align="right" placeholder="请输入店铺简洁" />
-            <van-cell title="店铺位置" is-link value="{{form.location==''?'选择位置':form.location}}" />
+            <van-cell title="店铺位置" is-link bind:click='o-router' data-url="/pages/map/map" value='{{form.info}}' value="{{form.location==''?'选择位置':form.location}}" />
         </van-cell-group>
     </view>
     <view class="userInfo">
