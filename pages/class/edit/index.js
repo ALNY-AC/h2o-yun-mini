@@ -7,7 +7,7 @@ class Page {
   data = {
     form:{
       name:"",
-      is_up:false,
+      is_up:0,
       store_id:2
     }
   }

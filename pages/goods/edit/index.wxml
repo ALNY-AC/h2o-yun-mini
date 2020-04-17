@@ -1,0 +1,17 @@
+<view class="box">
+    <van-cell-group>
+        <van-cell title-class='storeTitle' title="店铺图标">
+            <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+        </van-cell>
+        <van-field bind:input='o-model' data-model="form.title" value='{{form.title}}' clearable label="商品标题" placeholder="请输入价格商品标题" />
+        <van-field type='number' bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="价格" placeholder="请输入价格" />
+        <van-field type='number' bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
+    </van-cell-group>
+    <van-cell title="商品分类" is-link value="{{goodsNmae==''?'请选择分类':goodsNmae}}" bind:click="showPopup" />
+    <van-button type="primary" custom-class='fixed' bind:tap="save" block>保存</van-button>
+      
+</view>
+
+<van-popup position="bottom" show="{{ show }}" custom-style="height: 50%;" bind:close="onClose">
+    <van-picker show-toolbar title="标题" columns="{{ classList }}" value-key='name' bind:cancel="onCancel" bind:confirm="onConfirm" />
+</van-popup>

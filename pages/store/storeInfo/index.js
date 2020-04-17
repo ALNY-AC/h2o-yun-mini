@@ -7,8 +7,14 @@ class Page {
   data = {
 
     form: {
-      name: "",
-      id: 2,
+      name: "",//名称
+      y:"",//经度
+      x:"",//纬度
+      info:"",//描述
+      logo:"",//图片
+      contacts:"",//联系方式
+      phone:"",//手机号
+      QQ:""//QQ号
     }
   }
 
