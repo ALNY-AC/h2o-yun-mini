@@ -8,7 +8,7 @@ class Page {
     form: {
       name: "",
       is_up: 0,
-      store_id: 2
+      store_id: wx.getStorageSync('store_id')
     }
   }
 
