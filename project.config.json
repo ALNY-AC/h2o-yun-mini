@@ -127,6 +127,12 @@
 					"pathName": "pages/goods/edit/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/index",
+					"pathName": "pages/test/index",
+					"scene": null
 				}
 			]
 		}

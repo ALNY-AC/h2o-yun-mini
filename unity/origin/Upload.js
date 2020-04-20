@@ -6,7 +6,7 @@ module.exports = class Upload {
         this.file = file;
     }
     async push() {
-        const res = await this.file.open();
+        const file = await this.file.open();
         /**
          * 上传函数
          */
@@ -16,20 +16,19 @@ module.exports = class Upload {
              * 自定义上传封装
              */
 
-            // wx.uploadFile({
-            //     url: Url.apiUrl + '', //仅为示例，非真实的接口地址
-            //     filePath: tempFilePaths[0],
-            //     name: 'file',
-            //     formData: {
-            //         'user': 'test'
-            //     },
-            //     success(res) {
-            //         const data = res.data
-            //         //do something
-            //     }
-            // })
-            let url = res;
-            resolve(url);
+            wx.uploadFile({
+                url: Url.uploadUrl + '/api/file/upload',
+                filePath: file,
+                name: 'file',
+                formData: {
+                    'user': 'test'
+                },
+                success(res) {
+                    const data = JSON.parse(res.data);
+                    resolve(data.data.url);
+                }
+            })
+
         });
     }
 }

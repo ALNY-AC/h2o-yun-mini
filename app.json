@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/home/index",
     "pages/loginpwd/loginpwd",
     "pages/class/list/index",
     "pages/class/edit/index",
     "pages/goods/edit/index",
     "pages/goods/list/index",
-    "pages/home/index",
     "pages/store/index",
     "pages/store/store/index",
     "pages/store/storeInfo/index",
@@ -16,7 +16,8 @@
     "pages/order/order/index",
     "pages/user/user",
     "pages/auth/auth",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/test/index"
   ],
   "permission": {
     "scope.userLocation": {
