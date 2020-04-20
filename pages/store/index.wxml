@@ -1,14 +1,50 @@
-<view class="store">
-    <view class="store-header">
-        <van-card custom-class='good-card' title="超牛送水" thumb="{{ imageURL }}" />
+<view class="store" wx:if="{{info}}">
+    <view class="store-card" bind:tap="goEdit">
+        <view class="info">
+            <van-image radius='5' width="70" height="70" src="{{$app.url.imageUrl+ info.logo }}" />
+            <view class="title">{{info.name}}</view>
+        </view>
+        <van-icon name="arrow" />
     </view>
     <view class="store-set">
-        <van-grid column-num="3">
+        <!-- <van-grid column-num="3">
             <van-grid clickable column-num="3">
                 <van-grid-item icon="wap-home-o" link-type="navigateTo" url="/pages/store/storeInfo/index?id={{id}}" text="门店编辑" />
                 <van-grid-item icon="wap-nav" link-type="navigateTo" url="/pages/class/list/index" text="分类" />
                 <van-grid-item icon="shopping-cart-o" link-type="navigateTo" url="/pages/goods/list/index" text="商品" />
             </van-grid>
-        </van-grid>
+        </van-grid> -->
+    </view>
+    <view class="store-tool">
+        <view class="store-item" bind:tap="o-router" data-url="/pages/class/list/index">
+            <view class="icon">
+                <van-icon name="bars" />
+            </view>
+            <view class="title">分类管理</view>
+        </view>
+        <view class="store-item" bind:tap="o-router" data-url="/pages/goods/list/index">
+            <view class="icon">
+                <van-icon name="shopping-cart-o" />
+            </view>
+            <view class="title">商品管理</view>
+        </view>
+        <view class="store-item">
+            <view class="icon">
+                <van-icon name="coupon-o" />
+            </view>
+            <view class="title">水票管理</view>
+        </view>
+        <view class="store-item">
+            <view class="icon">
+                <van-icon name="orders-o" />
+            </view>
+            <view class="title">订单管理</view>
+        </view>
+        <view class="store-item">
+            <view class="icon">
+                <van-icon name="gem-o" />
+            </view>
+            <view class="title">服务配置</view>
+        </view>
     </view>
 </view>

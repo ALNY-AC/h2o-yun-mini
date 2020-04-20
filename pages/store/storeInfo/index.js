@@ -19,13 +19,13 @@ class Page {
       logo: "",//图片
       contacts: "",//联系方式
       phone: '',//手机号
-      QQ: ""//QQ号
+      qq: ""//QQ号
     },
-    host: Url.imageUrl
+    host: Url.imageUrl,
+    id: ''
   }
   computed = {
     logo(data) {
-
       return data.host + data.form.logo;
     }
   }
@@ -37,7 +37,14 @@ class Page {
    */
   async onStart() {
     if (this.$route.query.id) {
-      const res = await this.$http.post('/store/info', this.data.form);
+
+      this.setData({
+        id: this.$route.query.id
+      });
+
+      const res = await this.$http.post('/store/info', {
+        id: this.data.id
+      });
       if (res.code >= 0) {
         this.setData({
           form: res.data
@@ -50,11 +57,12 @@ class Page {
   }
   async save() {
     const res = await this.$http.post('/store/save', this.data.form);
+
     if (res.code >= 0) {
       this.$toast('保存成功');
-      // wx.switchTab({
-      //   url: '/pages/home/index'
-      // });
+      wx.setStorageSync('store', this.data.form);
+      // wx.setStorageSync('store_id', data.id);
+      this.$router.go(-1);
     } else {
       this.$toast(res.msg);
     }

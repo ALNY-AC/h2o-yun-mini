@@ -1,3 +1,5 @@
+const Url = require('./unity/origin/Url')
+
 //app.js
 App({
   onLaunch: function () {
@@ -15,6 +17,13 @@ App({
     if (!wx.getStorageSync('jwt')) {
       wx.reLaunch({
         url: '/pages/login/login'
+      });
+      return;
+    }
+
+    if (!wx.getStorageSync('store')) {
+      wx.reLaunch({
+        url: '/pages/store/selectStore/index'
       })
     }
 
@@ -47,6 +56,7 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    url: Url,
   }
 })

@@ -1,18 +1,19 @@
 <view class="box">
     <view class="list">
-        <view class="item" wx:for="{{list}}" wx:key="index" >
+        <view class="item" wx:for="{{list}}" wx:key="index">
             <van-swipe-cell right-width="{{ 65 }}">
                 <van-cell-group>
                     <van-cell title="{{item.name}}" label="{{item.is_up==1?'':'已隐藏'}}">
-                        <van-icon slot="right-icon" name="search" class="custom-icon" />
+                        <van-icon bind:tap="o-router" data-url="/pages/class/edit/index?id={{item.id}}" slot="right-icon" name="edit" class="custom-icon" />
                     </van-cell>
                 </van-cell-group>
                 <view slot="right" style="height:100%" class="van-swipe-cell__right">
-                    <van-button type="danger" custom-class='btn-height' data-id="{{item.id}}" bind:tap='del'>删除</van-button>
+                    <van-button type="danger" custom-class='btn-height' data-id="{{item.id}}" bind:tap='del'>
+                        删除
+                    </van-button>
                 </view>
             </van-swipe-cell>
         </view>
-   
         <van-button type="primary" custom-class='fixed' data-url='/pages/class/edit/index' bind:tap='o-router' block>
             添加分类
         </van-button>

@@ -75,9 +75,10 @@ class Page {
         }
       })
     } else {
-      wx.switchTab({
-        url: '/pages/home/index'
-      });
+      this.$router.push('/pages/store/selectStore/index');
+      // wx.switchTab({
+      //   url: '/pages/home/index'
+      // });
     }
 
     // console.warn(res);

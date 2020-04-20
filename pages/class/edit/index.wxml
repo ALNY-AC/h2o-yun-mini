@@ -3,5 +3,7 @@
     <van-cell center title="是否显示">
         <van-switch checked="{{ form.is_up }}" bind:change="onChange" slot="right-icon" size="40" active-value="{{1}}" inactive-value="{{0}}" />
     </van-cell>
-    <van-button type="primary" bind:tap="save" block>保存</van-button>
 </van-cell-group>
+<view class="f-btn">
+    <van-button type="primary" bind:tap="save" block>保存</van-button>
+</view>
