@@ -94,7 +94,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "pages/store/storeInfo/index",
 					"pathName": "pages/store/storeInfo/index",
 					"query": "",
@@ -132,6 +132,7 @@
 					"id": -1,
 					"name": "pages/test/index",
 					"pathName": "pages/test/index",
+					"query": "",
 					"scene": null
 				}
 			]
