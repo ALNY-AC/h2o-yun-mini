@@ -62,9 +62,10 @@ class Page {
       this.$toast('保存成功');
       wx.setStorageSync('store', this.data.form);
       // wx.setStorageSync('store_id', data.id);
-      wx.reLaunch({
-        url: '/pages/home/index'
-      });
+      this.$router.go(-1);
+      // wx.reLaunch({
+      //   url: '/pages/home/index'
+      // });
     } else {
       this.$toast(res.msg);
     }
