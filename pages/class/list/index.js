@@ -1,32 +1,11 @@
 const origin = require('../../../unity/origin/origin')
 
 class Page {
-  /**
-   * 声明data
-   */
+  
   data = {
-    form: {
-      store_id: wx.getStorageSync('store_id')
-    },
     list: []
   }
 
-  /**
-   * 监听data数据变化
-   */
-  observers = {
-    msg() {
-      // console.warn('更改');
-      // this.setData({
-      // msg2: this.data.msg.split(' ')[1]
-      // });
-    },
-
-  }
-  /**
-   * 声明周期函数
-   * 在onLoad后立即调用
-   */
   async onStart() {
     this.update();
   }
@@ -34,7 +13,9 @@ class Page {
     this.update();
   }
   async update() {
-    const res = await this.$http.post('/class/list', this.data.form);
+    const res = await this.$http.post('/class/list', {
+      store_id: wx.getStorageSync('store_id')
+    });
     if (res.code >= 0) {
       this.setData({
         list: res.data.list
@@ -44,7 +25,7 @@ class Page {
   del(e) {
     wx.showModal({
       title: '提示',
-      content: '这是一个模态弹窗',
+      content: '确定删除吗',
       success: async (res) => {
         if (res.confirm) {
           const res1 = await this.$http.post('/class/del', {

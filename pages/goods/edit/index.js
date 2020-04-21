@@ -13,12 +13,7 @@ class Page {
       class_id: ''
     },
     show: false,
-    goodsNmae:'',
-    query: {
-      page: 1,
-      page_size: 10,
-      store_id: 2
-    },
+    goodsNmae: '',
     classList: []
   }
 
@@ -42,19 +37,25 @@ class Page {
    */
   async onStart() {
     if (this.$route.query.id) {
-      const res = await this.$http.post('/store/info', this.data.form);
+      const res = await this.$http.post('/goods/info', {
+        id: this.$route.query.id
+      });
       if (res.code >= 0) {
         this.setData({
           form: res.data
-        })
+        });
       }
     }
-    const res1 = await this.$http.post('/class/list', this.data.query);
-    if (res1.code >= 0) {
+    this.httpClass();
+  }
+  async httpClass() {
+    const res = await this.$http.post('/class/list', {
+      store_id: wx.getStorageSync('store_id')
+    });
+    if (res.code >= 0) {
       this.setData({
-        classList: res1.data
-      })
-      console.log(this.data.classList)
+        classList: res.data.list
+      });
     }
   }
   onChange(e) {
@@ -77,11 +78,10 @@ class Page {
     })
   }
   onConfirm(e) {
-
     this.setData({
       'form.class_id': e.detail.value.id,
       goodsNmae: e.detail.value.name,
-      show:false
+      show: false
     })
   }
   onCancel() {

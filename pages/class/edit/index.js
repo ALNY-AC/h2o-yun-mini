@@ -8,24 +8,10 @@ class Page {
     form: {
       name: "",
       is_up: 0,
-      store_id: wx.getStorageSync('store_id')
+      store_id:'',
     }
   }
 
-
-
-  /**
-   * 监听data数据变化
-   */
-  observers = {
-    msg() {
-      // console.warn('更改');
-      // this.setData({
-      // msg2: this.data.msg.split(' ')[1]
-      // });
-    },
-
-  }
   /**
    * 声明周期函数
    * 在onLoad后立即调用
@@ -40,6 +26,10 @@ class Page {
           form: res.data
         })
       }
+    }else{
+        this.setData({
+          'form.store_id': wx.getStorageSync('store_id')
+        });
     }
   }
   onChange(e) {
