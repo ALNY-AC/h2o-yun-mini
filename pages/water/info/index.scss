@@ -1,0 +1,44 @@
+.box{
+    min-height: 100vh;
+    background-color: #f6f6f6;
+    .info{
+        background-color: white;
+        .title{
+            font-size: 20px;
+            padding: 30px 15px;
+        }
+        .data{
+            border-top: 1px solid grey;
+            border-bottom: 1px solid grey;
+            display: flex;
+            flex-direction: row;
+            
+            .data-info{
+                padding: 10px 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: #333333;
+                font-size: 14px;
+                .data-title{
+                    
+                }
+                .data-num{
+
+                }
+            }
+        }
+        .price{
+            color: #333333;
+            font-size: 14px;
+            padding:12px 15px;
+        }
+        
+    }
+    .fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+}

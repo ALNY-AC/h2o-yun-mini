@@ -1,6 +1,6 @@
 <view class="box">
     <view class="list">
-        <view class="item">
+        <view class="item" bind:tap="o-router" data-url="/pages/water/info/index">
             <view class="title">农夫山泉代金卷</view>
             <view class="info">
                 <view class="num">库存:100</view>
@@ -8,5 +8,9 @@
                 <view class="set">限购:不限购</view>
             </view>
         </view>
+、
     </view>
+     <van-button color="#32A1EE" custom-class='fixed' data-url='/pages/water/edit/index' bind:tap='o-router' block>
+            添加分类
+        </van-button>
 </view>

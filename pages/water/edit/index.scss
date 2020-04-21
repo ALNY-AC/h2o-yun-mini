@@ -1,0 +1,17 @@
+$color:#999999;
+$padding: 10px 16px;
+.box{
+    background-color: #f6f6f6;
+    height: 100vh;
+ 
+    .title{
+        padding:$padding;
+        color: $color;
+        font-size: 11px;
+    }
+    .fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+}

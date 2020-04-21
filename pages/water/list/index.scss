@@ -6,24 +6,35 @@
        .item{
            background-color: white;
            color: #333333;
+           padding:10px;
+           margin-bottom: 10px;
            .title{
             font-size: 16px;
+            margin-bottom: 8px;
            }
            .info{
                font-size: 14px;
                display: flex;
                flex-direction: row;
-               justify-content: center;
+            
                 .num{
-                    
+                    flex: 1;
+                  
                 }   
                 .price{
-
+                    flex: 1;
+                    text-align: center;
                 }
                 .set{
-
+                    flex: 1;
+                    text-align: right;
                 }
            }
        } 
+    }
+    .fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
 }
