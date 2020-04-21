@@ -1,4 +1,4 @@
-const origin = require('../../unity/origin/origin')
+const origin = require('../../../unity/origin/origin')
 
 class Page {
   /**
@@ -13,7 +13,7 @@ class Page {
    * 在onLoad后立即调用
    */
   onStart() {
-\
+
   }
 
   onShow() {

@@ -5,5 +5,5 @@
     </van-cell>
 </van-cell-group>
 <view class="f-btn">
-    <van-button type="primary" bind:tap="save" block>保存</van-button>
+    <van-button type="primary" color="#32A1EE" bind:tap="save" block>保存</van-button>
 </view>

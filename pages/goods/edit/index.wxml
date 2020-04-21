@@ -8,7 +8,7 @@
         <van-field type='number' bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
     </van-cell-group>
     <van-cell title="商品分类" is-link value="{{goodsNmae==''?'请选择分类':goodsNmae}}" bind:click="showPopup" />
-    <van-button type="primary" custom-class='fixed' bind:tap="save" block>保存</van-button>
+    <van-button color="#32A1EE" custom-class='fixed' bind:tap="save" block>保存</van-button>
       
 </view>
 

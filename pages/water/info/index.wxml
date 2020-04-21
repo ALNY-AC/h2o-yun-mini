@@ -1,2 +1,19 @@
-<!--pages/water/info/index.wxml-->
-<text>pages/water/info/index.wxml</text>
+<view class="box">
+    <view class="info">
+        <view class="title">农夫山泉代金卷</view>
+        <view class="data">
+            <view class="data-info">
+                <view class="data-title">库存剩余</view>
+                <view class="data-num">3999</view>
+            </view>
+            <view class="data-info">
+                <view class="data-title">历史售出</view>
+                <view class="data-num">1111</view>
+            </view>
+        </view>
+        <view class="price">单价：15￥</view>
+        <view class="price">限购：不限购</view>
+        <view class="price">购买下限：15张</view>
+    </view>
+    <van-button color="#32A1EE" custom-class='fixed' bind:tap="save" block>保存</van-button>
+</view>
