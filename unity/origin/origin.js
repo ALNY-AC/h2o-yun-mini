@@ -28,18 +28,26 @@ module.exports = function origin(className) {
      * 启动后处理
      */
     methods.onLoad = function () {
-        if (!wx.getStorageSync('jwt')) {
-            wx.reLaunch({
-                url: '/pages/login/login'
-            });
-            return;
+        let pages = getCurrentPages();
+        pages = pages[pages.length - 1];
+
+        console.warn(pages);
+
+        if (pages.route.indexOf('login') < 0 && pages.route.indexOf('selectStore') < 0) {
+            if (!wx.getStorageSync('jwt')) {
+                wx.reLaunch({
+                    url: '/pages/login/login'
+                });
+                return;
+            }
+            if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
+                wx.reLaunch({
+                    url: '/pages/store/selectStore/index'
+                });
+                return;
+            }
         }
-        if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
-            wx.reLaunch({
-                url: '/pages/store/selectStore/index'
-            });
-            return;
-        }
+
 
         /**
          * 处理http
