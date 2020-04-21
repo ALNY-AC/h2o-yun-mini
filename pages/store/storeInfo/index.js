@@ -21,13 +21,9 @@ class Page {
       phone: '',//手机号
       qq: ""//QQ号
     },
-    host: Url.imageUrl,
     id: ''
   }
   computed = {
-    logo(data) {
-      return data.host + data.form.logo;
-    }
   }
   code = null;
   userInfo = null;

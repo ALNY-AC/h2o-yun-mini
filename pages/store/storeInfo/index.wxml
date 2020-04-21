@@ -4,7 +4,7 @@
         <van-cell-group>
             <van-cell title-class='storeTitle' title="店铺图标">
                 <!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> -->
-                <van-image width="100" bind:tap="upload" height="100" src="{{logo}}" />
+                <van-image width="100" bind:tap="upload" height="100" src="{{$app.url.imageUrl+form.logo}}" />
             </van-cell>
             <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="店铺名称" input-align="right" placeholder="请输入店铺名称" />
             <van-field bind:input='o-model' data-model="form.info" value='{{form.info}}' clearable label="店铺简介" input-align="right" placeholder="请输入店铺简介" />
