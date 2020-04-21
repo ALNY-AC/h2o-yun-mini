@@ -3,4 +3,4 @@
     <open-data type="userNickName"></open-data> -->
     <van-card custom-class='good-card' title="{{info.title}}" thumb="{{ info.imageURL }}" />
 </view>
-<view class="usercell"></view>
+<van-cell is-link title="意见反馈" link-type="navigateTo" url="/pages/feedback/index" />

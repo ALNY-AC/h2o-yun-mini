@@ -1,0 +1,13 @@
+<view class="page">
+    <view class="h3">
+        <van-icon name="records" />
+        意见反馈
+    </view>
+    <view>
+        <textarea rows="15" bindinput="o-model" data-model="content" value="{{content}}" placeholder="请输入您宝贵的意见或建议。"></textarea>
+    </view>
+    <view class="info">欢迎您为我们提出宝贵的意见和建议，您留下的任何信息都将用来改善我们的软件。</view>
+    <view>
+        <van-button block bind:tap="submit" color="#32A1EE">提交</van-button>
+    </view>
+</view>
