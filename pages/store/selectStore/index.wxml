@@ -5,6 +5,3 @@
         <view class="title">{{item.name}}</view>
     </view>
 </view>
-<view class="f-btn">
-    <van-button block class="">新增店铺</van-button>
-</view>

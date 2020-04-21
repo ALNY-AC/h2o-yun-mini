@@ -1,11 +1,10 @@
 <view class="box">
     <view class="list">
-        <view class="item" wx:key="index" wx:for="{{list}}">
-            <van-card custom-class='good-card' title="{{item.title}}" img='{{item.goods_head_list[0]}}' />
+        <view class="item" wx:key="index" wx:for="{{list}}" bind:tap="go" data-item="{{item}}">
+            <van-card custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
         </view>
-        
     </view>
-    <van-button color="#32A1EE" custom-class='fixed' data-url='/pages/goods/edit/index' bind:tap='o-router' block>
+    <van-button type="info" custom-class="fixed" data-url="/pages/goods/edit/index" bind:tap="o-router" block>
         添加商品
     </van-button>
 </view>

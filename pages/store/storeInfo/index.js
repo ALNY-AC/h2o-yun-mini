@@ -21,13 +21,9 @@ class Page {
       phone: '',//手机号
       qq: ""//QQ号
     },
-    host: Url.imageUrl,
     id: ''
   }
   computed = {
-    logo(data) {
-      return data.host + data.form.logo;
-    }
   }
   code = null;
   userInfo = null;
@@ -62,9 +58,10 @@ class Page {
       this.$toast('保存成功');
       wx.setStorageSync('store', this.data.form);
       // wx.setStorageSync('store_id', data.id);
-      wx.reLaunch({
-        url: '/pages/home/index'
-      });
+      this.$router.go(-1);
+      // wx.reLaunch({
+      //   url: '/pages/home/index'
+      // });
     } else {
       this.$toast(res.msg);
     }

@@ -21,13 +21,11 @@ App({
       return;
     }
 
-    if (!wx.getStorageSync('store')) {
+    if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
       wx.reLaunch({
         url: '/pages/store/selectStore/index'
       })
     }
-
-
 
     // wx.login({
     //   success: res => {
@@ -54,6 +52,19 @@ App({
     //     }
     //   }
     // })
+  },
+  onShow() {
+    if (!wx.getStorageSync('jwt')) {
+      wx.reLaunch({
+        url: '/pages/login/login'
+      });
+      return;
+    }
+    if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
+      wx.reLaunch({
+        url: '/pages/store/selectStore/index'
+      })
+    }
   },
   globalData: {
     userInfo: null,

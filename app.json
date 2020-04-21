@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/home/index",
+
     "pages/water/list/index",
     "pages/water/edit/index",
     "pages/water/info/index",
-    "pages/home/index",
+    
     "pages/loginpwd/loginpwd",
     "pages/class/list/index",
     "pages/class/edit/index",
