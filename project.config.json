@@ -13,7 +13,7 @@
 		"coverView": true,
 		"nodeModules": true,
 		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
+		"showShadowRootInWxmlPanel": false,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -94,7 +94,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "pages/store/storeInfo/index",
 					"pathName": "pages/store/storeInfo/index",
 					"query": "",
@@ -125,6 +125,27 @@
 					"id": -1,
 					"name": "pages/goods/edit/index",
 					"pathName": "pages/goods/edit/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/index",
+					"pathName": "pages/test/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/store/selectStore/index",
+					"pathName": "pages/store/selectStore/index",
 					"query": "",
 					"scene": null
 				}

@@ -5,10 +5,10 @@ class Page {
    * 声明data
    */
   data = {
-    form:{
-      name:"",
-      is_up:0,
-      store_id:2
+    form: {
+      name: "",
+      is_up: 0,
+      store_id: wx.getStorageSync('store_id')
     }
   }
 
@@ -32,17 +32,19 @@ class Page {
    */
   async onStart() {
     if (this.$route.query.id) {
-      const res = await this.$http.post('/store/info', this.data.form);
+      const res = await this.$http.post('/class/info', {
+        id: this.$route.query.id
+      });
       if (res.code >= 0) {
         this.setData({
-          form:res.data
+          form: res.data
         })
       }
     }
   }
-  onChange(e){
+  onChange(e) {
     this.setData({
-      'form.is_up':e.detail
+      'form.is_up': e.detail
     })
   }
   async save() {

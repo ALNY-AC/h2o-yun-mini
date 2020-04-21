@@ -100,8 +100,6 @@ module.exports = function origin(className) {
     //     .handleWatch()
 
 
-
-
     let a = Component(page);
 
 }

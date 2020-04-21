@@ -75,9 +75,9 @@ class Page {
         }
       })
     } else {
-      wx.switchTab({
-        url: '/pages/home/index'
-      });
+      wx.reLaunch({
+        url: '/pages/store/selectStore/index'
+      })
     }
 
     // console.warn(res);

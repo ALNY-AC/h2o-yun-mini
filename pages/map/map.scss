@@ -18,8 +18,12 @@ page {
       position: absolute;
       top: calc(50% - 100rpx);
       left: calc(50% - 50rpx);
-      width: 100rpx;
-      height: 100rpx;
+
+      .img {
+        width: 100rpx;
+        height: 100rpx;
+      }
+
     }
   }
 

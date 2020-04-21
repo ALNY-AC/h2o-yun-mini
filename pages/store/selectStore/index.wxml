@@ -1,0 +1,10 @@
+<view class="h2">请选择您要管理的店铺</view>
+<view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="index" bind:tap="select" data-item="{{item}}">
+        <van-image class="img" width="60" height="60" src="{{$app.url.imageUrl+item.logo}}" />
+        <view class="title">{{item.name}}</view>
+    </view>
+</view>
+<view class="f-btn">
+    <van-button block class="">新增店铺</van-button>
+</view>
