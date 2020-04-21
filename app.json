@@ -2,7 +2,7 @@
   "pages": [
     "pages/home/index",
     "pages/water/list/index",
-    "pages/water/edit/index",
+    
     "pages/water/info/index",
     "pages/loginpwd/loginpwd",
     "pages/class/list/index",
@@ -22,7 +22,8 @@
     "pages/map/map",
     "pages/test/index",
     "pages/store/selectStore/index",
-    "pages/feedback/index"
+    "pages/feedback/index",
+    "pages/water/edit/index"
   ],
   "permission": {
     "scope.userLocation": {

@@ -1,16 +1,15 @@
 <view class="box">
     <view class="list">
-        <view class="item" bind:tap="o-router" data-url="/pages/water/info/index">
-            <view class="title">农夫山泉代金卷</view>
+        <view class="item" wx:for='{{list}}' wx:key="index" bind:tap="o-router" data-url="/pages/water/info/index?id={{item.id}}">
+            <view class="title">{{item.name}}</view>
             <view class="info">
-                <view class="num">库存:100</view>
-                <view class="price">价格:10</view>
-                <view class="set">限购:不限购</view>
+                <view class="num">库存:{{item.num}}</view>
+                <view class="price">价格:{{item.price}}</view>
+                <view class="set">限购:{{item.max}}</view>
             </view>
         </view>
-
     </view>
-     <van-button color="#32A1EE" custom-class='fixed' data-url='/pages/water/edit/index' bind:tap='o-router' block>
-            添加水票
-        </van-button>
+    <van-button color="#32A1EE" custom-class='fixed' data-url='/pages/water/edit/index' bind:tap='o-router' block>
+        添加水票
+    </van-button>
 </view>

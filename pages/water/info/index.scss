@@ -4,8 +4,15 @@
     .info{
         background-color: white;
         .title{
-            font-size: 20px;
+            display: flex;
             padding: 30px 15px;
+            .title-name{
+                flex: 1;
+                font-size: 20px;
+            }
+            .title-btn{
+
+            }
         }
         .data{
             border-top: 1px solid grey;

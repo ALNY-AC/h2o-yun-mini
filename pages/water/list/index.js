@@ -9,6 +9,7 @@ class Page {
     form: {
       page: 1,
       page_size: 10,
+      store_id:''
     }
   }
 
@@ -32,8 +33,9 @@ class Page {
     const res = await this.$http.post('/water_coupon/list', this.data.form);
     if (res.code >= 0) {
       this.setData({
-        list: [...this.data.list, ...res.data.list],
+        list: [...this.data.list, ...res.data],
       })
+  
     }
     wx.stopPullDownRefresh();
   }

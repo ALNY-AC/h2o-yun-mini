@@ -1,66 +1,61 @@
-// pages/water/info/index.js
-Page({
+const origin = require('../../../unity/origin/origin')
+
+class Page {
+  /**
+   * 声明data
+   */
+  data = {
+    info: null
+  }
 
   /**
-   * 页面的初始数据
+   * 声明周期函数
+   * 在onLoad后立即调用
    */
-  data: {
+  async onStart() {
+    this.update();
+  }
 
-  },
+  //调用接口
+  async update() {
+    const res = await this.$http.post('/water_coupon/info', {
+      id: this.$route.query.id
+    });
+    if (res.code >= 0) {
+      this.setData({
+        info: res.data
+      })
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    }
 
   }
-})
+  del(e) {
+    console.log(this.data.info.id)
+    wx.showModal({
+      title: '提示',
+      content: '确定删除吗',
+      success: async (res) => {
+        if (res.confirm) {
+          const res1 = await this.$http.post('/water_coupon/del', {
+            id:this.data.info.id,
+            store_id:wx.getStorageSync('store_id')
+          });
+          if (res1.code >= 0) {
+            this.$toast('删除成功');
+            this.$router.go(-1)
+          } else {
+            this.$toast(res1.msg);
+          }
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+
+  }
+
+
+}
+
+origin(Page)
