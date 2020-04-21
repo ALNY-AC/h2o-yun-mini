@@ -1,0 +1,12 @@
+<view class="box">
+    <view class="list">
+        <view class="item">
+            <view class="title">农夫山泉代金卷</view>
+            <view class="info">
+                <view class="num">库存:100</view>
+                <view class="price">价格:10</view>
+                <view class="set">限购:不限购</view>
+            </view>
+        </view>
+    </view>
+</view>

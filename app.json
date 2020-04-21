@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/water/list/index",
+    "pages/water/edit/index",
+    "pages/water/info/index",
+    
     "pages/home/index",
     "pages/loginpwd/loginpwd",
     "pages/class/list/index",

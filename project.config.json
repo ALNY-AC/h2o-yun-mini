@@ -148,6 +148,12 @@
 					"pathName": "pages/store/selectStore/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/water/list/index",
+					"pathName": "pages/water/list/index",
+					"scene": null
 				}
 			]
 		}

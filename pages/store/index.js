@@ -31,10 +31,10 @@ class Page {
 
   async update() {
 
-    // const res = await this.$http.post('/store/info', {
-    //   id: this.data.id
-    // });
-    // console.warn(res.data);
+    const res = await this.$http.post('/store/info', {
+      id: this.data.id
+    });
+
   }
 
   goEdit() {

@@ -1,0 +1,29 @@
+.box{
+    min-height: 100vh;
+    background-color: #f6f6f6;
+    .list{
+        padding: 10px;
+       .item{
+           background-color: white;
+           color: #333333;
+           .title{
+            font-size: 16px;
+           }
+           .info{
+               font-size: 14px;
+               display: flex;
+               flex-direction: row;
+               justify-content: center;
+                .num{
+                    
+                }   
+                .price{
+
+                }
+                .set{
+
+                }
+           }
+       } 
+    }
+}

@@ -28,7 +28,7 @@
             </view>
             <view class="title">商品管理</view>
         </view>
-        <view class="store-item">
+        <view class="store-item" bind:tap="o-router" data-url="/pages/water/list/index">
             <view class="icon">
                 <van-icon name="coupon-o" />
             </view>
