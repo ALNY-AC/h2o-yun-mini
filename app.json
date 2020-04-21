@@ -21,7 +21,8 @@
     "pages/auth/auth",
     "pages/map/map",
     "pages/test/index",
-    "pages/store/selectStore/index"
+    "pages/store/selectStore/index",
+    "pages/feedback/index"
   ],
   "permission": {
     "scope.userLocation": {
