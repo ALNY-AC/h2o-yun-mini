@@ -1,6 +1,11 @@
 const origin = require('../../../unity/origin/origin')
+const Upload = require('../../../unity/origin/Upload')
+const File = require('../../../unity/origin/File')
+const computedBehavior = require('miniprogram-computed')
 
 class Page {
+  behaviors = [computedBehavior]
+
   /**
    * 声明data
    */
@@ -8,27 +13,37 @@ class Page {
     form: {
       title: "",
       price: 0,
-      store_id: 2,
+      store_id: '',
       sort: 0,
-      class_id: ''
+      class_id: '',
+      goods_head: ''
     },
     show: false,
-    goodsNmae: '',
     classList: []
   }
+  computed = {
 
-
-
-  /**
-   * 监听data数据变化
-   */
-  observers = {
-    msg() {
-      // console.warn('更改');
-      // this.setData({
-      // msg2: this.data.msg.split(' ')[1]
-      // });
+    className(data) {
+      if (data.form.class_id) {
+        let el = data.classList.find(e => e.id == data.form.class_id);
+        if (el) {
+          return el.name;
+        } else {
+          return '请选择'
+        }
+      } else {
+        return '请选择'
+      }
     },
+    defaultIndex(data) {
+      if (data.form.class_id) {
+        let index = data.classList.findIndex(e => e.id == data.form.class_id);
+        return index;
+      } else {
+        return 0
+      }
+    }
+
 
   }
   /**
@@ -80,7 +95,6 @@ class Page {
   onConfirm(e) {
     this.setData({
       'form.class_id': e.detail.value.id,
-      goodsNmae: e.detail.value.name,
       show: false
     })
   }
@@ -94,6 +108,13 @@ class Page {
       show: false
     })
   }
+
+  async upload() {
+    let upload = new Upload(new File());
+    const res = await upload.push();
+    this.setData({ ['form.goods_head']: res });
+  }
+
 
 }
 

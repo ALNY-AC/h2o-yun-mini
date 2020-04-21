@@ -16,32 +16,18 @@ class Page {
     }
   }
 
-  code = null;
-  userInfo = null;
-
-  /**
-   * 监听data数据变化
-   */
-  observers = {
-    msg() {
-      // console.warn('更改');
-      // this.setData({
-      // msg2: this.data.msg.split(' ')[1]
-      // });
-    }
-  }
   /**
    * 声明周期函数
    * 在onLoad后立即调用
    */
   async onStart() {
     this.setData({
-      store_id: wx.getStorageSync('store_id')
+      'form.store_id': wx.getStorageSync('store_id')
     });
   }
   onShow() {
     this.setData({
-      store_id: wx.getStorageSync('store_id')
+      'form.store_id': wx.getStorageSync('store_id')
     });
     this.updateInit();
   }
@@ -56,8 +42,9 @@ class Page {
     wx.stopPullDownRefresh();
   }
   go(e) {
-
-
+    this.$router.push('/pages/goods/edit/index', {
+      id: e.currentTarget.dataset.item.id
+    });
   }
   //初始化数据
   updateInit() {
