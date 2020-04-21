@@ -9,7 +9,7 @@ class Page {
     form: {
       page: 1,
       page_size: 10,
-      store_id:''
+      store_id: ''
     }
   }
 
@@ -26,32 +26,21 @@ class Page {
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
-    this.updateInit();
+
   }
   //调用接口
   async update() {
     const res = await this.$http.post('/water_coupon/list', this.data.form);
     if (res.code >= 0) {
       this.setData({
-        list: [...this.data.list, ...res.data],
+        list: [...this.data.list, ...res.data.list],
       })
-  
+
     }
-    wx.stopPullDownRefresh();
+
   }
-  go(e) {
-    this.$router.push('/pages/goods/edit/index', {
-      id: e.currentTarget.dataset.item.id
-    });
-  }
-  //初始化数据
-  updateInit() {
-    this.setData({
-      list: [],
-      ['form.page']: 1
-    })
-    this.update()
-  }
+
+
 
 
 

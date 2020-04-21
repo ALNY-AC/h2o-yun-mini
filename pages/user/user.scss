@@ -5,25 +5,30 @@ page {
 
 .user-info-card {
     width: 100%;
-    background-color: #fff;
+    background-color: #32A1EE;
     color: #333;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 40px;
+    flex-direction: column;
 
-    padding: 10px;
-
-    .good-card {
-        background-color: #ffffff;
-    }
-
-    .user-head {
-        width: 80px;
-        height: 80px;
-        background-color: #dddddd;
-        display: block;
-        margin-right: 10px;
-    }
+    
+        
+        .user-head {
+            width: 80px;
+            height: 80px;
+            background-color: #dddddd;
+            border-radius: 100%;
+            overflow: hidden;
+            display: block;
+            margin-bottom: 10px;
+        }
+    
+  
 
     .user-name {
+        color: white;
         flex: 1;
         text-align: center;
     }

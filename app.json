@@ -104,7 +104,7 @@
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的店铺",
+        "text": "我的",
         "iconPath": "/assets/images/icon/my-o.png",
         "selectedIconPath": "/assets/images/icon/my-n.png"
       }

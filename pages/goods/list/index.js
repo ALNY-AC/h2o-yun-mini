@@ -43,7 +43,7 @@ class Page {
   }
   go(e) {
     this.$router.push('/pages/goods/edit/index', {
-      id: e.currentTarget.dataset.item.id
+      id: e.currentTarget.dataset.id
     });
   }
   //初始化数据

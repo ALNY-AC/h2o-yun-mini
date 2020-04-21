@@ -3,7 +3,8 @@
         <view class="title">
             <view class="title-name">{{info.name}}</view>
             <view class="title-btn">
-                <van-button bind:tap="del"  size="mini" type="danger">删除</van-button>
+            <van-icon name="delete"  bind:tap="del"/>
+         
             </view>
         </view>
         <view class="data">
@@ -17,7 +18,7 @@
             </view>
         </view>
         <view class="price">单价：{{info.price}}￥</view>
-        <view class="price">限购：{{info.max}}</view>
+        <view class="price">限购：{{info.max==0?'不限购':info.max}}</view>
         <view class="price">购买下限：{{info.min}}张</view>
     </view>
 </view>

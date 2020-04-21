@@ -1,6 +1,5 @@
 <view class="user-info-card">
-    <!-- <open-data class="user-head" type="userAvatarUrl"></open-data>
-    <open-data type="userNickName"></open-data> -->
-    <van-card custom-class='good-card' title="{{info.title}}" thumb="{{ info.imageURL }}" />
+    <open-data class="user-head" type="userAvatarUrl"></open-data>
+    <open-data class="user-name" type="userNickName"></open-data>
 </view>
 <van-cell is-link title="意见反馈" link-type="navigateTo" url="/pages/feedback/index" />
