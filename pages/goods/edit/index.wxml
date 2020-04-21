@@ -1,6 +1,6 @@
 <view class="box">
     <van-cell-group>
-        <van-cell title-class='storeTitle' title="店铺图标">
+        <van-cell title-class='storeTitle' title="商品图标">
             <van-image width="100" bind:tap="upload" height="100" src="{{$app.url.imageUrl+form.goods_head}}" />
         </van-cell>
         <van-field bind:input='o-model' data-model="form.title" value='{{form.title}}' clearable label="商品标题" placeholder="请输入价格商品标题" />

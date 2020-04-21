@@ -51,6 +51,7 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    this.data.form.store_id = wx.getStorageSync('store_id');
     if (this.$route.query.id) {
       const res = await this.$http.post('/goods/info', {
         id: this.$route.query.id
@@ -79,6 +80,7 @@ class Page {
     })
   }
   async save() {
+   
     const res = await this.$http.post('/goods/save', this.data.form);
     if (res.code >= 0) {
       this.$toast('保存成功');

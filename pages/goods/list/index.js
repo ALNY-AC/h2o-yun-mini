@@ -54,6 +54,29 @@ class Page {
     })
     this.update()
   }
+  del(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确定删除吗',
+      success: async (res) => {
+        if (res.confirm) {
+          const res1 = await this.$http.post('/goods/del', {
+            id: e.currentTarget.dataset.id
+          });
+          if (res1.code >= 0) {
+            this.$toast('删除成功');
+            this.updateInit();
+          } else {
+            this.$toast(res1.msg);
+          }
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+
+  }
   //下拉刷新
   onPullDownRefresh() {
     this.updateInit();

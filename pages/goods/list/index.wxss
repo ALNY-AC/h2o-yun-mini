@@ -1,1 +1,1 @@
-.box{min-height:100vh;background-color:#f6f6f6}.box .list .item .good-card{background-color:#ffffff}.box .fixed{position:fixed;bottom:0;left:0}
+.box{min-height:100vh;background-color:#f6f6f6}.box .list .item{margin-bottom:10px}.box .list .item .good-card{background-color:#ffffff}.box .list .item .btn-height{height:100%}.box .fixed{position:fixed;bottom:0;left:0}

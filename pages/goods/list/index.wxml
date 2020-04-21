@@ -1,7 +1,16 @@
 <view class="box">
     <view class="list">
         <view class="item" wx:key="index" wx:for="{{list}}" bind:tap="go" data-item="{{item}}">
-            <van-card custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
+            <van-swipe-cell right-width="{{ 65 }}">
+                <van-cell-group>
+                    <van-card custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
+                </van-cell-group>
+                <view slot="right" style="height:100%" class="van-swipe-cell__right">
+                    <van-button type="danger" custom-class='btn-height' data-id="{{item.id}}" bind:tap='del'>
+                        删除
+                    </van-button>
+                </view>
+            </van-swipe-cell>
         </view>
     </view>
     <van-button type="info" custom-class="fixed" data-url="/pages/goods/edit/index" bind:tap="o-router" block>
