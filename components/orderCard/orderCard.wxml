@@ -1,6 +1,8 @@
 <view class="order-card">
     <view class="order-card-head">
-        <view class="order-title">{{info.state}}</view>
+        <view class="order-title" wx:if="{{info.state == 0}}">未支付</view>
+        <view class="order-title" wx:if="{{info.state == 1}}">配送中</view>
+        <view class="order-title" wx:if="{{info.state == 2}}">已完成</view>
         <!-- <view class="order-state">111</view> -->
     </view>
     <view class="order-card-body">
