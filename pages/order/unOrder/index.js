@@ -40,7 +40,7 @@ class Page {
     query: {
       page_size: 10,
       page: 1,
-      store_id: 12
+      store_id: 0
     },
   }
   computed = {
@@ -53,6 +53,9 @@ class Page {
    * 启动函数
    */
   async onStart() {
+    this.setData({
+      ['query.store_id']: wx.getStorageSync('store_id')
+    })
     this.update()
   }
   async update() {
