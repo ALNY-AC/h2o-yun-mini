@@ -183,6 +183,20 @@
 					"pathName": "pages/water/edit/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/water/info/index",
+					"pathName": "pages/water/info/index",
+					"query": "id=15",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/water/qr/index",
+					"pathName": "pages/water/qr/index",
+					"query": "id=15",
+					"scene": null
 				}
 			]
 		}

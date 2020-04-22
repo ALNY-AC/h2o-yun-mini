@@ -5,7 +5,7 @@
              
                 <view class="title-name">{{item.name}}</view>
                 <view class="title-btn">
-                    <van-icon name="qr" bind:tap="del" />
+                    <van-icon name="qr" catch:tap="o-router" data-url="/pages/water/qr/index?id={{item.id}}"/>
                 </view>
             </view>
             <view class="info">
@@ -15,7 +15,7 @@
                 </view>
                 <view class="num">
                     <view class="num-title">起购数量</view>
-                    <view class="num-number">{{item.min}}</view>
+                    <view class="num-number">{{item.min}}张</view>
                 </view>
                 <view class="num">
                     <view class="num-title">库存</view>

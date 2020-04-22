@@ -16,7 +16,7 @@ class Page {
     let width =  Math.ceil((wx.getSystemInfoSync().windowWidth-40)/20);
     this.setData({
       number:width
-    })
+    });
     this.update();
 
   }
