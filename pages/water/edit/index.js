@@ -16,20 +16,17 @@ class Page {
       num: '',
       max: '',
       min: '',
-      goods_id:[]
+      goods_id: []
     },
     show: false,
-    goodsList:[],
- 
+    goodsList: [],
+
   }
   computed = {
-
     goodsName(data) {
       if (data.form.goods_id) {
-
         let el = data.goodsList.find(e => e.id == data.form.goods_id);
         if (el) {
-          console.log(el.title)
           return el.title;
         } else {
           return '请选择'
@@ -41,7 +38,7 @@ class Page {
     defaultIndex(data) {
       if (data.form.goods_id) {
         let index = data.goodsList.findIndex(e => e.id == data.form.goods_id);
-        console.log(index)
+        // console.log(index)
         return index;
       } else {
         return 0
@@ -80,7 +77,7 @@ class Page {
   }
 
   async save() {
-   
+
     const res = await this.$http.post('/water_coupon/save', this.data.form);
     if (res.code >= 0) {
       this.$toast('保存成功');

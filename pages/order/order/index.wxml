@@ -1,2 +1,5 @@
-<!--pages/order/order/index.wxml-->
-<text>pages/order/order/index.wxml</text>
+<view class="list">
+  <view class="item">
+    <order-card info='{{item}}' wx:for="{{list}}" wx:key='index'></order-card>
+  </view>
+</view>
