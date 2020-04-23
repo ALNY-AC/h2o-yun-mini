@@ -34,7 +34,7 @@
             </view>
             <view class="title">水票管理</view>
         </view>
-        <view class="store-item">
+        <view class="store-item" bind:tap="goOrder">
             <view class="icon">
                 <van-icon name="orders-o" />
             </view>

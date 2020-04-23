@@ -197,6 +197,19 @@
 					"pathName": "pages/water/qr/index",
 					"query": "id=15",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order/index",
+					"pathName": "pages/order/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/yue/index",
+					"pathName": "pages/financial/yue/index",
+					"scene": null
 				}
 			]
 		}

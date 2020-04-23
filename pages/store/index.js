@@ -42,7 +42,11 @@ class Page {
       id: this.data.id
     })
   }
-
+  goOrder(){
+    wx.switchTab({
+      url:'/pages/order/order/index'
+    })
+  }
 
 }
 

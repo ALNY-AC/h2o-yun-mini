@@ -40,7 +40,8 @@ class Page {
     query: {
       page_size: 10,
       page: 1,
-      store_id: 0
+      store_id: 0,
+      state:1
     },
   }
   computed = {
@@ -66,14 +67,33 @@ class Page {
           list: [...this.data.list, ...res.data.list]
         })
       }
+      wx.stopPullDownRefresh();
     } catch (error) {
       console.warn(error);
 
     }
   }
-  regionchange() {
-
+  //下拉刷新
+  onPullDownRefresh() {
+    this.updateInit();
   }
+  //上拉加载
+  onReachBottom() {
+    this.setData({
+      ['query.page']: ++this.data.form.page,
+      ['query.page_size']: 10
+    })
+    this.update();
+  }
+   //初始化数据
+   updateInit() {
+    this.setData({
+      list: [],
+      ['query.page']: 1
+    })
+    this.update()
+  }
+
 }
 
 origin(Page);

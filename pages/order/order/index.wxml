@@ -1,5 +1,14 @@
 <view class="list">
+  <van-tabs swipeable bind:click='onChange'>
+    <van-tab title="全部"></van-tab>
+    <van-tab title="待支付"></van-tab>
+    <van-tab title="待配送"></van-tab>
+    <van-tab title="配送中"></van-tab>
+    <van-tab title="完成"></van-tab>
+    <van-tab title="订单取消"></van-tab>
+    <van-tab title="待取消订单"></van-tab>
+  </van-tabs>
   <view class="item">
-    <order-card info='{{item}}' wx:for="{{list}}" wx:key='index'></order-card>
+      <order-card info='{{item}}' wx:for="{{list}}" wx:key='index'></order-card>
   </view>
 </view>

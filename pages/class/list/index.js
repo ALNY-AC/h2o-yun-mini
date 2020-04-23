@@ -21,6 +21,7 @@ class Page {
         list: res.data.list
       });
     }
+   
   }
   del(e) {
     wx.showModal({

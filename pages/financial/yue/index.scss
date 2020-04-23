@@ -1,0 +1,42 @@
+.box{
+    min-height: 100vh;
+    background-color: #f6f6f6;
+    .top-panel{
+        display:flex;
+        flex-direction:row;
+        padding: 20px;
+        background-color: #32A1EE;
+        .data{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            .title{
+                flex: 1;
+                font-size: 11px;
+                margin-bottom: 6px;
+            }
+            .info{
+                flex: 1;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .bottom{
+        position: fixed;
+        bottom: 18px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .kefu{
+            font-size: 16px;
+            color: #333333;
+            margin-right:8px;
+        }
+    }
+}
