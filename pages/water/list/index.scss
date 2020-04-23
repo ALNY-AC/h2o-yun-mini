@@ -8,41 +8,50 @@
         .item {
             background: linear-gradient(180deg, rgba(97, 207, 248, 1) 0%, rgba(50, 161, 238, 1) 100%);
             color: white;
-            padding: 10px 19px;
             margin-bottom: 15px;
             border-radius: 5px;
             position: relative;
+            padding-bottom: 20px;
 
-            .title {
+            .title-box {
                 display: flex;
+                align-items: center;
                 font-size: 20px;
-                margin-bottom: 18px;
+                padding: 20px 20px;
+                margin-bottom: 10px;
 
                 .title-name {
                     flex: 1;
                     font-size: 20px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
-                .title-btn {}
+                .qr-share {
+                    font-weight: bold;
+                    line-height: normal;
+                }
             }
 
-            .info {
+            .info-box {
+
                 font-size: 14px;
                 display: flex;
-                flex-direction: row;
-                padding-bottom: 15px;
-                .num {
+                flex-wrap: nowrap;
+                margin-bottom: 25px;
+
+                .info-item {
                     flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    .num-title{
-                        font-size: 11px;
+                    text-align: center;
+
+                    .info-title {
+                        font-size: 16px;
                         margin-bottom: 5px;
                     }
-                    .num-number{
-                        font-size: 16px;
+
+                    .info-value {
+                        font-size: 20px;
                     }
                 }
 
@@ -50,21 +59,22 @@
             }
 
             .bottom-border {
-                background-color: rgba(50, 161, 238, 1);
-                position: relative;
-                left: 0;
-                bottom: -10px;
-                width: 100%;
+                $size: 15px;
+                position: absolute;
+                bottom: -$size/2.5;
+                left: 50%;
+                transform: translate3D(-50%, 0, 0);
                 display: flex;
-                flex-direction: row;
+                flex-wrap: nowrap;
 
                 .border-radius {
 
                     background-color: #F6F6F6;
-                    width: 14px;
-                    height: 7px;
+                    width: $size;
+                    min-width: $size;
+                    height: $size;
                     margin: 0 3px;
-                    border-radius: 7px 7px 0 0;
+                    border-radius: 100%;
 
                 }
             }

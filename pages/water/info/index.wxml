@@ -28,7 +28,7 @@
         <view class="bottom">
             <view class="box1">
                 <view class="title">库存剩余</view>
-                <view class="number">3998</view>
+                <view class="number">{{info.stock}}</view>
             </view>
             <view class="box2">
                 <view class="title">历史售出</view>

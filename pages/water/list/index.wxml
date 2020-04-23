@@ -1,25 +1,22 @@
 <view class="box">
     <view class="list">
         <view class="item" wx:for='{{list}}' wx:key="index" bind:tap="o-router" data-url="/pages/water/info/index?id={{item.id}}">
-            <view class="title">
-             
+            <view class="title-box">
                 <view class="title-name">{{item.name}}</view>
-                <view class="title-btn">
-                    <van-icon name="qr" catch:tap="o-router" data-url="/pages/water/qr/index?id={{item.id}}"/>
-                </view>
+                <van-icon class="qr-share" name="qr" size="30px" catch:tap="o-router" data-url="/pages/water/qr/index?id={{item.id}}" />
             </view>
-            <view class="info">
-                <view class="num">
-                    <view class="num-title">单价</view>
-                    <view class="num-number">{{item.price}}￥</view>
+            <view class="info-box">
+                <view class="info-item">
+                    <view class="info-title">单价</view>
+                    <view class="info-value">{{item.price}}￥</view>
                 </view>
-                <view class="num">
-                    <view class="num-title">起购数量</view>
-                    <view class="num-number">{{item.min}}张</view>
+                <view class="info-item">
+                    <view class="info-title">起购数量</view>
+                    <view class="info-value">{{item.min}}张</view>
                 </view>
-                <view class="num">
-                    <view class="num-title">库存</view>
-                    <view class="num-number">{{item.num}}</view>
+                <view class="info-item">
+                    <view class="info-title">库存</view>
+                    <view class="info-value">{{item.stock}}</view>
                 </view>
             </view>
             <view class="bottom-border">
