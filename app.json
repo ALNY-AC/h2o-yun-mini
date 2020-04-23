@@ -6,6 +6,7 @@
     "pages/financial/yue/index",
     "pages/financial/tixian/index",
     "pages/financial/shouzhi/index",
+    "pages/financial/shouzhiInfo/index",
     "pages/water/info/index",
     "pages/loginpwd/loginpwd",
     "pages/class/list/index",

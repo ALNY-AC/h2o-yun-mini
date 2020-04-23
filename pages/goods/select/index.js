@@ -22,10 +22,11 @@ class Page {
       this.setData({
         selectList: wx.getStorageSync('goodsSelectList')
       });
+    } else {
+      this.setData({
+        selectList: [],
+      });
     }
-    this.setData({
-      'form.store_id': wx.getStorageSync('store_id')
-    });
     this.updateInit();
   }
   //调用接口
@@ -43,24 +44,21 @@ class Page {
     let id = info.id;
     let list = this.data.selectList;
 
-
     if (list.indexOf(id) >= 0) {
       // 存在就删除
-      list = list.filter(el => el.id != id);
-      this.setData({ selectList: list });
+      list = list.filter(el => el != id);
     } else {
       // 不存在就添加
       list.push(id);
     }
     this.setData({ selectList: list });
-    wx.setStorageSync('goodsSelectList', list);
-    console.warn(list);
 
   }
   //初始化数据
   updateInit() {
     this.setData({
       list: [],
+      'form.store_id': wx.getStorageSync('store_id'),
       ['form.page']: 1
     })
     this.update()
@@ -76,7 +74,10 @@ class Page {
     })
     this.update();
   }
-
+  submit() {
+    wx.setStorageSync('goodsSelectList', this.data.selectList);
+    this.$router.go(-1);
+  }
 
 
 }

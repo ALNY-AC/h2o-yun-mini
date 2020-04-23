@@ -8,9 +8,8 @@
         <van-field type='number' bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
     </van-cell-group>
     <van-cell title="商品分类" is-link value="{{className}}" bind:click="showPopup" />
-   
-        <view class="f-b">
-       <van-button size='large' color='#32A1EE' block  bind:tap="save" >保存</van-button>
+    <view class="f-b">
+        <van-button size='large' color='#32A1EE' block bind:tap="save">保存</van-button>
     </view>
 </view>
 <van-popup position="bottom" show="{{ show }}" custom-style="height: 50%;" bind:close="onClose">

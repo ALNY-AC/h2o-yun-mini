@@ -1,1 +1,1 @@
-.box{background-color:#f6f6f6;height:100vh}.box .title{padding:10px 16px;color:#999;font-size:11px}
+page{background-color:#f6f6f6}.title{padding:10px 16px;color:#666;font-size:12px}

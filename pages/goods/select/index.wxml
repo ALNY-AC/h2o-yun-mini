@@ -1,3 +1,4 @@
+<wxs src="../../../utils/tools.wxs" module="tools" />
 <view class="h2">请选择您的商品（多选）</view>
 <view class="list">
     <view class="item" wx:key="index" wx:for="{{list}}">
@@ -5,9 +6,10 @@
             <van-card catch:tap="select" data-info="{{item}}" custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}"></van-card>
         </view>
         <view class="select-tag">
-            <view>{{selectList.indexOf(item.id)}}</view>
-            <view>id:{{item.id}}</view>
-            <van-icon wx:if="{{selectList.indexOf(item.id)>=0}}" size="30px" name="success" />
+            <van-icon wx:if="{{tools.indexOf(selectList,item.id)>=0}}" size="30px" name="success" />
         </view>
     </view>
+</view>
+<view class="f-b">
+    <van-button size="large" bind:tap="submit" block color="#32A1EE">确定</van-button>
 </view>

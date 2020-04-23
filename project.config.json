@@ -157,10 +157,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/water/edit/index",
+					"id": 14,
+					"name": "水票编辑有参数",
 					"pathName": "pages/water/edit/index",
-					"query": "",
+					"query": "id=16",
 					"scene": null
 				},
 				{
@@ -178,8 +178,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/water/edit/index",
+					"id": 17,
+					"name": "水票编辑无参数",
 					"pathName": "pages/water/edit/index",
 					"query": "",
 					"scene": null
@@ -221,8 +221,15 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/home/index",
-					"pathName": "pages/home/index",
+					"name": "pages/financial/tixian/index",
+					"pathName": "pages/financial/tixian/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/shouzhi/index",
+					"pathName": "pages/financial/shouzhi/index",
 					"scene": null
 				}
 			]
