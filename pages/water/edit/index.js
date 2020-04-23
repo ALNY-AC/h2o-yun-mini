@@ -57,12 +57,11 @@ class Page {
         this.setData({
           form: res.data,
         });
+        wx.setStorageSync('goodsSelectList', res.data.goods_id);
       }
     }
   }
-
   async save() {
-
     const res = await this.$http.post('/water_coupon/save', this.data.form);
     wx.setStorageSync('goodsSelectList', []);
     if (res.code >= 0) {

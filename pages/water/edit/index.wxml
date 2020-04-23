@@ -12,4 +12,3 @@
         <van-button size='large' color='#32A1EE' block bind:tap="save" block>保存</van-button>
     </view>
 </view>
-{{count}}
