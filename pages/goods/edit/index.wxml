@@ -6,6 +6,7 @@
         <van-field bind:input='o-model' data-model="form.title" value='{{form.title}}' clearable label="商品标题" placeholder="请输入价格商品标题" />
         <van-field type='number' bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="价格" placeholder="请输入价格" />
         <van-field type='number' bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
+          <van-field type='number' bind:input='o-model' data-model="form.stock" value='{{form.stock}}' clearable label="库存" placeholder="请输入库存" />
     </van-cell-group>
     <van-cell title="商品分类" is-link value="{{className}}" bind:click="showPopup" />
     <view class="f-b">

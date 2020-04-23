@@ -16,7 +16,8 @@ class Page {
       store_id: '',
       sort: 0,
       class_id: '',
-      goods_head: ''
+      goods_head: '',
+      stock:0
     },
     show: false,
     classList: []

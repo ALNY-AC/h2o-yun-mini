@@ -225,6 +225,13 @@
 					"pathName": "pages/water/qr/index",
 					"query": "id=16",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/orderInfo/index",
+					"pathName": "pages/order/orderInfo/index",
+					"query": "order_id=ORDER2020042320503426359",
+					"scene": null
 				}
 			]
 		}

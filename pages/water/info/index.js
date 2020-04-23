@@ -7,6 +7,12 @@ class Page {
   data = {
     info: null,
     goodsList: [],
+    list:[],
+    query:{
+      page:1,
+      page_size:10,
+      water_coupon_id:''
+    }
   }
 
   /**
@@ -14,6 +20,9 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    this.setData({
+      'query.water_coupon_id':this.$route.query.id
+    })
     this.update();
   }
 
@@ -40,7 +49,32 @@ class Page {
   }
   async httpUsers() {
     // 销售记录
-
+    const res = await this.$http.post('/water_coupon/user_water_coupon', this.data.query);
+    if (res.code >= 0) {
+      this.setData({
+        list: [...this.data.list, ...res.data.list],
+      })
+    }
+    wx.stopPullDownRefresh();
+  }
+  updateInit() {
+    this.setData({
+      list: [],
+      ['query.page']: 1
+    })
+    this.update();
+  }
+  //下拉刷新
+  onPullDownRefresh() {
+    this.updateInit();
+  }
+  //上拉加载
+  onReachBottom() {
+    this.setData({
+      ['query.page']: ++this.data.query.page,
+      ['query.page_size']: 10
+    })
+    this.httpUsers();
   }
   del(e) {
     wx.showModal({

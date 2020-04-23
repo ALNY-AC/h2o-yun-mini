@@ -9,6 +9,6 @@
     <van-tab title="待取消订单"></van-tab>
   </van-tabs>
   <view class="item">
-      <order-card info='{{item}}' wx:for="{{list}}" wx:key='index'></order-card>
+      <order-card info='{{item}}'  data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}"  wx:key='index'></order-card>
   </view>
 </view>

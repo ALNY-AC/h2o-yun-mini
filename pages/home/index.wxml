@@ -27,7 +27,7 @@
   <van-grid-item icon="photo-o" text="{{item.word}}" wx:for="{{ tool }}" url/>
 </van-grid> -->
 <view class="tool">
-  <view class="tool-item" wx:for="{{ tool }}" data-url="{{item.url}}" data-ids="{{item.id}}" bind:tap="go">
+  <view class="tool-item" wx:for="{{ tool }}" wx:key="index" data-url="{{item.url}}" data-ids="{{item.id}}" bind:tap="go">
     <view class="icon">
       <van-icon name="{{item.icon}}"></van-icon>
     </view>

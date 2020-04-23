@@ -92,7 +92,7 @@
       },
       {
         "pagePath": "pages/order/unOrder/index",
-        "text": "预订单",
+        "text": "待处理订单",
         "iconPath": "/assets/images/icon/unorder-o.png",
         "selectedIconPath": "/assets/images/icon/unorder-n.png"
       },

@@ -5,7 +5,7 @@
             <view class="card-body">
                 <view class="title van-ellipsis">{{title}}</view>
                 <view class="info">
-                    <view class="van-ellipsis" wx:for="{{infos}}" wx:key="{{index}}">{{item}}</view>
+                    <view class="van-ellipsis" wx:for="{{infos}}" wx:key="index">{{item}}</view>
                 </view>
             </view>
             <view class="card-footer">

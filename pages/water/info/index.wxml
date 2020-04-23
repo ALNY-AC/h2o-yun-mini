@@ -31,15 +31,15 @@
     </van-panel>
 </view>
 <van-panel title="销售记录">
-    <view class="user-card" wx:for="{{10}}" wx:key="index">
-        <van-image round width="40" height="40" src="{{$app.url.imageUrl+item.head}}" />
+    <view class="user-card" wx:for="{{list}}" wx:key="index">
+        <van-image round width="40" height="40" src="{{item.head}}" />
         <view class="info-box">
             <view class="name">{{item.name}}</view>
-            <view class="time">下单时间：2020-05-01 00:00:00</view>
+            <view class="time">下单时间：{{item.add_time}}</view>
         </view>
         <view class="data-box">
-            <view class="price">¥8888</view>
-            <view class="count">x88</view>
+            <view class="price">¥{{item.price}}</view>
+            <view class="count">x{{item.data.buy_num}}</view>
         </view>
     </view>
 </van-panel>

@@ -84,7 +84,7 @@ class Page {
   //上拉加载
   onReachBottom() {
     this.setData({
-      ['form.page']: ++this.data.form.page,
+      ['form.page']: ++this.data.query.page,
       ['form.page_size']: 10
     })
     this.update();
