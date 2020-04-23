@@ -1,9 +1,10 @@
 $color:#666666;
 $padding: 10px 16px;
-.box{
+page{
     background-color: #f6f6f6;
-    height: 100vh;
- 
+}
+.box{
+
     .stroeInfo{
         .title{
             padding:$padding;
@@ -23,10 +24,5 @@ $padding: 10px 16px;
             color: $color;
         }
     }
-    .f-b{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+ 
 }
