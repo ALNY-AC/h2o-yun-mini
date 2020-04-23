@@ -22,12 +22,8 @@ class Page {
     });
   }
   onShow() {
-    // 动态获取个数
-    let width = Math.ceil((wx.getSystemInfoSync().windowWidth - 40) / 21);
-
     this.setData({
       'form.store_id': wx.getStorageSync('store_id'),
-      number: width
     });
     this.update();
   }
@@ -38,15 +34,8 @@ class Page {
       this.setData({
         list: res.data.list
       })
-
     }
-
   }
-
-
-
-
-
 
 }
 

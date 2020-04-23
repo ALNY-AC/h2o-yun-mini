@@ -1,28 +1,6 @@
 <view class="box">
     <view class="list">
-        <view class="item" wx:for='{{list}}' wx:key="index" bind:tap="o-router" data-url="/pages/water/info/index?id={{item.id}}">
-            <view class="title-box">
-                <view class="title-name">{{item.name}}</view>
-                <van-icon class="qr-share" name="qr" size="30px" catch:tap="o-router" data-url="/pages/water/qr/index?id={{item.id}}" />
-            </view>
-            <view class="info-box">
-                <view class="info-item">
-                    <view class="info-title">单价</view>
-                    <view class="info-value">{{item.price}}￥</view>
-                </view>
-                <view class="info-item">
-                    <view class="info-title">起购数量</view>
-                    <view class="info-value">{{item.min}}张</view>
-                </view>
-                <view class="info-item">
-                    <view class="info-title">库存</view>
-                    <view class="info-value">{{item.stock}}</view>
-                </view>
-            </view>
-            <view class="bottom-border">
-                <view class="border-radius" wx:for="{{number}}" wx:key="index"></view>
-            </view>
-        </view>
+        <water-card wx:for='{{list}}' wx:key="index" info="{{item}}"></water-card>
     </view>
     <van-button color="#32A1EE" custom-class='fixed' data-url='/pages/water/edit/index' bind:tap='o-router' block>
         添加水票
