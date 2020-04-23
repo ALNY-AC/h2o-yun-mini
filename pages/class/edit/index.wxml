@@ -4,6 +4,6 @@
         <van-switch checked="{{ form.is_up }}" bind:change="onChange" slot="right-icon" size="40" active-value="{{1}}" inactive-value="{{0}}" />
     </van-cell>
 </van-cell-group>
-<view class="f-btn">
+<view class="f-b">
     <van-button size='large' color='#32A1EE' block bind:tap="save" >保存</van-button>
 </view>

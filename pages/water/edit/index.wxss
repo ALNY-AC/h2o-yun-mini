@@ -1,1 +1,1 @@
-.box{background-color:#f6f6f6;height:100vh}.box .title{padding:10px 16px;color:#999;font-size:11px}.box .fixed{position:fixed;bottom:0;left:0}
+.box{background-color:#f6f6f6;height:100vh}.box .title{padding:10px 16px;color:#999;font-size:11px}

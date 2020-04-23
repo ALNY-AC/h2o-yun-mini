@@ -1,6 +1,8 @@
-.box{
-    min-height: 100vh;
+page{
     background-color: #f6f6f6;
+}
+.box{
+  
     .list{
         width: 100vw;
         .item{
@@ -9,10 +11,5 @@
             }
         }
     }
-    .f-b{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+
 }
