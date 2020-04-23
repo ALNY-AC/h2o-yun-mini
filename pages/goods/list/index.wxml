@@ -13,4 +13,9 @@
             </van-swipe-cell>
         </view>
     </view>
+    <view class="f-b">
+        <van-button size='large' color='#32A1EE' block  data-url="/pages/goods/edit/index" bind:tap="o-router" block>
+            添加商品
+        </van-button>
+    </view>
 </view>

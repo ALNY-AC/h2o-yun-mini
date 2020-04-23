@@ -19,5 +19,7 @@
             <van-field bind:input='o-model' data-model="form.qq" value='{{form.qq}}' clearable label="联系QQ" input-align="right" placeholder="请输入联系QQ" />
         </van-cell-group>
     </view>
-    <van-button type="info" custom-class='fixed' bind:tap="save" block>保存</van-button>
+     <view class="f-b">
+            <van-button size='large' color='#32A1EE' block  bind:tap="save" block>保存</van-button>
+    </view>
 </view>

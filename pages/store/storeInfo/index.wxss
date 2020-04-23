@@ -1,1 +1,1 @@
-.box{background-color:#f6f6f6;height:100vh}.box .stroeInfo .title{padding:10px 16px;color:#666}.box .stroeInfo .storeTitle{display:flex;align-items:center}.box .userInfo .title{padding:10px 16px;color:#666}.box .fixed{position:fixed;bottom:0;left:0}
+.box{background-color:#f6f6f6;height:100vh}.box .stroeInfo .title{padding:10px 16px;color:#666}.box .stroeInfo .storeTitle{display:flex;align-items:center}.box .userInfo .title{padding:10px 16px;color:#666}.box .f-b{position:fixed;bottom:0;left:0;right:0}
