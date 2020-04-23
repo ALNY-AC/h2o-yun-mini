@@ -26,7 +26,8 @@
     "pages/test/index",
     "pages/store/selectStore/index",
     "pages/feedback/index",
-    "pages/water/edit/index"
+    "pages/water/edit/index",
+    "pages/goods/select/index"
   ],
   "permission": {
     "scope.userLocation": {
