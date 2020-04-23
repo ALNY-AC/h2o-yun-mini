@@ -1,0 +1,32 @@
+page{
+    background-color: #f6f6f6;
+}
+.box{
+    .picker{
+        display: flex;
+        padding: 11px 10px 11px 15px;
+        color: #333333;
+        .left{
+            flex: 1;
+            text-align: left;
+        }
+        .right{
+            flex: 1;
+            text-align: right;
+        }
+    }
+    .title{
+        font-size: 14px!important;
+        color: #333333;
+    }
+    .label{
+        font-size: 11px!important;
+        color: #888888;
+    }
+    .value{
+        font-size: 14px!important;
+        color: #555555;
+    }
+ 
+    
+}

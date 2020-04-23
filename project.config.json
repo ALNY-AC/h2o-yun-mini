@@ -223,6 +223,13 @@
 					"id": -1,
 					"name": "pages/financial/tixian/index",
 					"pathName": "pages/financial/tixian/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/shouzhi/index",
+					"pathName": "pages/financial/shouzhi/index",
 					"scene": null
 				}
 			]
