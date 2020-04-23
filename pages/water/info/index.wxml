@@ -19,6 +19,12 @@
         </view>
     </view>
 </view>
+<view class="goods-list">
+    <view class="goods-item">
+        <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+        <view class="goods-title">商品标题</view>
+    </view>
+</view>
 <view class="f-b">
-    <van-button>删除</van-button>
+    <van-button size="large" block color="#32A1EE">删除</van-button>
 </view>

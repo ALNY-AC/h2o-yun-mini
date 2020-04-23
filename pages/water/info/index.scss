@@ -1,7 +1,7 @@
 .box {
     min-height: 100vh;
     background-color: #f6f6f6;
-    padding: 10px;
+    padding: 15px;
 
     .data-panel {
         background: linear-gradient(180deg, rgba(97, 207, 248, 1) 0%, rgba(50, 161, 238, 1) 100%);
@@ -41,9 +41,20 @@
         }
     }
 
-    .f-b {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-    }
+}
+
+
+.goods-list {
+    display: flex;
+    align-items: center;
+
+    .goods-item {}
+}
+
+
+.f-b {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
