@@ -22,10 +22,11 @@
 <view style="margin-bottom:15px">
     <van-panel title="可用商品">
         <view class="goods-list">
-            <view class="goods-item" wx:for="{{goodsList}}" wx:key="index">
+            <view class="goods-item" wx:if="{{goodsList.length>0}}" wx:for="{{goodsList}}" wx:key="index">
                 <van-image width="100" height="100" src="{{$app.url.imageUrl+item.goods_head}}" />
                 <view class="goods-title">{{item.title}}</view>
             </view>
+            <view wx:if="{{goodsList.length<=0}}">全场通用</view>
         </view>
     </van-panel>
 </view>
