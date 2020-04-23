@@ -1,1 +1,1 @@
-/* pages/financial/tixian/index.wxss */
+page{background-color:#f6f6f6}.box{padding:15px}.box .info{padding:20px 17px;background-color:white}.box .info .input{position:relative;margin-bottom:41px}.box .info .input .position{position:absolute;color:#333333;font-size:14px;left:0;top:8px;z-index:1000}.box .info .input .inp{font-size:30px;color:#333333}.box .info .input .yue{font-size:11px;margin-top:4px;color:#999999}
