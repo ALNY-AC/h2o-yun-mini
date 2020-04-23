@@ -22,6 +22,7 @@ App({
     }
 
     if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
+
       wx.reLaunch({
         url: '/pages/store/selectStore/index'
       })
@@ -61,10 +62,20 @@ App({
       return;
     }
     if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
-      wx.reLaunch({
-        url: '/pages/store/selectStore/index'
-      })
+      this.goSelectStore();
     }
+  },
+  goSelectStore() {
+    let pages = getCurrentPages();
+    if (pages.length > 0) {
+      pages = pages[pages.length - 1];
+      if (pages.route.indexOf('store') < 0) {
+        wx.reLaunch({
+          url: '/pages/store/selectStore/index'
+        })
+      }
+    }
+
   },
   globalData: {
     userInfo: null,

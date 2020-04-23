@@ -40,11 +40,11 @@
             </view>
             <view class="title">订单管理</view>
         </view>
-        <view class="store-item">
+        <!-- <view class="store-item">
             <view class="icon">
                 <van-icon name="gem-o" />
             </view>
             <view class="title">服务配置</view>
-        </view>
+        </view> -->
     </view>
 </view>

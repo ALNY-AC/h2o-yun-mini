@@ -8,7 +8,8 @@
             </van-cell>
             <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="店铺名称" input-align="right" placeholder="请输入店铺名称" />
             <van-field bind:input='o-model' data-model="form.info" value='{{form.info}}' clearable label="店铺简介" input-align="right" placeholder="请输入店铺简介" />
-            <van-cell title="店铺位置" is-link bind:click='o-router' data-url="/pages/map/map" value='{{form.info}}' value="{{form.location==''?'选择位置':form.location}}" />
+            <van-cell title="店铺位置" is-link value="{{form.x?'已选择':'选择位置'}}" label="{{form.address_wx?form.address_wx:''}}" bind:tap="httpAddress" />
+            <van-field bind:input='o-model' data-model="form.address" value='{{form.address}}' clearable label="详细地址" input-align="right" placeholder="请输入详细地址" />
         </van-cell-group>
     </view>
     <view class="userInfo">
@@ -19,7 +20,7 @@
             <van-field bind:input='o-model' data-model="form.qq" value='{{form.qq}}' clearable label="联系QQ" input-align="right" placeholder="请输入联系QQ" />
         </van-cell-group>
     </view>
-     <view class="f-b">
-            <van-button size='large' color='#32A1EE' block  bind:tap="save" block>保存</van-button>
+    <view class="f-b">
+        <van-button size='large' color='#32A1EE' block bind:tap="save" block>保存</van-button>
     </view>
 </view>

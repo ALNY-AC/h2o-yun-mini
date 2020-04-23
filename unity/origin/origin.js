@@ -30,22 +30,30 @@ module.exports = function origin(className) {
     methods.onLoad = function () {
         let pages = getCurrentPages();
         pages = pages[pages.length - 1];
+        
+        if (pages.route.indexOf('store') < 0) {
+            
+            if (
+                pages.route.indexOf('login') < 0
+                && pages.route.indexOf('selectStore') < 0
+            ) {
+                if (!wx.getStorageSync('jwt')) {
+                    wx.reLaunch({
+                        url: '/pages/login/login'
+                    });
+                    return;
+                }
+                if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
+                    
+                    wx.reLaunch({
+                        url: '/pages/store/selectStore/index'
+                    });
+                    return;
+                }
 
-
-        if (pages.route.indexOf('login') < 0 && pages.route.indexOf('selectStore') < 0) {
-            if (!wx.getStorageSync('jwt')) {
-                wx.reLaunch({
-                    url: '/pages/login/login'
-                });
-                return;
-            }
-            if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
-                wx.reLaunch({
-                    url: '/pages/store/selectStore/index'
-                });
-                return;
             }
         }
+
 
 
         /**

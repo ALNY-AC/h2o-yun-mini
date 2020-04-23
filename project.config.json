@@ -60,15 +60,15 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order/unOrder/index",
-					"pathName": "pages/order/unOrder/index",
+					"name": "pages/store/storeInfo/index",
+					"pathName": "pages/store/storeInfo/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
+					"id": 1,
+					"name": "pages/store/index",
+					"pathName": "pages/store/index",
 					"query": "",
 					"scene": null
 				},
@@ -237,6 +237,7 @@
 					"id": -1,
 					"name": "pages/financial/shouzhiInfo/index",
 					"pathName": "pages/financial/shouzhiInfo/index",
+					"query": "",
 					"scene": null
 				}
 			]

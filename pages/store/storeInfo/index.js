@@ -19,9 +19,12 @@ class Page {
       logo: "",//图片
       contacts: "",//联系方式
       phone: '',//手机号
-      qq: ""//QQ号
+      qq: "",//QQ号
+      address_wx: '',
+      address: '',
     },
-    id: ''
+    id: '',
+    address: null
   }
   computed = {
   }
@@ -32,6 +35,8 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    console.warn('store edit');
+
     if (this.$route.query.id) {
 
       this.setData({
@@ -47,6 +52,7 @@ class Page {
         })
       }
     } else {
+      this.httpAddress()
       this.setData({ ['form.phone']: wx.getStorageSync('userInfo').phone });
     }
 
@@ -57,11 +63,15 @@ class Page {
     if (res.code >= 0) {
       this.$toast('保存成功');
       wx.setStorageSync('store', this.data.form);
-      // wx.setStorageSync('store_id', data.id);
-      this.$router.go(-1);
-      // wx.reLaunch({
-      //   url: '/pages/home/index'
-      // });
+      wx.setStorageSync('store_id', res.data);
+      if (getCurrentPages().length > 1) {
+        this.$router.go(-1);
+      } else {
+        wx.reLaunch({
+          url: '/pages/home/index'
+        });
+      }
+
     } else {
       this.$toast(res.msg);
     }
@@ -70,8 +80,29 @@ class Page {
   async upload() {
     let upload = new Upload(new File());
     const res = await upload.push();
-    console.warn(res);
     this.setData({ ['form.logo']: res });
+  }
+  async httpAddress() {
+    wx.chooseLocation({
+      success: (res) => {
+        this.setData({
+          ['form.address_wx']: res.address + res.name,
+          ['form.x']: res.latitude,
+          ['form.y']: res.longitude,
+        })
+      },
+      fail: (e) => {
+        if (!this.data.form.x || !this.data.form.x) {
+          wx.showModal({
+            title: '请选择地址',
+            showCancel: false,
+            complete: () => {
+              this.httpAddress();
+            }
+          })
+        }
+      }
+    })
   }
 
 }

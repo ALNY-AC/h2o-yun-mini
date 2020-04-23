@@ -6,12 +6,12 @@ const computedBehavior = require('miniprogram-computed')
 class Page {
   behaviors = [computedBehavior]
   data = {
-    tool:[
+    tool: [
       {
-        id:1,
-        word:'分类管理',
-        url:'/pages/class/list/index',
-        icon:'bars',
+        id: 1,
+        word: '分类管理',
+        url: '/pages/class/list/index',
+        icon: 'bars',
       }, {
         id: 2,
         word: '商品管理',
@@ -27,17 +27,18 @@ class Page {
         word: '订单管理',
         url: '/pages/order/order/index',
         icon: 'orders-o',
-      }, {
-        id: 5,
-        word: '服务配置',
-        url: '',
-        icon: 'gem-o',
-      }, {
-        id: 6,
-        word: '推广店铺',
-        url: '',
-        icon: 'photo-o',
       },
+      // {
+      //   id: 5,
+      //   word: '服务配置',
+      //   url: '',
+      //   icon: 'gem-o',
+      // }, {
+      //   id: 6,
+      //   word: '推广店铺',
+      //   url: '',
+      //   icon: 'photo-o',
+      // },
     ]
   }
   computed = {
@@ -54,12 +55,12 @@ class Page {
   async update() {
 
   }
-  go(e){
-    if(e.currentTarget.dataset.ids=="4"){
+  go(e) {
+    if (e.currentTarget.dataset.ids == "4") {
       wx.switchTab({
         url: e.currentTarget.dataset.url
       })
-    }else {
+    } else {
       wx.navigateTo({
         url: e.currentTarget.dataset.url,
       })
