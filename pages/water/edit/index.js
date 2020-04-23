@@ -13,7 +13,7 @@ class Page {
       name: "",
       price: '',
       store_id: '',
-      num: '',
+      stock: '',
       max: '',
       min: '',
       goods_id: []

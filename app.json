@@ -72,7 +72,8 @@
     "img-text-card": "/components/ImgTextCard/ImgTextCard",
     "banner": "/components/banner/banner",
     "order-card": "/components/orderCard/orderCard",
-    "cell-card": "/components/cellCard/cellCard"
+    "cell-card": "/components/cellCard/cellCard",
+    "water-card": "/components/WaterCard/WaterCard"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

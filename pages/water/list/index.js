@@ -7,11 +7,9 @@ class Page {
   data = {
     list: [],
     form: {
-      page: 1,
-      page_size: 10,
       store_id: ''
     },
-    
+
   }
 
   /**
@@ -24,12 +22,8 @@ class Page {
     });
   }
   onShow() {
-    // 动态获取个数
- let width =  Math.ceil((wx.getSystemInfoSync().windowWidth-40)/20);
-
     this.setData({
       'form.store_id': wx.getStorageSync('store_id'),
-      number:width
     });
     this.update();
   }
@@ -38,17 +32,10 @@ class Page {
     const res = await this.$http.post('/water_coupon/list', this.data.form);
     if (res.code >= 0) {
       this.setData({
-        list:res.data.list
+        list: res.data.list
       })
-
     }
-
   }
-
-
-
-
-
 
 }
 
