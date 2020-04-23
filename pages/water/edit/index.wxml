@@ -12,6 +12,4 @@
         <van-button size='large' color='#32A1EE' block bind:tap="save" block>保存</van-button>
     </view>
 </view>
-<van-popup position="bottom" show="{{ show }}" custom-style="height: 50%;" bind:close="onClose">
-    <van-picker show-toolbar default-index="{{defaultIndex}}" title="标题" columns="{{ goodsList}}" value-key='title' bind:cancel="onCancel" bind:confirm="onConfirm" />
-</van-popup>
+{{count}}
