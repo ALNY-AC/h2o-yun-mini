@@ -1,17 +1,17 @@
 .box {
-    min-height: 100vh;
     background-color: #f6f6f6;
 
     .list {
         padding: 10px;
+        padding-bottom: 100px;
 
         .item {
             background: linear-gradient(180deg, rgba(97, 207, 248, 1) 0%, rgba(50, 161, 238, 1) 100%);
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             border-radius: 5px;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
 
             .title-box {
                 display: flex;
