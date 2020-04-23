@@ -19,33 +19,23 @@ class Page {
       goods_id: []
     },
     show: false,
-    goodsList: [],
 
   }
   computed = {
     goodsName(data) {
-      if (data.form.goods_id) {
-        let el = data.goodsList.find(e => e.id == data.form.goods_id);
-        if (el) {
-          return el.title;
-        } else {
-          return '请选择'
-        }
-      } else {
-        return '请选择'
-      }
+      return `已选择${data.form.goods_id.selectList.length}个商品`;
     },
-    defaultIndex(data) {
-      if (data.form.goods_id) {
-        let index = data.goodsList.findIndex(e => e.id == data.form.goods_id);
-        // console.log(index)
-        return index;
-      } else {
-        return 0
-      }
+
+  }
+
+  onShow() {
+    let list = [];
+    if (wx.getStorageSync('goodsSelectList')) {
+      list = wx.getStorageSync('goodsSelectList')
     }
-
-
+    this.setData({
+      ['form.goods_id']: list,
+    });
   }
   /**
    * 声明周期函数
