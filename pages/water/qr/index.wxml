@@ -1,10 +1,10 @@
-<view class="box">
+<view class="box" wx:if="{{info}}">
     <view style="margin-bottom:10px">
         <water-card rb="#fff" show-qr="{{false}}" info="{{info}}"></water-card>
     </view>
     <view class="erweima">
         <view class="ma">
-            <canvas  style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+            <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
         </view>
         <view class="text">保存或截屏，将发送二维码给客户，客户扫码即可购买水票</view>
     </view>
