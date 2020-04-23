@@ -4,9 +4,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    info: { // 属性名
+    info: { // 数据
       type: Object,
       value: null
+    },
+    rb: { //圆的背景颜色
+      type: String,
+      value: '#f6f6f6'
+    },
+    showQr: { //圆的背景颜色
+      type: Boolean,
+      value: true
     },
   },
 
