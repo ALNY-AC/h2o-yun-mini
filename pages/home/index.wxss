@@ -1,1 +1,62 @@
 /* pages/home/index.wxss */
+page {
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.header{
+  padding: 26rpx 20rpx;
+  color: #fff;
+  background:linear-gradient(180deg,rgba(97,207,248,1) 0%,rgba(50,161,238,1) 100%);
+  border-radius:10rpx;
+  margin-bottom: 40rpx;
+}
+.panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
+.line {
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #fff;
+}
+.panel-block {
+  flex: 1;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.text-low {
+  margin-top:20rpx;
+  font-size: 24rpx;
+}
+.text-hight {
+  font-size: 40rpx;
+}
+
+/* 推荐工具 */
+.grad {
+  border:none !important;
+}
+.tool {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.tool-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color:#323233;
+}
+.tool-item image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  background: #32A1EE;
+}
