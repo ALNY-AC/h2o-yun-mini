@@ -1,28 +1,12 @@
 <view class="box">
-    <view class="qr">
-        <view class="title">
-            <view class="title-name">{{info.name}}</view>
-        </view>
-        <view class="info">
-            <view class="num">
-                <view class="num-title">单价</view>
-                <view class="num-number">{{info.price}}￥</view>
-            </view>
-            <view class="num">
-                <view class="num-title">购买下线</view>
-                <view class="num-number">{{info.min}}张</view>
-            </view>
-        </view>
-        <view class="bottom-border">
-            <view class="border-radius" wx:for="{{number}}" wx:key="index"></view>
-        </view>
+    <view style="margin-bottom:10px">
+        <water-card rb="#fff" show-qr="{{false}}" info="{{info}}"></water-card>
     </view>
     <view class="erweima">
-        <view class="ma"></view>
-        <view class="text">发送二维码给客户，客户即可购买水票</view>
-     
+        <view class="ma">
+            <canvas  style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+        </view>
+        <view class="text">保存或截屏，将发送二维码给客户，客户扫码即可购买水票</view>
     </view>
-       <van-button color="#32A1EE" custom-class='btn' data-url='/pages/water/edit/index' bind:tap='o-router' block>
-            保存至相册
-        </van-button>
+    <van-button color="#32A1EE" custom-class='btn' bind:tap='save' block>保存至相册</van-button>
 </view>

@@ -1,93 +1,38 @@
+page {
+    background-color: rgba($color: #32A1EE, $alpha: 0.8);
+}
+
 .box {
-    min-height: 100vh;
-    background-color: #f6f6f6;
-    padding: 10px;
-  
-
-        .qr {
-            background: linear-gradient(180deg, rgba(97, 207, 248, 1) 0%, rgba(50, 161, 238, 1) 100%);
-            color: white;
-            padding: 10px 19px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            position: relative;
-
-            .title {
-                display: flex;
-                font-size: 20px;
-                margin-bottom: 18px;
-
-                .title-name {
-                    flex: 1;
-                    font-size: 20px;
-                }
-
-                .title-btn {}
-            }
-
-            .info {
-                font-size: 14px;
-                display: flex;
-                flex-direction: row;
-                padding-bottom: 15px;
-                .num {
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    .num-title{
-                        font-size: 11px;
-                        margin-bottom: 5px;
-                    }
-                    .num-number{
-                        font-size: 16px;
-                    }
-                }
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 5px;
 
 
-            }
+    .erweima {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 58px;
 
-            .bottom-border {
-                background-color: rgba(50, 161, 238, 1);
-                position: relative;
-                left: 0;
-                bottom: -10px;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-
-                .border-radius {
-
-                    background-color: #F6F6F6;
-                    width: 14px;
-                    height: 7px;
-                    margin: 0 3px;
-                    border-radius: 7px 7px 0 0;
-
-                }
-            }
+        .ma {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            margin-bottom: 23px;
         }
-        .erweima{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 58px;
-            .ma{
-                width: 200px;
-                height: 200px;
-                background-color: black;
-                margin-bottom: 23px;
-            }
-            .text{
-                color: #666666;
-                font-size: 14px;
-              
-            }
+
+        .text {
+            color: #666666;
+            font-size: 14px;
+            text-align: center;
+
         }
-        .btn{
-            width: 85%;
-        }
- 
+    }
+
+    .btn {
+        width: 85%;
+    }
+
 }

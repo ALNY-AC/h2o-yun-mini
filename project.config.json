@@ -186,16 +186,9 @@
 				},
 				{
 					"id": 18,
-					"name": "pages/water/info/index",
+					"name": "水票详情带参数16",
 					"pathName": "pages/water/info/index",
 					"query": "id=16",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/water/qr/index",
-					"pathName": "pages/water/qr/index",
-					"query": "id=15",
 					"scene": null
 				},
 				{
@@ -223,6 +216,14 @@
 					"id": -1,
 					"name": "pages/financial/tixian/index",
 					"pathName": "pages/financial/tixian/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "水票二维码",
+					"pathName": "pages/water/qr/index",
+					"query": "id=16",
 					"scene": null
 				}
 			]

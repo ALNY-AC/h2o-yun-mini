@@ -1,4 +1,8 @@
 const origin = require('../../../unity/origin/origin')
+const drawQrcode = require('weapp-qrcode')
+
+
+
 
 class Page {
   /**
@@ -13,12 +17,13 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    let width =  Math.ceil((wx.getSystemInfoSync().windowWidth-40)/20);
-    this.setData({
-      number:width
-    });
     this.update();
-
+    drawQrcode({
+      width: 200,
+      height: 200,
+      canvasId: 'myQrcode',
+      text: 'http://h5.h2o.cy-cube.com/pay/ticket?id=16'
+    })
   }
 
   //调用接口
@@ -30,36 +35,19 @@ class Page {
       this.setData({
         info: res.data
       })
-
     }
 
   }
-  del(e) {
-    console.log(this.data.info.id)
-    wx.showModal({
-      title: '提示',
-      content: '确定删除吗',
-      success: async (res) => {
-        if (res.confirm) {
-          const res1 = await this.$http.post('/water_coupon/del', {
-            id:this.data.info.id,
-            store_id:wx.getStorageSync('store_id')
-          });
-          if (res1.code >= 0) {
-            this.$toast('删除成功');
-            this.$router.go(-1)
-          } else {
-            this.$toast(res1.msg);
-          }
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
+  save() {
+    wx.canvasToTempFilePath({
+      canvasId: 'myQrcode',
+      success: function (res) {
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+        })
       }
     })
-
-
   }
-
 
 }
 
