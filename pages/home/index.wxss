@@ -54,9 +54,12 @@ page {
   font-size: 28rpx;
   color:#323233;
 }
-.tool-item image {
+.icon {
+  display: flex;
+  justify-content: center;
   width: 60rpx;
   height: 60rpx;
   border-radius: 100%;
-  background: #32A1EE;
+  color: #32A1EE;
+  background:rgba(50,161,238,0.5);
 }
