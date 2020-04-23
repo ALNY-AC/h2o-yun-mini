@@ -18,13 +18,18 @@ page {
                 color: #333333;
                 font-size: 14px;
                 left: 0;
-                top: 8px;
+                top: 15px;
                 z-index: 1000;
             }
 
             .inp {
                 font-size: 30px;
+                height: auto;
+                line-height: 34px;;
                 color: #333333;
+                padding: 10px 16px;
+                display: block;
+                border-bottom: 1px solid #DDDDDD;
             }
 
             .yue {

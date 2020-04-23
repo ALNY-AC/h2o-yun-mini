@@ -3,7 +3,7 @@
         <view>提现金额</view>
         <view class="input">
             <view class="position">￥</view>
-            <van-field type='number' input-class='inp' size='30' bind:input='o-model' data-model="form.sort" value='0.21' clearable />
+          <input type="text" class="inp" value="11"/>
             <view class="yue">可用余额:9999</view>
         </view>
       <view class="button">

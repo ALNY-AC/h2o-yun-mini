@@ -232,6 +232,12 @@
 					"pathName": "pages/order/orderInfo/index",
 					"query": "order_id=ORDER2020042320503426359",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/shouzhiInfo/index",
+					"pathName": "pages/financial/shouzhiInfo/index",
+					"scene": null
 				}
 			]
 		}
