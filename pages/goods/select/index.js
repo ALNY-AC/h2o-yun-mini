@@ -5,11 +5,8 @@ class Page {
    * 声明data
    */
   data = {
-    info: {
-      title: "好",
-      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586957304625&di=00265dca96f1ac4236b3ba1208620fd4&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fg6%2FM07%2F5D%2FAB%2FwKhQsVNsW6aEP0DZAAAAAMqPSDE457.jpg'
-    },
     list: [],
+    selectList: [],
     form: {
       page: 1,
       page_size: 10,
@@ -21,11 +18,11 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    this.setData({
-      'form.store_id': wx.getStorageSync('store_id')
-    });
-  }
-  onShow() {
+    if (wx.getStorageSync('goodsSelectList')) {
+      this.setData({
+        selectList: wx.getStorageSync('goodsSelectList')
+      });
+    }
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
@@ -41,10 +38,24 @@ class Page {
     }
     wx.stopPullDownRefresh();
   }
-  go(e) {
-    this.$router.push('/pages/goods/edit/index', {
-      id: e.currentTarget.dataset.id
-    });
+  select(e) {
+    let info = e.currentTarget.dataset.info;
+    let id = info.id;
+    let list = this.data.selectList;
+
+
+    if (list.indexOf(id) >= 0) {
+      // 存在就删除
+      list = list.filter(el => el.id != id);
+      this.setData({ selectList: list });
+    } else {
+      // 不存在就添加
+      list.push(id);
+    }
+    this.setData({ selectList: list });
+    wx.setStorageSync('goodsSelectList', list);
+    console.warn(list);
+
   }
   //初始化数据
   updateInit() {
@@ -54,29 +65,6 @@ class Page {
     })
     this.update()
   }
-  del(e) {
-    wx.showModal({
-      title: '提示',
-      content: '确定删除吗',
-      success: async (res) => {
-        if (res.confirm) {
-          const res1 = await this.$http.post('/goods/del', {
-            id: e.currentTarget.dataset.id
-          });
-          if (res1.code >= 0) {
-            this.$toast('删除成功');
-            this.updateInit();
-          } else {
-            this.$toast(res1.msg);
-          }
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-
-
-  }
   //下拉刷新
   onPullDownRefresh() {
     this.updateInit();
@@ -85,13 +73,9 @@ class Page {
   onReachBottom() {
     this.setData({
       ['form.page']: ++this.data.form.page,
-      ['form.page_size']: 10
     })
     this.update();
   }
-
-
-
 
 
 

@@ -1,1 +1,1 @@
-.box{min-height:100vh;background-color:#f6f6f6}.box .list .item{margin-bottom:10px}.box .list .item .good-card{background-color:#ffffff}.box .list .item .btn-height{height:100%}.box .fixed{position:fixed;bottom:0;left:0}
+page{background-color:#fff}.h2{padding:10px;margin-bottom:10px;font-size:20px}.list .item{display:flex;align-items:center}.list .item .goods-card-box{flex:1}.list .item .good-card{background-color:#ffffff}.list .item .select-tag{padding-right:10px;color:#32A1EE}

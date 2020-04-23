@@ -31,7 +31,6 @@ module.exports = function origin(className) {
         let pages = getCurrentPages();
         pages = pages[pages.length - 1];
 
-        console.warn(pages);
 
         if (pages.route.indexOf('login') < 0 && pages.route.indexOf('selectStore') < 0) {
             if (!wx.getStorageSync('jwt')) {

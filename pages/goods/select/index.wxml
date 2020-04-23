@@ -1,18 +1,13 @@
+<view class="h2">请选择您的商品（多选）</view>
 <view class="list">
     <view class="item" wx:key="index" wx:for="{{list}}">
-        <van-swipe-cell right-width="{{ 65 }}">
-            <van-cell-group>
-                <van-card catch:tap="go" data-id="{{item.id}}" custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
-            </van-cell-group>
-            <view slot="right" style="height:100%" class="van-swipe-cell__right">
-                <van-button type="danger" custom-class='btn-height' data-id="{{item.id}}" bind:tap='del'>
-                    删除
-                </van-button>
-            </view>
-        </van-swipe-cell>
+        <view class="goods-card-box">
+            <van-card catch:tap="select" data-info="{{item}}" custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}"></van-card>
+        </view>
+        <view class="select-tag">
+            <view>{{selectList.indexOf(item.id)}}</view>
+            <view>id:{{item.id}}</view>
+            <van-icon wx:if="{{selectList.indexOf(item.id)>=0}}" size="30px" name="success" />
+        </view>
     </view>
 </view>
-
-<van-button type="info" custom-class="fixed" data-url="/pages/goods/edit/index" bind:tap="o-router" block>
-    添加商品
-</van-button>
