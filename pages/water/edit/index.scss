@@ -1,13 +1,9 @@
-$color:#999999;
-$padding: 10px 16px;
-.box{
+page {
     background-color: #f6f6f6;
-    height: 100vh;
- 
-    .title{
-        padding:$padding;
-        color: $color;
-        font-size: 11px;
-    }
- 
+}
+
+.title {
+    padding: 10px 16px;
+    color: #666;
+    font-size: 12px;
 }

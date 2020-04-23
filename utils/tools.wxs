@@ -1,0 +1,4 @@
+var indexOf = require("./wxs/indexOf.wxs");
+module.exports = {
+    indexOf: indexOf
+};
