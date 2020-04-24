@@ -1,70 +1,24 @@
 page {
     background-color: #f6f6f6;
-    padding: 10px;
 }
 
-
-.store-header {
-    .good-card {
-        background-color: #ffffff;
-    }
+.store {
+    background: linear-gradient(180deg, #32A1EE 0%, rgba($color: #32A1EE, $alpha: 0.7) 100%);
 }
 
 .store-card {
     display: flex;
     align-items: center;
     padding: 15px;
-    color: #666;
-    background-color: #ffffff;
-    margin-bottom: 10px;
+    color: #fff;
 
     .info {
         display: flex;
         flex: 1;
-        color: #333;
 
         .title {
             margin-left: 10px;
         }
     }
 
-}
-
-.store-tool {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-
-    box-sizing: border-box;
-
-    .store-item {
-        width: 25vw;
-        height: 25vw;
-        box-sizing: border-box;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-
-        .icon {
-            background-color: rgba(50, 161, 238, 0.3);
-            color: rgb(50, 161, 238);
-
-            border-radius: 100%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-
-        .title {
-            font-size: 14px;
-            color: #333;
-        }
-    }
 }

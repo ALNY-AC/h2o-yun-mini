@@ -1,0 +1,45 @@
+<view class="tool-panel">
+    <slot></slot>
+    <van-row gutter="15">
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/class/list/index">
+                <view class="icon">
+                    <van-icon name="bars" />
+                </view>
+                <view class="title">分类管理</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/goods/list/index">
+                <view class="icon">
+                    <van-icon name="shopping-cart-o" />
+                </view>
+                <view class="title">商品管理</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/water/list/index">
+                <view class="icon">
+                    <van-icon name="coupon-o" />
+                </view>
+                <view class="title">水票管理</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="goOrder">
+                <view class="icon">
+                    <van-icon name="orders-o" />
+                </view>
+                <view class="title">订单管理</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item">
+                <view class="icon">
+                    <van-icon name="gem-o" />
+                </view>
+                <view class="title">服务配置</view>
+            </view>
+        </van-col>
+    </van-row>
+</view>
