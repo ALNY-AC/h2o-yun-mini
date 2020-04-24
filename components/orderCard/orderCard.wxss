@@ -1,1 +1,1 @@
-.order-card{background-color:#ffffff;margin-bottom:10px}.order-card .panel-head{display:flex;padding:10px 16px}.order-card .panel-head .icon{display:inline-block;margin-right:10px}.order-card .panel-head .title{font-size:16px}.order-card .goods-list .item{background-color:transparent;margin-bottom:10px}
+.order-card{background-color:#ffffff;margin-bottom:10px}.order-card .goods-list .item{background-color:transparent;margin-bottom:10px}.order-card .footer{display:flex;flex-direction:row-reverse}

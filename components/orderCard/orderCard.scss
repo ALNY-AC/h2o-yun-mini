@@ -2,25 +2,14 @@
     background-color: #ffffff;
     margin-bottom: 10px;
 
-    .panel-head {
-        display: flex;
-        padding: 10px 16px;
-
-
-        .icon {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .title {
-            font-size: 16px;
-        }
-    }
-
     .goods-list {
         .item {
             background-color: transparent;
             margin-bottom: 10px;
         }
+    }
+    .footer{
+        display: flex;
+        flex-direction: row-reverse;
     }
 }

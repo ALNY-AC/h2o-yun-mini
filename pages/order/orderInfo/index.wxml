@@ -1,94 +1,45 @@
-<view wx:if="{{info.state!=4 && info.state!=5 && info.state !=0}}" class="map_container">
+<view wx:if="{{ info.state!=5 && info.state !=0}}" class="map_container">
     <map id="map" longitude="{{locationx}}" latitude="{{locationy}}" scale="{{15}}" markers="{{markers}}" polyline="{{polyline}}" include-points="{{includePoints}}" show-location style="width: 100%; height: 100%;"></map>
 </view>
 <view class="page">
     <view class="bottom">
-        <view class="card" wx:if="{{info}}">
-            <view class="card-head">
-                <view class="left">{{info.storeInfo.name}}</view>
-                <view wx:if="{{info.state==0}}" class="right">待支付</view>
-                <view wx:if="{{info.state==1}}" class="right">商家已接单</view>
-                <view wx:if="{{info.state==2}}" class="right">待取货</view>
-                <view wx:if="{{info.state==3}}" class="right">配送中</view>
-                <view wx:if="{{info.state==4}}" class="right">已完成</view>
-                <view wx:if="{{info.state==5}}" class="right">订单取消</view>
-            </view>
-            <van-button bind:tap="http_Close">退款</van-button>
-            <view class="card-body">
-                <view class="info-group">
-                    <block wx:for="{{info.snapshotInfo}}" wx:key="index">
-                        <img-text-card radius="0" img-url="{{$app.url.imageUrl+item.data.goods_head}}" title="{{item.data.title}}" img-size="{{['100rpx','100rpx']}}" margin-b="10px">
-                            <view slot="footer" class="tool">
-                                <view class="quantity">x{{item.data.quantity}}</view>
-                            </view>
-                            <view slot="right">
-                                <view class="price">￥{{item.data.quantity*item.data.price}}</view>
-                            </view>
-                        </img-text-card>
+        <view class="card">
+            <van-panel title="{{orderState}}" desc="{{info.add_time}}">
+                <view class="goods-list">
+                    <block wx:for='{{info.snapshotInfo}}' wx:key="index">
+                        <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
                     </block>
+                    <view class="total-price">合计：￥15</view>
                 </view>
-                <view wx:if="{{info.freight_price}}" class="info-group">
-                    <view class="other">
-                        <text>配送费</text>
-                        <text>￥{{info.freight_price}}</text>
-                    </view>
-                </view>
-            </view>
-            <view class="crad-footer">
-                总计
-                <text>￥{{info.price*1+info.freight_price*1}}</text>
-            </view>
+            </van-panel>
         </view>
         <view class="card">
-            <view class="card-head">配送信息</view>
-            <view class="card-body">
-                <!-- <view class="give-info">
-                <view class="title">配送服务</view>
-                <view class="content">美团配送</view>
-            </view>
-            <view class="give-info">
-                <view class="title">期望时间</view>
-                <view class="content">立即配送</view>
-            </view> -->
-                <view class="give-info">
-                    <view class="title">配送地址</view>
-                    <view class="content">
-                        <view>{{addressUser}}</view>
-                    </view>
+            <van-panel title="配送信息">
+                <view>
+                    <van-cell title="客户名称" custom-class="family" value="{{info.addressInfo.contacts}}" />
+                    <van-cell title="联系方式" custom-class="family" value="{{info.addressInfo.phone}}" />
+                    <van-cell title="配送地址" custom-class="family" value="{{info.addressInfo.address}}" />
+                    <van-cell title="详细地址" custom-class="family" value="{{info.addressInfo.address_num}}" border="{{ false }}" />
                 </view>
-                <view class="content">
-                    <view>{{info.addressInfo.address_num}}</view>
-                    <view>{{info.addressInfo.address}}</view>
-                </view>
-            </view>
+            </van-panel>
         </view>
         <view class="card">
-            <view class="card-head">订单信息</view>
-            <view class="card-body">
-                <view class="give-info">
-                    <view class="title">订单号</view>
-                    <view class="content">{{info.order_id}}</view>
+            <van-panel title="订单信息">
+                <view>
+                    <van-cell title="订单号" custom-class="family" value="{{info.order_id}}" />
+                    <van-cell title="下单时间" custom-class="family" value="{{info.add_time}}" />
+                    <van-cell title="支付方式" custom-class="family" value="{{payMethod}}" />
+                    <van-cell title="订单备注" custom-class="family" value="{{info.remarks}}" border="{{ false }}" />
                 </view>
-                <view class="give-info">
-                    <view class="title">下单时间</view>
-                    <view class="content">{{info.add_time}}</view>
-                </view>
-                <view class="give-info" wx:if="{{info.state > 1}}">
-                    <view class="title">支付时间</view>
-                    <view class="content">{{info.payInfo.add_time}}</view>
-                </view>
-                <view class="give-info">
-                    <view class="title">支付方式</view>
-                    <view class="content">在线支付</view>
-                </view>
-                <view class="give-info">
-                    <view class="title">订单备注</view>
-                    <view class="content">{{info.remarks}}</view>
-                </view>
-            </view>
+            </van-panel>
         </view>
-        <view class="bottom-btn" wx:if="{{info.state ==0}}">
-            <van-button type="danger" size="large" bind:click="payment">立即支付</van-button>
+        <view class="bottom-btn" wx:if="{{info.type == 'pay_order'}}">
+            <van-button block wx:if="{{info.state == 21}}" bind:tap="http_Close" type="danger">
+                确认退款
+            </van-button>
+            <van-button block wx:if="{{info.state !=21&&info.state !=5}}" bind:tap="http_Close" type="danger">
+                取消订单
+            </van-button>
         </view>
     </view>
 </view>
