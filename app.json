@@ -87,32 +87,32 @@
       {
         "pagePath": "pages/home/index",
         "text": "首页",
-        "iconPath": "/assets/images/icon/home-o.png",
-        "selectedIconPath": "/assets/images/icon/home-n.png"
+        "iconPath": "/assets/images/icon/a.png",
+        "selectedIconPath": "/assets/images/icon/aa.png"
       },
       {
         "pagePath": "pages/order/unOrder/index",
         "text": "待处理订单",
-        "iconPath": "/assets/images/icon/unorder-o.png",
-        "selectedIconPath": "/assets/images/icon/unorder-n.png"
+        "iconPath": "/assets/images/icon/b.png",
+        "selectedIconPath": "/assets/images/icon/bb.png"
       },
       {
         "pagePath": "pages/order/order/index",
         "text": "订单",
-        "iconPath": "/assets/images/icon/order-o.png",
-        "selectedIconPath": "/assets/images/icon/order-n.png"
+        "iconPath": "/assets/images/icon/c.png",
+        "selectedIconPath": "/assets/images/icon/cc.png"
       },
       {
         "pagePath": "pages/store/index",
         "text": "店铺",
-        "iconPath": "/assets/images/icon/store-o.png",
-        "selectedIconPath": "/assets/images/icon/store-n.png"
+        "iconPath": "/assets/images/icon/d.png",
+        "selectedIconPath": "/assets/images/icon/dd.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "/assets/images/icon/my-o.png",
-        "selectedIconPath": "/assets/images/icon/my-n.png"
+        "iconPath": "/assets/images/icon/e.png",
+        "selectedIconPath": "/assets/images/icon/ee.png"
       }
     ]
   }
