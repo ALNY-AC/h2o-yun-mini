@@ -89,16 +89,16 @@ class Page {
       this.$toast('请输入商品标题');
       return false;
     }
-    if ( this.data.form.price == 0) {
+    if (this.data.form.price == 0) {
       this.$toast('价格不得为0');
       return false;
     }
-    
-    if (this.data.form.stock == 0 ) {
+
+    if (this.data.form.stock == 0) {
       this.$toast('库存不得为0');
       return false;
     }
-    if (this.data.form.class_id == "") {
+    if (this.data.form.class_id == "" || typeof this.data.form.class_id == 'undefined') {
       this.$toast('请选择商品分类');
       return false;
     }

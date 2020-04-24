@@ -5,21 +5,31 @@ class Page {
    * 声明data
    */
   data = {
-    date: '2016-09-01',
+    date: new Date().Format('yyyy-MM-dd'),
+    list: [],
   }
-
+  id = '';
   /**
    * 声明周期函数
    * 在onLoad后立即调用
    */
   async onStart() {
-    
+    this.id = wx.getStorageSync('store_id');
+    this.update();
+  }
+  async update() {
+    const res = await this.$http.post('/budget/list', {
+      store_id: this.id,
+      times: this.data.date
+    });
+
+    this.setData({ list: res.data.list })
   }
   bindDateChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
-    })
+    });
+    this.update();
   }
 
 

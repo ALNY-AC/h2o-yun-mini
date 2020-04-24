@@ -2,19 +2,19 @@
     <view class="top-panel">
         <view class="data">
             <view class="title">店铺余额</view>
-            <view class="info">9999.99</view>
+            <view class="info">¥{{info.money}}</view>
         </view>
         <view class="data">
-            <view class="title">待审核金额</view>
-            <view class="info">8999999</view>
+            <view class="title">冻结金额</view>
+            <view class="info">¥{{info.freeze_money}}</view>
         </view>
     </view>
     <van-cell-group>
-        <van-cell title='收支明细' value='详细信息' link-type="navigateTo" url="/pages/financial/shouzhi/index"  is-link></van-cell>
-        <van-cell title='提现申请'  link-type="navigateTo" url="/pages/financial/tixian/index"  is-link></van-cell>
+        <van-cell title='收支明细' value='详细信息' link-type="navigateTo" url="/pages/financial/shouzhi/index" is-link></van-cell>
+        <van-cell title='提现申请' link-type="navigateTo" url="/pages/financial/tixian/index" is-link></van-cell>
     </van-cell-group>
     <view class="bottom">
         <text class="kefu">联系客服</text>
-       <van-icon name="service-o" size='16' />
+        <van-icon name="service-o" size='16' />
     </view>
 </view>

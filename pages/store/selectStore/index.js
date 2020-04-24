@@ -17,9 +17,10 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+  }
+  async onShow() {
     this.update();
   }
-
   async update() {
     const res = await this.$http.post('/store/list');
     this.setData({ list: res.data.list });

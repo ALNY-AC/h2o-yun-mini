@@ -1,9 +1,11 @@
-page{
+page {
     background-color: #f6f6f6;
 }
-.box{
+
+.box {
     background-color: white;
-    .top{
+
+    .top {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -11,40 +13,53 @@ page{
         padding: 26px 0;
         margin: 0 15px;
         border-bottom: 1px solid #dddddd;
-        .title{
-            font-size: 11px;
+
+        .title {
+            font-size: 14px;
             color: #333333;
         }
-        .info{
-         .fuhao{
-            font-size: 14px;
-            color: #323233;
-         }   
-         .money{
-            font-size: 30px;
-            color: #333333;
-         }
+
+        .info {
+            align-items: center;
+            display: flex;
+
+            .fuhao {
+                font-size: 30px;
+                color: #323233;
+                line-height: normal;
+            }
+
+            .money {
+                font-size: 50px;
+                color: #333333;
+                font-weight: bold;
+                line-height: normal;
+            }
         }
     }
-    .bottom{
-        .cell{
+
+    .bottom {
+        .cell {
             display: flex;
             flex-direction: row;
-            padding-top:12px;
+            padding-top: 12px;
             margin: 0 15px;
             font-size: 14px;
-            .left{
+
+            .left {
                 flex: 1;
                 color: #999999;
-              
+
             }
-            .right{
+
+            .right {
                 color: #333333;
                 text-align: right;
             }
         }
-        .cell:nth-child(4){
-            padding-bottom:10px;
+
+        .cell:nth-child(4) {
+            padding-bottom: 10px;
         }
     }
 }
