@@ -8,5 +8,5 @@
     </view>
 </view>
 <view style="padding:10px;margin-top:-50px">
-    <nav-tool></nav-tool>
+    <nav-card></nav-card>
 </view>

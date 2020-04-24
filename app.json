@@ -75,7 +75,7 @@
     "order-card": "/components/orderCard/orderCard",
     "cell-card": "/components/cellCard/cellCard",
     "water-card": "/components/WaterCard/WaterCard",
-    "nav-tool": "/components/NavTool/NavTool"
+    "nav-card": "/components/NavCard/NavCard"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

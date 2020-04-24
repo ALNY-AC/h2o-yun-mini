@@ -22,7 +22,7 @@
   </view>
 </view>
 <view class="tool-box">
-  <nav-tool>
+  <nav-card>
     <view class="h2">推荐工具</view>
-  </nav-tool>
+  </nav-card>
 </view>
