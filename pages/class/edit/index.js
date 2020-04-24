@@ -38,6 +38,10 @@ class Page {
     })
   }
   async save() {
+    if (this.data.form.name.replace(/(^\s*)|(\s*$)/g, "") == '') {
+      this.$toast('请输入分类名称');
+      return false;
+    }
     const res = await this.$http.post('/class/save', this.data.form);
     if (res.code >= 0) {
       this.$toast('保存成功');

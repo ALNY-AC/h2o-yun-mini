@@ -17,7 +17,7 @@ class Page {
       sort: 0,
       class_id: '',
       goods_head: '',
-      stock:0
+      stock: 0
     },
     show: false,
     classList: []
@@ -81,7 +81,27 @@ class Page {
     })
   }
   async save() {
-   
+    if (this.data.form.goods_head == "") {
+      this.$toast('请添加商品图片');
+      return false;
+    }
+    if (this.data.form.title.replace(/(^\s*)|(\s*$)/g, "") == '') {
+      this.$toast('请输入商品标题');
+      return false;
+    }
+    if ( this.data.form.price == 0) {
+      this.$toast('价格不得为0');
+      return false;
+    }
+    
+    if (this.data.form.stock == 0 ) {
+      this.$toast('库存不得为0');
+      return false;
+    }
+    if (this.data.form.class_id == "") {
+      this.$toast('请选择商品分类');
+      return false;
+    }
     const res = await this.$http.post('/goods/save', this.data.form);
     if (res.code >= 0) {
       this.$toast('保存成功');
@@ -115,7 +135,9 @@ class Page {
   async upload() {
     let upload = new Upload(new File());
     const res = await upload.push();
-    this.setData({ ['form.goods_head']: res });
+    this.setData({
+      ['form.goods_head']: res
+    });
   }
 
 

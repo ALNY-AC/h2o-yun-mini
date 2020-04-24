@@ -1,16 +1,16 @@
-<view class="order-card" >
+<view class="order-card">
     <view class="order-card-head">
         <view class="order-title" wx:if="{{info.state == 0}}">未支付</view>
         <view class="order-title" wx:if="{{info.state == 1}}">待配送</view>
         <view class="order-title" wx:if="{{info.state == 2}}">配送中</view>
-         <view class="order-title" wx:if="{{info.state == 4}}">已完成</view>
-         <view class="order-title" wx:if="{{info.state == 5}}">订单取消</view>
-         <view class="order-title" wx:if="{{info.state == 9}}">异常</view>
-         <view class="order-title" wx:if="{{info.state == 21}}">客户取消订单</view>
+        <view class="order-title" wx:if="{{info.state == 4}}">已完成</view>
+        <view class="order-title" wx:if="{{info.state == 5}}">订单取消</view>
+        <view class="order-title" wx:if="{{info.state == 9}}">异常</view>
+        <view class="order-title" wx:if="{{info.state == 21}}">客户取消订单</view>
         <!-- <view class="order-state">111</view> -->
     </view>
     <view class="order-card-body">
-        <van-card num="{{info.num}}" custom-class='good-card' price="{{info.price}}" desc="{{info.desc}}" title="{{info.snapshotInfo[0].title}}"  thumb="{{ $app.url.imageUrl+info.snapshotInfo[0].data.goods_head }}" />
+        <van-card num="{{info.num}}" wx:for='{{info.snapshotInfo}}' custom-class='good-card' price="{{info.price}}" desc="{{info.desc}}" title="{{item.title}}" thumb="{{ $app.url.imageUrl+item.data.goods_head }}" />
         <van-cell title="配送费" value="商家免运费" title-class='order-title' size="large" />
         <van-cell wx:if="{{info.price}}" title="实付金额" title-class='order-title' value="￥{{info.price}}" value-class='order-price' size="large" />
         <van-cell wx:if="{{info.add_time}}" title="下单时间" title-class='order-title' value-class='order-time' value="{{info.add_time}}" size="large" />

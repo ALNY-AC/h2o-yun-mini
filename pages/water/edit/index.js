@@ -11,10 +11,10 @@ class Page {
   data = {
     form: {
       name: "",
-      price: '',
-      store_id: '',
-      stock: '',
-      min: '',
+      price:0,
+      store_id:"",
+      stock:-1,
+      min:-1,
       goods_id: []
     },
     count: 0
@@ -62,6 +62,22 @@ class Page {
     }
   }
   async save() {
+    if(this.data.form.name.replace(/(^\s*)|(\s*$)/g,"")==''){
+      this.$toast('请输入水票标题');
+      return false;
+    }
+    if(this.data.form.stock==0){
+      this.$toast('库存不得为0');
+      return false;
+    }
+    if(this.data.form.price==0){
+      this.$toast('价格不得为0');
+      return false;
+    }
+    if(this.data.form.min==0){
+      this.$toast('起购数量不得为0');
+      return false;
+    }
     const res = await this.$http.post('/water_coupon/save', this.data.form);
     wx.setStorageSync('goodsSelectList', []);
     if (res.code >= 0) {
@@ -71,6 +87,7 @@ class Page {
       this.$toast(res.msg);
     }
   }
+
 }
 
 origin(Page)

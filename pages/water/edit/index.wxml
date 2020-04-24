@@ -1,9 +1,9 @@
 <view class="box">
     <van-cell-group>
         <van-field bind:input='o-model' data-model="form.name" value='{{form.name}}' clearable label="水票标题" input-align="right" placeholder="请输入标题" />
-        <van-field bind:input='o-model' data-model="form.stock" value='{{form.stock}}' clearable label="库存" input-align="right" placeholder="请输入库存" />
-        <van-field bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="单张价格" input-align="right" placeholder="请输入价格" />
-        <van-field bind:input='o-model' data-model="form.min" value='{{form.min}}' clearable label="起购数量" input-align="right" placeholder="请输入起购数量" />
+        <van-field type='number' bind:input='o-model' data-model="form.stock" value='{{form.stock}}' clearable label="库存" input-align="right" placeholder="请输入库存" />
+        <van-field type='number' bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="单张价格" input-align="right" placeholder="请输入价格" />
+        <van-field type='number' bind:input='o-model' data-model="form.min" value='{{form.min}}' clearable label="起购数量" input-align="right" placeholder="请输入起购数量" />
     </van-cell-group>
     <view class="title">库存、起购数量若不限制请填写-1</view>
     <van-cell title="可用商品" is-link value="{{goodsName}}" bind:click="o-router" data-url="/pages/goods/select/index" />

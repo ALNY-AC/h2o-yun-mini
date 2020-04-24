@@ -24,12 +24,13 @@ class Page {
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
+    this.updateInit();
   }
   onShow() {
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
-    this.updateInit();
+ 
   }
   //调用接口
   async update() {

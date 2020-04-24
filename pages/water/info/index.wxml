@@ -44,5 +44,5 @@
     </view>
 </van-panel>
 <view class="f-b">
-    <van-button size="large" block color="#32A1EE">删除</van-button>
+    <van-button size="large" bind:tap="del" block color="#32A1EE">删除</van-button>
 </view>
