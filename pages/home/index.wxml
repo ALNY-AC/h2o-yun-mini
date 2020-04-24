@@ -1,13 +1,13 @@
-<view class="h2">今日业绩</view>
 <view class="data-panel">
+  <view class="panel-title">今日业绩</view>
   <div class="value-cell-group">
     <view class="value-cell">
       <view class="title">已完成订单</view>
-      <view class="value">1000￥</view>
+      <view class="value">1000</view>
     </view>
     <view class="value-cell">
       <view class="title">待处理订单</view>
-      <view class="value">1000￥</view>
+      <view class="value">1000</view>
     </view>
   </div>
   <view class="value-cell-group">
@@ -16,8 +16,8 @@
       <view class="value">1213</view>
     </view>
     <view class="value-cell">
-      <view class="title">支付金额（元）</view>
-      <view class="value">2389</view>
+      <view class="title">成交额</view>
+      <view class="value">¥2389.99</view>
     </view>
   </view>
 </view>

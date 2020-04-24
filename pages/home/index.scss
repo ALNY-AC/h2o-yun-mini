@@ -43,6 +43,11 @@ page {
   margin-bottom: 15px;
   border-radius: 5px;
 
+  .panel-title {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+
   .value-cell-group {
     display: flex;
     flex-wrap: nowrap;
@@ -50,13 +55,13 @@ page {
     align-items: center;
 
     &:nth-child(2) {
-      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.4);
     }
 
     .value-cell {
       text-align: center;
       flex: 1;
-      padding: 15px;
+      padding: 10px;
 
       &:nth-child(2) {
         // border-left: 1px solid rgba($color: #fff, $alpha: 0.5);
