@@ -16,6 +16,14 @@ Component({
       type: Boolean,
       value: true
     },
+    routerInfo: {
+      type: Boolean,
+      value: true
+    },
+    routerQr: {
+      type: Boolean,
+      value: true
+    }
   },
 
   /**
@@ -35,13 +43,19 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    go(e) {
-      if (typeof e.currentTarget.dataset.url != 'undefined') {
+    goInfo(e) {
+      if (this.data.routerInfo) {
         wx.navigateTo({
-          url: e.currentTarget.dataset.url
+          url: `/pages/water/info/index?id=${this.data.info.id}`
         });
       }
-
+    },
+    goQr() {
+      if (this.data.routerQr) {
+        wx.navigateTo({
+          url: `/pages/water/qr/index?id=${this.data.info.id}`
+        });
+      }
     }
   }
 })

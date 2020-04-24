@@ -1,6 +1,6 @@
 <view class="box" wx:if="{{info}}">
     <view style="margin-bottom:10px">
-        <water-card rb="#fff" show-qr="{{false}}" info="{{info}}"></water-card>
+        <water-card rb="#fff" router-info="{{false}}" show-qr="{{false}}" info="{{info}}"></water-card>
     </view>
     <view class="erweima">
         <view class="ma">

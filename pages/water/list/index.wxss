@@ -1,1 +1,1 @@
-.box{background-color:#f6f6f6}.box .list{padding:15px;padding-bottom:100px}
+page{background-color:#f6f6f6}.list{padding:15px;padding-bottom:100px}.empty-box{height:100vh;width:100vw;display:flex;align-items:center;justify-content:center;flex-direction:column}.empty-box .btn-box{width:80%}

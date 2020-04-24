@@ -1,31 +1,27 @@
-<!--pages/home/index.wxml-->
-<view class="header">
-  <text>今日业绩</text>
-  <view class="panel line">
-    <view class="panel-block">
-      <text class="text-low">已完成订单</text>
-      <text class="text-hight">0</text>
+<view class="h2">今日业绩</view>
+<view class="data-panel">
+  <div class="value-cell-group">
+    <view class="value-cell">
+      <view class="title">已完成订单</view>
+      <view class="value">1000￥</view>
     </view>
-    <view class="panel-block">
-      <text class="text-low">待处理订单</text>
-      <text class="text-hight">0</text>
+    <view class="value-cell">
+      <view class="title">待处理订单</view>
+      <view class="value">1000￥</view>
     </view>
-  </view>
-  <view class="panel">
-    <view class="panel-block">
-      <text class="text-low">访客数</text>
-      <text class="text-hight">0</text>
+  </div>
+  <view class="value-cell-group">
+    <view class="value-cell">
+      <view class="title">访客数</view>
+      <view class="value">1213</view>
     </view>
-    <view class="panel-block">
-      <text class="text-low">支付金额（元）</text>
-      <text class="text-hight">0</text>
+    <view class="value-cell">
+      <view class="title">支付金额（元）</view>
+      <view class="value">2389</view>
     </view>
   </view>
 </view>
-<text style="margin-left:20rpx;">推荐工具</text>
-<!-- <van-grid square border="{{false}}">
-  <van-grid-item icon="photo-o" text="{{item.word}}" wx:for="{{ tool }}" url/>
-</van-grid> -->
+<view class="h2">推荐工具</view>
 <view class="tool">
   <view class="tool-item" wx:for="{{ tool }}" wx:key="index" data-url="{{item.url}}" data-ids="{{item.id}}" bind:tap="go">
     <view class="icon">

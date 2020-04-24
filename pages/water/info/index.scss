@@ -8,6 +8,7 @@ page {
 
     .data-panel {
         background: linear-gradient(180deg, rgba(97, 207, 248, 1) 0%, rgba(50, 161, 238, 1) 100%);
+        // background-color: #32A1EE;
         color: white;
         margin-bottom: 15px;
         border-radius: 5px;
@@ -106,8 +107,26 @@ page {
         }
     }
 
-
-
 }
 
 
+
+
+.f-b {
+    background-color: #fff;
+}
+
+.empty-box {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+
+    .btn-box {
+        margin: 15px 0;
+        width: 80%;
+    }
+}

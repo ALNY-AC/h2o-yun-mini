@@ -160,20 +160,13 @@
 					"id": 14,
 					"name": "水票编辑有参数",
 					"pathName": "pages/water/edit/index",
-					"query": "id=16",
+					"query": "id=43",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/water/info/index",
 					"pathName": "pages/water/info/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/water/list/index",
-					"pathName": "pages/water/list/index",
 					"query": "",
 					"scene": null
 				},
@@ -186,9 +179,9 @@
 				},
 				{
 					"id": 18,
-					"name": "水票详情带参数16",
+					"name": "水票详情带参数",
 					"pathName": "pages/water/info/index",
-					"query": "id=16",
+					"query": "id=43",
 					"scene": null
 				},
 				{

@@ -9,6 +9,10 @@ page {
     text-align: right;
 }
 
+.text-left {
+    text-align: left;
+}
+
 .f-b {
     position: fixed;
     bottom: 0;

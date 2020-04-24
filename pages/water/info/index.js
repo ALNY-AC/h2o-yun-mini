@@ -7,12 +7,14 @@ class Page {
   data = {
     info: null,
     goodsList: [],
-    list:[],
-    query:{
-      page:1,
-      page_size:10,
-      water_coupon_id:''
-    }
+    list: [],
+    query: {
+      page: 1,
+      page_size: 10,
+      water_coupon_id: ''
+    },
+    id: '',
+    userTotal: -1,
   }
 
   /**
@@ -21,7 +23,8 @@ class Page {
    */
   async onStart() {
     this.setData({
-      'query.water_coupon_id':this.$route.query.id
+      'query.water_coupon_id': this.$route.query.id,
+      'id': this.$route.query.id
     })
     this.update();
   }
@@ -48,32 +51,21 @@ class Page {
     this.setData({ goodsList: res.data.list });
   }
   async httpUsers() {
+    if (this.data.userTotal == 0) {
+      return;
+    }
     // 销售记录
     const res = await this.$http.post('/water_coupon/user_water_coupon', this.data.query);
     if (res.code >= 0) {
       this.setData({
         list: [...this.data.list, ...res.data.list],
+        userTotal: res.data.total,
+        ['query.page']: ++this.data.query.page,
       })
     }
-    wx.stopPullDownRefresh();
-  }
-  updateInit() {
-    this.setData({
-      list: [],
-      ['query.page']: 1
-    })
-    this.update();
-  }
-  //下拉刷新
-  onPullDownRefresh() {
-    this.updateInit();
   }
   //上拉加载
   onReachBottom() {
-    this.setData({
-      ['query.page']: ++this.data.query.page,
-      ['query.page_size']: 10
-    })
     this.httpUsers();
   }
   del(e) {

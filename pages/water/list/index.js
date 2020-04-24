@@ -8,10 +8,10 @@ class Page {
     list: [],
     query: {
       store_id: '',
-      page:1,
-      page_size:10
+      page: 1,
+      page_size: 10
     },
-
+    loading: false,
   }
 
   /**
@@ -28,16 +28,25 @@ class Page {
     this.setData({
       'query.store_id': wx.getStorageSync('store_id'),
     });
+    if (this.data.list.length <= 0) {
+      this.updateInit();
+    }
 
   }
   //调用接口
   async update() {
+    if (this.data.loading) {
+      return;
+    }
+    await this.setData({ loading: true });
     const res = await this.$http.post('/water_coupon/list', this.data.query);
     if (res.code >= 0) {
       this.setData({
+        ['query.page']: ++this.data.query.page,
         list: res.data.list
       })
     }
+    await this.setData({ loading: false });
     wx.stopPullDownRefresh();
   }
   updateInit() {
@@ -47,16 +56,12 @@ class Page {
     })
     this.update()
   }
-   //下拉刷新
-   onPullDownRefresh() {
+  //下拉刷新
+  onPullDownRefresh() {
     this.updateInit();
   }
   //上拉加载
   onReachBottom() {
-    this.setData({
-      ['query.page']: ++this.data.query.page,
-      ['query.page_size']: 10
-    })
     this.update();
   }
 }

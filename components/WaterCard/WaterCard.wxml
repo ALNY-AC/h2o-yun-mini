@@ -1,8 +1,8 @@
 <view class="water-card" wx:if="{{info}}">
-    <view class="item" bind:tap="go" data-url="/pages/water/info/index?id={{info.id}}">
+    <view class="item" bind:tap="goInfo">
         <view class="title-box">
             <view class="title-name">{{info.name}}</view>
-            <van-icon wx:if="{{showQr}}" class="qr-share" name="qr" size="30px" catch:tap="go" data-url="/pages/water/qr/index?id={{info.id}}" />
+            <van-icon wx:if="{{showQr}}" class="qr-share" name="qr" size="30px" catch:tap="goQr" />
         </view>
         <view class="info-box">
             <view class="info-item">
@@ -14,7 +14,7 @@
                 <view class="info-value">{{info.min}}张</view>
             </view>
             <view class="info-item">
-                <view class="info-title">库存</view>
+                <view class="info-title">已售出</view>
                 <view class="info-value">{{info.stock}}</view>
             </view>
         </view>

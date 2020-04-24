@@ -11,18 +11,21 @@ class Page {
   data = {
     form: {
       name: "",
-      price:0,
-      store_id:"",
-      stock:-1,
-      min:-1,
+      price: '',
+      store_id: "",
+      min: '',
       goods_id: []
     },
-    count: 0
+    count: 0,
+    id: ''
   }
   computed = {
     goodsName(data) {
       return `已选择${data.form.goods_id.length}个商品`;
     },
+    isEdit(data) {
+      return !!data.id
+    }
   }
 
   onShow() {
@@ -47,9 +50,12 @@ class Page {
   async onStart() {
 
     this.setData({
-      "form.store_id": wx.getStorageSync('store_id')
+      "form.store_id": wx.getStorageSync('store_id'),
     });
     if (this.$route.query.id) {
+      this.setData({
+        "id": this.$route.query.id
+      });
       const res = await this.$http.post('/water_coupon/info', {
         id: this.$route.query.id
       });
@@ -62,26 +68,24 @@ class Page {
     }
   }
   async save() {
-    if(this.data.form.name.replace(/(^\s*)|(\s*$)/g,"")==''){
+
+    if (this.data.form.name.replace(/(^\s*)|(\s*$)/g, "") == '') {
       this.$toast('请输入水票标题');
       return false;
     }
-    if(this.data.form.stock==0){
-      this.$toast('库存不得为0');
+    if (this.data.form.price.length <= 0) {
+      this.$toast('请填写价格！');
       return false;
     }
-    if(this.data.form.price==0){
-      this.$toast('价格不得为0');
+    if (this.data.form.min.length <= 0) {
+      this.$toast('请输入起购数量');
       return false;
     }
-    if(this.data.form.min==0){
-      this.$toast('起购数量不得为0');
-      return false;
-    }
+
     const res = await this.$http.post('/water_coupon/save', this.data.form);
-    wx.setStorageSync('goodsSelectList', []);
     if (res.code >= 0) {
       this.$toast('保存成功');
+      wx.setStorageSync('goodsSelectList', []);
       this.$router.go(-1);
     } else {
       this.$toast(res.msg);

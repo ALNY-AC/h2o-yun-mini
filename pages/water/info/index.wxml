@@ -1,16 +1,10 @@
 <view class="box">
-    <water-card info="{{info}}"></water-card>
+    <water-card router-info="{{false}}" info="{{info}}"></water-card>
     <view class="data-panel">
-        <div class="value-cell-group">
+        <view class="value-cell-group">
             <view class="value-cell">
                 <view class="title">已收入</view>
                 <view class="value">1000￥</view>
-            </view>
-        </div>
-        <view class="value-cell-group">
-            <view class="value-cell">
-                <view class="title">库存剩余</view>
-                <view class="value">{{info.stock}}</view>
             </view>
             <view class="value-cell">
                 <view class="title">历史售出</view>
@@ -31,7 +25,7 @@
     </van-panel>
 </view>
 <van-panel title="销售记录">
-    <view class="user-card" wx:for="{{list}}" wx:key="index">
+    <view class="user-card" wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="index">
         <van-image round width="40" height="40" src="{{item.head}}" />
         <view class="info-box">
             <view class="name">{{item.name}}</view>
@@ -42,7 +36,26 @@
             <view class="count">x{{item.data.buy_num}}</view>
         </view>
     </view>
+    <view wx:if="{{list.length<=0}}">
+        <view class="empty-box">
+            暂无记录，分享二维码增加销售量！
+            <view class="btn-box">
+                <van-button size='large' color='#32A1EE' block data-url="/pages/water/qr/index?id={{id}}" bind:tap='o-router'>
+                    立即分享
+                </van-button>
+            </view>
+        </view>
+    </view>
 </van-panel>
-<view class="f-b">
-    <van-button size="large" bind:tap="del" block color="#32A1EE">删除</van-button>
+<view class="f-b" style="padding:10px">
+    <van-row gutter="10">
+        <van-col span="12">
+            <van-button size="large" bind:tap="del" block>删除</van-button>
+        </van-col>
+        <van-col span="12">
+            <van-button size='large' color='#32A1EE' block data-url='/pages/water/edit/index?id={{id}}' bind:tap='o-router'>
+                编辑
+            </van-button>
+        </van-col>
+    </van-row>
 </view>

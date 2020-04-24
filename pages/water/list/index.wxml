@@ -1,10 +1,18 @@
-<view class="box">
+<view wx:if="{{list.length>0}}">
     <view class="list">
         <water-card wx:for='{{list}}' wx:key="index" info="{{item}}"></water-card>
     </view>
     <view class="f-b">
         <van-button size='large' color='#32A1EE' block data-url='/pages/water/edit/index' bind:tap='o-router'>
             添加水票
+        </van-button>
+    </view>
+</view>
+<view wx:else class="empty-box">
+    <van-icon size="150" color="#ddd" name="coupon-o" />
+    <view class="btn-box">
+        <van-button size='large' color='#32A1EE' block data-url='/pages/water/edit/index' bind:tap='o-router'>
+            快速添加水票
         </van-button>
     </view>
 </view>
