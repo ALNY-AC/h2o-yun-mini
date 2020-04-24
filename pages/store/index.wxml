@@ -7,6 +7,6 @@
         <van-icon name="arrow" />
     </view>
 </view>
-<view style="padding:10px">
+<view style="padding:10px;margin-top:-50px">
     <nav-tool></nav-tool>
 </view>

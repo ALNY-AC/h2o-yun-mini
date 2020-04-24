@@ -1,1 +1,1 @@
-page{background-color:#f6f6f6}.store{background:linear-gradient(180deg, #32A1EE 0%, rgba(50,161,238,0.7) 100%)}.store-card{display:flex;align-items:center;padding:15px;color:#fff}.store-card .info{display:flex;flex:1}.store-card .info .title{margin-left:10px}
+page{background-color:#f6f6f6}.store{background:linear-gradient(180deg, #32A1EE 0%, rgba(50,161,238,0.7) 100%)}.store-card{display:flex;align-items:center;padding:15px;padding-bottom:50px;color:#fff}.store-card .info{display:flex;flex:1}.store-card .info .title{margin-left:10px}
