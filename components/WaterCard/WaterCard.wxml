@@ -15,7 +15,7 @@
             </view>
             <view class="info-item">
                 <view class="info-title">已售出</view>
-                <view class="info-value">{{info.stock}}</view>
+                <view class="info-value">{{info.coupon_num}}</view>
             </view>
         </view>
         <view class="bottom-border">

@@ -44,6 +44,12 @@ class Page {
       success: function (res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
+          success() {
+            wx.showModal({
+              content: "保存成功",
+              showCancel: false,
+            })
+          }
         })
       }
     })

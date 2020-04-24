@@ -30,9 +30,9 @@ module.exports = function origin(className) {
     methods.onLoad = function () {
         let pages = getCurrentPages();
         pages = pages[pages.length - 1];
-        
+
         if (pages.route.indexOf('store') < 0) {
-            
+
             if (
                 pages.route.indexOf('login') < 0
                 && pages.route.indexOf('selectStore') < 0
@@ -44,7 +44,7 @@ module.exports = function origin(className) {
                     return;
                 }
                 if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
-                    
+
                     wx.reLaunch({
                         url: '/pages/store/selectStore/index'
                     });
@@ -93,7 +93,7 @@ module.exports = function origin(className) {
         if (url.indexOf('./') >= 0) return url;
         let _url;
         if (url.indexOf('http') == -1) {
-            _url = Url.imgUrl + url;
+            _url = Url.imageUrl + url;
         } else {
             _url = url;
         }

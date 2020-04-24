@@ -1,5 +1,5 @@
 <view class="order-card">
-    <view class="order-card-head">
+    <!-- <view class="order-card-head">
         <view class="order-title" wx:if="{{info.state == 0}}">未支付</view>
         <view class="order-title" wx:if="{{info.state == 1}}">待配送</view>
         <view class="order-title" wx:if="{{info.state == 2}}">配送中</view>
@@ -7,7 +7,7 @@
         <view class="order-title" wx:if="{{info.state == 5}}">订单取消</view>
         <view class="order-title" wx:if="{{info.state == 9}}">异常</view>
         <view class="order-title" wx:if="{{info.state == 21}}">客户取消订单</view>
-        <!-- <view class="order-state">111</view> -->
+        <view class="order-state">111</view>
     </view>
     <view class="order-card-body">
         <van-card num="{{info.num}}" wx:for='{{info.snapshotInfo}}' custom-class='good-card' price="{{info.price}}" desc="{{info.desc}}" title="{{item.title}}" thumb="{{ $app.url.imageUrl+item.data.goods_head }}" />
@@ -15,5 +15,19 @@
         <van-cell wx:if="{{info.price}}" title="实付金额" title-class='order-title' value="￥{{info.price}}" value-class='order-price' size="large" />
         <van-cell wx:if="{{info.add_time}}" title="下单时间" title-class='order-title' value-class='order-time' value="{{info.add_time}}" size="large" />
         <van-cell wx:if="{{info.remarks}}" title="订单备注" title-class='order-title' value="{{info.remarks}}" size="large" />
-    </view>
+    </view> -->
+    <van-panel title="等待配送" desc="{{info.add_time}}" use-footer-slot>
+        <view class="goods-list">
+            <block wx:for='{{info.snapshotInfo}}' wx:key="index">
+                <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
+            </block>
+            <van-cell-group>
+                <van-cell title="实付金额" value="{{info.price}}" border="{{ false }}" />
+            </van-cell-group>
+        </view>
+        <view slot="footer">
+            <van-button size="small">按钮</van-button>
+            <van-button size="small" type="danger">按钮</van-button>
+        </view>
+    </van-panel>
 </view>

@@ -60,8 +60,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/store/storeInfo/index",
-					"pathName": "pages/store/storeInfo/index",
+					"name": "pages/order/unOrder/index",
+					"pathName": "pages/order/unOrder/index",
 					"query": "",
 					"scene": null
 				},

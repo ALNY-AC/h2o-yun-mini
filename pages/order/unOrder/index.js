@@ -14,7 +14,7 @@ class Page {
       page_size: 10,
       page: 1,
       store_id: 0,
-      state:1
+      state: 1
     },
   }
   computed = {
@@ -36,6 +36,12 @@ class Page {
     try {
       const res = await this.$http.post('/order/list', this.data.query)
       if (res.code > 0) {
+        res.data.list.forEach(el => {
+          el.snapshotInfo.forEach(url => {
+            url.data.goods_head = this.$getUrl(url.data.goods_head)
+          })
+        })
+
         this.setData({
           list: [...this.data.list, ...res.data.list]
         })
@@ -58,8 +64,8 @@ class Page {
     })
     this.update();
   }
-   //初始化数据
-   updateInit() {
+  //初始化数据
+  updateInit() {
     this.setData({
       list: [],
       ['query.page']: 1
