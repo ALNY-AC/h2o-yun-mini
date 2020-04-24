@@ -228,13 +228,6 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/financial/shouzhiInfo/index",
-					"pathName": "pages/financial/shouzhiInfo/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "我的财务",
 					"pathName": "pages/financial/yue/index",
 					"query": "",
@@ -244,6 +237,13 @@
 					"id": -1,
 					"name": "pages/financial/shouzhiInfo/index",
 					"pathName": "pages/financial/shouzhiInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/shouzhi/index",
+					"pathName": "pages/financial/shouzhi/index",
 					"query": "",
 					"scene": null
 				}

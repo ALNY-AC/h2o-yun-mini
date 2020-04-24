@@ -2,11 +2,11 @@
     <view class="top-panel">
         <view class="data">
             <view class="title">店铺余额</view>
-            <view class="info">¥8999999.99</view>
+            <view class="info">¥{{info.money}}</view>
         </view>
         <view class="data">
-            <view class="title">待审核金额</view>
-            <view class="info">¥8999999.99</view>
+            <view class="title">冻结金额</view>
+            <view class="info">¥{{info.freeze_money}}</view>
         </view>
     </view>
     <van-cell-group>

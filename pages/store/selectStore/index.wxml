@@ -5,3 +5,8 @@
         <view class="title">{{item.name}}</view>
     </view>
 </view>
+<view style="padding:10px">
+    <van-button color="#32A1EE" block bind:tap="o-router" data-url="/pages/store/storeInfo/index">
+        新增门店
+    </van-button>
+</view>

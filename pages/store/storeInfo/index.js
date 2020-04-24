@@ -52,29 +52,40 @@ class Page {
         })
       }
     } else {
-      this.httpAddress()
       this.setData({ ['form.phone']: wx.getStorageSync('userInfo').phone });
+      wx.showModal({
+        title: '请设置您店铺的地址～',
+        showCancel: false,
+        complete: () => {
+          this.httpAddress();
+        }
+      })
     }
 
   }
   async save() {
-    const res = await this.$http.post('/store/save', this.data.form);
+    try {
+      const res = await this.$http.post('/store/save', this.data.form);
+      if (res.code >= 0) {
+        this.$toast('保存成功');
+        wx.setStorageSync('store', this.data.form);
+        wx.setStorageSync('store_id', res.data);
+        if (getCurrentPages().length > 1) {
+          this.$router.go(-1);
+        } else {
+          wx.reLaunch({
+            url: '/pages/home/index'
+          });
+        }
 
-    if (res.code >= 0) {
-      this.$toast('保存成功');
-      wx.setStorageSync('store', this.data.form);
-      wx.setStorageSync('store_id', res.data);
-      if (getCurrentPages().length > 1) {
-        this.$router.go(-1);
       } else {
-        wx.reLaunch({
-          url: '/pages/home/index'
-        });
+        this.$toast(res.msg);
       }
-
-    } else {
-      this.$toast(res.msg);
+    } catch (error) {
+      this.$toast('保存失败！请重试');
     }
+
+
   }
 
   async upload() {

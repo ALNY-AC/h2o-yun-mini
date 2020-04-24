@@ -1,6 +1,7 @@
 /* pages/home/index.wxss */
 page {
   padding: 10px;
+  background-color: #f6f6f6;
 }
 
 .h2 {
@@ -9,23 +10,32 @@ page {
   margin-bottom: 10px;
 }
 
-.tool {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 20rpx;
+.tool-box {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+
+  .tool {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+
+    .tool-item {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20rpx;
+      font-size: 28rpx;
+      color: #323233;
+    }
+  }
+
 }
 
-.tool-item {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20rpx;
-  font-size: 28rpx;
-  color: #323233;
-}
+
 
 .icon {
   display: flex;
@@ -42,10 +52,10 @@ page {
   color: white;
   margin-bottom: 15px;
   border-radius: 5px;
+  padding: 15px;
 
   .panel-title {
-    padding-left: 15px;
-    padding-top: 15px;
+    margin-bottom: 10px;
   }
 
   .value-cell-group {
@@ -59,9 +69,9 @@ page {
     }
 
     .value-cell {
-      text-align: center;
+      text-align: left;
       flex: 1;
-      padding: 10px;
+      padding: 10px 0;
 
       &:nth-child(2) {
         // border-left: 1px solid rgba($color: #fff, $alpha: 0.5);

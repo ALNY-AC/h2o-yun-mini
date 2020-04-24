@@ -21,12 +21,14 @@
     </view>
   </view>
 </view>
-<view class="h2">推荐工具</view>
-<view class="tool">
-  <view class="tool-item" wx:for="{{ tool }}" wx:key="index" data-url="{{item.url}}" data-ids="{{item.id}}" bind:tap="go">
-    <view class="icon">
-      <van-icon name="{{item.icon}}"></van-icon>
+<view class="tool-box">
+  <view class="h2">推荐工具</view>
+  <view class="tool">
+    <view class="tool-item" wx:for="{{ tool }}" wx:key="index" data-url="{{item.url}}" data-ids="{{item.id}}" bind:tap="go">
+      <view class="icon">
+        <van-icon name="{{item.icon}}"></van-icon>
+      </view>
+      <text>{{item.word}}</text>
     </view>
-    <text>{{item.word}}</text>
   </view>
 </view>

@@ -8,7 +8,27 @@
         </view>
     </view>
     <view>
-        <van-cell title="交易" title-class='title' label-class='label' value-class='value' value="+99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index" />
-        <van-cell title="提现" title-class='title' label-class='label' value-class='value' value="-99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index" />
+        <van-cell 
+        
+        wx:for="{{list}}" 
+        
+        title="交易" 
+        
+        title-class='title' 
+        
+        label-class='label' 
+        
+        value-class='value' 
+        
+        value="{{item.type==1?'+':'-'}}{{item.money}}" 
+        
+        size="large" 
+        
+        label="{{item.add_time}}" 
+        
+        link-type="navigateTo" 
+        
+        url="/pages/financial/shouzhiInfo/index"
+         />
     </view>
 </view>
