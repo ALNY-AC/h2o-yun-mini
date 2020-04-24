@@ -11,18 +11,17 @@
             <view class="left">业务名称</view>
             <view class="right">交易</view>
         </view>
-           <view class="cell">
+        <view class="cell">
             <view class="left">时间</view>
             <view class="right">2020-05-10 18:88:88</view>
         </view>
-           <view class="cell">
+        <view class="cell">
             <view class="left">收支类型</view>
             <view class="right">首付</view>
         </view>
-           <view class="cell">
+        <view class="cell">
             <view class="left">备注</view>
             <view class="right">水票购买</view>
         </view>
-        
     </view>
 </view>

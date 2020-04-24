@@ -5,7 +5,7 @@ class Page {
    * 声明data
    */
   data = {
-  
+
   }
 
   /**
@@ -13,7 +13,7 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    
+
   }
 
 

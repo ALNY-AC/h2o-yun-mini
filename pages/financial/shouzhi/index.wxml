@@ -3,12 +3,12 @@
         <view class="left">{{date}}</view>
         <view class="right">
             <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-                <van-icon name="calender-o" />
+                <van-icon size="24" color="#666" name="notes-o" />
             </picker>
         </view>
     </view>
     <view>
-     <van-cell title="交易" title-class='title' label-class='label' value-class='value' value="+99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index" />
-     <van-cell title="提现" title-class='title' label-class='label' value-class='value' value="-99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index"  />
+        <van-cell title="交易" title-class='title' label-class='label' value-class='value' value="+99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index" />
+        <van-cell title="提现" title-class='title' label-class='label' value-class='value' value="-99.88" size="large" label="06月06日 18:42" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index" />
     </view>
 </view>
