@@ -87,13 +87,6 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/store/index",
-					"pathName": "pages/store/index",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 5,
 					"name": "pages/store/storeInfo/index",
 					"pathName": "pages/store/storeInfo/index",

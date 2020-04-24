@@ -14,7 +14,6 @@
     "pages/goods/edit/index",
     "pages/goods/list/index",
     "pages/store/index",
-    "pages/store/store/index",
     "pages/store/storeInfo/index",
     "pages/index/index",
     "pages/login/login",
