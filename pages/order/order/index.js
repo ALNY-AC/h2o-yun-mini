@@ -97,7 +97,7 @@ class Page {
   //上拉加载
   onReachBottom() {
     this.setData({
-      ['query.page']: ++this.data.form.page,
+      ['query.page']: ++this.data.query.page,
       ['query.page_size']: 10
     })
     this.update();

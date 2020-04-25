@@ -55,7 +55,21 @@ class Banner {
     console.log(info)
     console.warn('Banner');
   }
-  async delivery() {
+  delivery() {
+    try {
+      wx.showModal({
+        content: '是否开始配送',
+        success: (res) => {
+          if (res.confirm) {
+            this.http_delivery()
+          }
+        }
+      })
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  async http_delivery() {
     try {
       const res = await http.post('/order/sending', {
         order_id: this.data.info.order_id
@@ -67,6 +81,41 @@ class Banner {
         })
         this.setData({
           ['info.state']: 2
+        })
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  Close() {
+    try {
+      wx.showModal({
+        title: '是否同意退款',
+        content: '退款将返还给用户',
+        success: (res) => {
+          if (res.confirm) {
+            this.http_Close()
+          }
+        }
+      })
+    } catch (error) {
+      console.warn(error);
+    }
+
+  }
+  async http_Close() {
+    try {
+      const res = await http.post('/order/close_order', {
+        order_id: this.data.info.order_id
+      });
+      if (this.data.info.state == 21) {
+        wx.showToast({
+          title: '退款成功',
+          icon: 'none',
+          duration: 1000
+        })
+        this.setData({
+          ['info.state']: 5
         })
       }
     } catch (error) {

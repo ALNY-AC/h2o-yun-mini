@@ -22,37 +22,26 @@ class Page {
     this.setData({
       'query.store_id': wx.getStorageSync('store_id')
     });
-    this.updateInit();
   }
   onShow() {
-    this.setData({
-      'query.store_id': wx.getStorageSync('store_id'),
-    });
-    if (this.data.list.length <= 0) {
-      this.updateInit();
-    }
-
+    this.updateInit();
   }
   //调用接口
   async update() {
-    if (this.data.loading) {
-      return;
-    }
-    await this.setData({ loading: true });
     const res = await this.$http.post('/water_coupon/list', this.data.query);
     if (res.code >= 0) {
       this.setData({
         ['query.page']: ++this.data.query.page,
-        list: res.data.list
+        list: [...this.data.list, ...res.data.list],
+        loading: res.data.list.length > 0 || this.data.list.length > 0 ? false : true
       })
     }
-    await this.setData({ loading: false });
     wx.stopPullDownRefresh();
   }
   updateInit() {
     this.setData({
       list: [],
-      ['query.page']: 1
+      ['query.page']: 1,
     })
     this.update()
   }

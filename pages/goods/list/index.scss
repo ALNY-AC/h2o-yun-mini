@@ -1,22 +1,24 @@
-.box{
-    min-height: 100vh;
+.box {
+    height: 100vh;
     background-color: #f6f6f6;
-    .list{
-        .item{
+    display: flex;
+    flex-direction: column;
+
+    .list {
+        flex: 1;
+        overflow: auto;
+
+        .item {
             margin-bottom: 10px;
-            .good-card{
+
+            .good-card {
                 background-color: #ffffff;
             }
-            .btn-height{
+
+            .btn-height {
                 height: 100%;
             }
         }
-      
-    }
-    .f-b{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+
     }
 }
