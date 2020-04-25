@@ -67,8 +67,8 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/store/index",
-					"pathName": "pages/store/index",
+					"name": "pages/share/store/store",
+					"pathName": "pages/share/store/store",
 					"query": "",
 					"scene": null
 				},

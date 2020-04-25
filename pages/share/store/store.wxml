@@ -1,0 +1,9 @@
+<view class="box">
+  <view class="erweima">
+    <view class="ma">
+      <canvas style="width: 270px; height: 270px;" canvas-id="myQrcode"></canvas>
+    </view>
+    <view class="text">发送二维码给好友，吸引更多客流</view>
+  </view>
+  <van-button color="#32A1EE" custom-class='btn' bind:tap='save' block>保存至相册</van-button>
+</view>
