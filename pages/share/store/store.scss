@@ -14,10 +14,12 @@ page {
     margin-bottom: 158px;
 
     .ma {
-      background-color: #fff;
       margin-bottom: 23px;
-      padding: 10px;
-      border-radius: 4px;
+
+      .img {
+        width: 280px;
+        height: 280px;
+      }
     }
 
     .text {

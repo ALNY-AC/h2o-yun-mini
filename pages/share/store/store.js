@@ -9,6 +9,7 @@ class Page {
    * 声明data
    */
   data = {
+    url: ''
   }
 
   /**
@@ -16,32 +17,47 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    drawQrcode({
-      width: 270,
-      height: 270,
-      canvasId: 'myQrcode',
-      text: `https://h5.h2o.cy-cube.com/store/info?store_id=${wx.getStorageSync('store_id')}`
-    })
+    this.update()
   }
 
   //调用接口
   async update() {
+    try {
+      const res = await this.$http.post('/store/qr_code', {
+        store_id: wx.getStorageSync('store_id')
+      })
+      if (res.code > 0) {
+        this.setData({
+          url: res.data.img
+        })
+      }
+    } catch (error) {
+
+    }
   }
   save() {
-    wx.canvasToTempFilePath({
-      canvasId: 'myQrcode',
-      success: function (res) {
+    wx.downloadFile({
+      url: this.data.url,
+      success(res) {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
-          success() {
+          success(res) {
             wx.showModal({
-              content: "保存成功",
-              showCancel: false,
+              content: '保存成功',
+              showCancel: false
+            })
+          },
+          fail(e) {
+            wx.showToast({
+              title: '取消保存',
+              icon: 'none'
             })
           }
         })
       }
     })
+
+
   }
 
 }

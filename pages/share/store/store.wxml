@@ -1,7 +1,7 @@
 <view class="box">
   <view class="erweima">
     <view class="ma">
-      <canvas style="width: 270px; height: 270px;" canvas-id="myQrcode"></canvas>
+      <image class="img" src="{{url}}"></image>
     </view>
     <view class="text">发送二维码给好友，吸引更多客流</view>
   </view>
