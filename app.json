@@ -22,12 +22,12 @@
     "pages/order/order/index",
     "pages/user/user",
     "pages/auth/auth",
-    "pages/map/map",
     "pages/test/index",
     "pages/store/selectStore/index",
     "pages/feedback/index",
     "pages/water/edit/index",
-    "pages/goods/select/index"
+    "pages/goods/select/index",
+    "pages/share/store/store"
   ],
   "permission": {
     "scope.userLocation": {

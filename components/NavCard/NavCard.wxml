@@ -41,5 +41,13 @@
                 <view class="title">服务配置</view>
             </view>
         </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/share/store/store">
+                <view class="icon">
+                    <van-icon name="qr" />
+                </view>
+                <view class="title">推广门店</view>
+            </view>
+        </van-col>
     </van-row>
 </view>
