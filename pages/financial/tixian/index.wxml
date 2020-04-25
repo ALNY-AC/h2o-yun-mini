@@ -3,11 +3,11 @@
         <view>提现金额</view>
         <view class="input">
             <view class="position">￥</view>
-          <input type="text" class="inp" value="11"/>
-            <view class="yue">可用余额:9999</view>
+          <input type="text" class="inp" bind:input='o-model' data-model="form.money" value='{{form.money}}'/>
+            <view class="yue">可用余额:{{info.money}}</view>
         </view>
       <view class="button">
-        <van-button size='large' color='#32A1EE' block bind:tap="save">提现</van-button>
+        <van-button size='large' color='#32A1EE' block bind:tap="httpTixian">提现</van-button>
     </view>
         
     </view>

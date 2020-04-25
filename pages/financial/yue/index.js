@@ -5,10 +5,7 @@ class Page {
    * 声明data
    */
   data = {
-    info: {
-      freeze_money: 0.00,
-      money: 0.01,
-    },
+    info:null,
     id: ''
   }
 
@@ -21,15 +18,16 @@ class Page {
     this.update();
   }
   async update() {
-
-    const res = this.$http.post('/store/profile/info', {
+    const res = await this.$http.post('/store/profile/info', {
       id: this.id
     });
-    let data = res.data;
+    if(res.code>=0){
+      let data = res.data;
+      this.setData({ info: data })
+    }
+   
 
-    this.setData({ info: data })
-
-
+ 
   }
 
 

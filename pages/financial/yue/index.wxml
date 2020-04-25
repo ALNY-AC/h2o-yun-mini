@@ -1,5 +1,5 @@
 <view class="box">
-    <view class="top-panel">
+    <view class="top-panel" v-if='{{info}}'> 
         <view class="data">
             <view class="title">店铺余额</view>
             <view class="info">¥{{info.money}}</view>
