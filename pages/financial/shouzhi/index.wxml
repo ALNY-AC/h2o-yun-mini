@@ -2,33 +2,12 @@
     <view class="picker">
         <view class="left">{{date}}</view>
         <view class="right">
-            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
                 <van-icon size="24" color="#666" name="notes-o" />
             </picker>
         </view>
     </view>
     <view>
-        <van-cell 
-        
-        wx:for="{{list}}" 
-        
-        title="交易" 
-        
-        title-class='title' 
-        
-        label-class='label' 
-        
-        value-class='value' 
-        
-        value="{{item.type==1?'+':'-'}}{{item.money}}" 
-        
-        size="large" 
-        
-        label="{{item.add_time}}" 
-        
-        link-type="navigateTo" 
-        
-        url="/pages/financial/shouzhiInfo/index"
-         />
+        <van-cell wx:for="{{list}}" wx:key="index" title="{{item.type==1?'收入':'支出'}}" title-class='title' label-class='label' value-class='value' value="{{item.type==1?'+':'-'}}{{item.money}}" size="large" label="{{item.add_time}}" link-type="navigateTo" url="/pages/financial/shouzhiInfo/index?id={{item.id}}" />
     </view>
 </view>

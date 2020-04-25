@@ -1,9 +1,9 @@
-<view class="box">
+<view class="box" v-if='{{info}}'>
     <view class="top">
         <view class="title">金额</view>
         <view class="info">
             <text class="fuhao">￥</text>
-            <text class="money">0.02</text>
+            <text class="money">{{info.money}}</text>
         </view>
     </view>
     <view class="bottom">
@@ -13,15 +13,15 @@
         </view>
         <view class="cell">
             <view class="left">时间</view>
-            <view class="right">2020-05-10 18:88:88</view>
+            <view class="right">{{info.add_time}}</view>
         </view>
         <view class="cell">
             <view class="left">收支类型</view>
-            <view class="right">首付</view>
+            <view class="right">{{info.type==1?'收入':'支出'}}</view>
         </view>
         <view class="cell">
             <view class="left">备注</view>
-            <view class="right">水票购买</view>
+            <view class="right">{{info.text}}</view>
         </view>
     </view>
 </view>

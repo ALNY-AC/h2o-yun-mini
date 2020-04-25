@@ -14,12 +14,12 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    this.id = wx.getStorageSync('store_id');
+  
     this.update();
   }
   async update() {
-    const res = this.$http.post('/budget/list', {
-      id: this.id
+    const res = await this.$http.post('/budget/info', {
+      id: this.$route.query.id
     });
     let data = res.data;
     this.setData({ info: data })
