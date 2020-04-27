@@ -1,5 +1,5 @@
 <view class="box">
-    <view class="top-panel" v-if='{{info}}'> 
+    <view class="top-panel" v-if='{{info}}'>
         <view class="data">
             <view class="title">店铺余额</view>
             <view class="info">¥{{info.money}}</view>
@@ -13,8 +13,10 @@
         <van-cell title='收支明细' value='详细信息' link-type="navigateTo" url="/pages/financial/shouzhi/index" is-link></van-cell>
         <van-cell title='提现申请' link-type="navigateTo" url="/pages/financial/tixian/index" is-link></van-cell>
     </van-cell-group>
-    <view class="bottom">
-        <text class="kefu">联系客服</text>
-        <van-icon name="service-o" size='16' />
-    </view>
+    <button open-type='contact' class="bottom">
+        <view >
+            <text class="kefu">联系客服</text>
+            <van-icon name="service-o" size='16' />
+        </view>
+    </button>
 </view>

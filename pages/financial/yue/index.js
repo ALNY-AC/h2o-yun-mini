@@ -14,6 +14,9 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+
+  }
+  async onShow(){
     this.id = wx.getStorageSync('store_id');
     this.update();
   }
@@ -25,11 +28,12 @@ class Page {
       let data = res.data;
       this.setData({ info: data })
     }
-   
-
- 
+    wx.stopPullDownRefresh();
   }
-
+  //下拉刷新
+  onPullDownRefresh() {
+    this.update();
+  }
 
 }
 
