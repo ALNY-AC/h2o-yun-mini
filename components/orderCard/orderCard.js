@@ -33,7 +33,7 @@ class Banner {
     },
     footerState(data) {
       if (!data.info) return false
-      if (data.info.state == 1 || data.info.state == 21) {
+      if (data.info.state == 1 || data.info.state == 21 || data.info.state == 2) {
         return true
       }
       return false
@@ -87,7 +87,7 @@ class Banner {
       console.warn(error);
     }
   }
-  Close() {
+  close() {
     try {
       wx.showModal({
         title: '是否同意退款',
@@ -101,7 +101,6 @@ class Banner {
     } catch (error) {
       console.warn(error);
     }
-
   }
   async http_Close() {
     try {
@@ -116,6 +115,40 @@ class Banner {
         })
         this.setData({
           ['info.state']: 5
+        })
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  complete() {
+    try {
+      wx.showModal({
+        content: '配送是否已完成',
+        cancelText: '否',
+        confirmText: '是',
+        success: (res) => {
+          if (res.confirm) {
+            this.http_complete()
+          }
+        }
+      })
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  async http_complete() {
+    try {
+      const res = await http.post('/order/success', {
+        order_id: this.data.info.order_id
+      })
+      if (res.code > 0) {
+        wx.showToast({
+          title: '配送完成',
+          icon: 'none'
+        })
+        this.setData({
+          ['info.state']: 4
         })
       }
     } catch (error) {

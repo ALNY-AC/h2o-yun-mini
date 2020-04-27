@@ -60,8 +60,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/pay/range/range",
-					"pathName": "pages/pay/range/range",
+					"name": "pages/user/list/list",
+					"pathName": "pages/user/list/list",
 					"query": "",
 					"scene": null
 				},
@@ -258,6 +258,7 @@
 					"id": -1,
 					"name": "pages/financial/yue/index",
 					"pathName": "pages/financial/yue/index",
+					"query": "",
 					"scene": null
 				}
 			]

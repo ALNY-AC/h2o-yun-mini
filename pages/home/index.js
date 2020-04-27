@@ -17,24 +17,28 @@ class Page {
    * 启动函数
    */
   async onStart() {
-
+    this.update()
   }
   async onShow() {
+
+  }
+  async update() {
     const res = await this.$http.post('/store/data', {
       store_id: wx.getStorageSync('store_id')
     });
+    wx.stopPullDownRefresh()
     if (res.code >= 0) {
       this.setData({
         info: res.data
       })
     }
   }
-  async update() {
-
-  }
 
   submit() {
 
+  }
+  onPullDownRefresh() {
+    this.update()
   }
 }
 

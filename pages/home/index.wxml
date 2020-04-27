@@ -12,7 +12,7 @@
   </div>
   <view class="value-cell-group">
     <view class="value-cell">
-      <view class="title">访客数</view>
+      <view class="title">新增用户</view>
       <view class="value">{{info.volume}}</view>
     </view>
     <view class="value-cell">

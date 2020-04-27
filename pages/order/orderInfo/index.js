@@ -1,26 +1,9 @@
 const origin = require('../../../unity/origin/origin')
 const computedBehavior = require('miniprogram-computed')
-const amapFile = require('../../../unity/origin/lib/amap-wx')
-const myAmapFun = new amapFile.AMapWX({
-  key: '3bf281c848c98e8400915e11cf21a14b'
-});
 class Page {
   behaviors = [computedBehavior]
   data = {
     info: null,
-    locationx: "",
-    locationy: "",
-    CurrentAddress: "",
-    markers: [
-      {
-        iconPath: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3738963772,1223532166&fm=26&gp=0.jpg",
-        id: 0,
-        latitude: "",
-        longitude: "",
-        width: 30,
-        height: 30
-      },
-    ],
     stateArr: [
       { title: '待支付', state: 0 },
       { title: '等待配送', state: 1 },
@@ -48,10 +31,10 @@ class Page {
     },
     payMethod(data) {
       if (!data.info) return ''
-      if (data.info.type == 'pay_order'){
+      if (data.info.type == 'pay_order') {
         return '在线支付'
       }
-      if (data.info.type == 'water_order'){
+      if (data.info.type == 'water_order') {
         return '水票支付'
       }
     }
@@ -103,41 +86,6 @@ class Page {
 
       });
     }
-    const res1 = await this.$http.post('/store/info', {
-      id: wx.getStorageSync('store_id')
-    });
-    if (res1.code >= 0) {
-      this.setData({
-        'markers[0].latitude': res1.data.x,
-        'markers[0].longitude': res1.data.y,
-      })
-
-    }
-    myAmapFun.getRegeo({
-      success: (res) => {
-        this.setData({
-          CurrentAddress: res[0].regeocodeData,
-
-          locationx: `${res[0].longitude}`,
-          locationy: `${res[0].latitude}`
-        })
-
-      }
-    })
-    // myAmapFun.getPoiAround({
-    //   success:(data)=>{
-    //     //成功回调
-    //   },
-
-    // })
-    if (res.data.state == 3) {
-      setInterval(() => {
-        this.dadaLocation()
-      }, 5000)
-
-    }
-
-
   }
   async http_Close() {
     try {
@@ -164,12 +112,6 @@ class Page {
       console.warn(error);
     }
 
-  }
-  dadaLocation() {
-    this.setData({
-      'markers[1].latitude': "31.01000",
-      'markers[1].longitude': "121.24000",
-    })
   }
 }
 

@@ -58,11 +58,11 @@
             </view>
         </van-col>
         <van-col span="6">
-            <view class="store-item" bind:tap="o-router" data-url="/pages/share/store/store">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/user/list/list">
                 <view class="icon">
-                    <van-icon name="replay" />
+                    <van-icon name="friends-o" />
                 </view>
-                <view class="title">刷新排名</view>
+                <view class="title">用户列表</view>
             </view>
         </van-col>
     </van-row>

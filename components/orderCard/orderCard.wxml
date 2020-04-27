@@ -29,8 +29,11 @@
             <van-button size="small" wx:if="{{info.state == 1}}" catch:tap="delivery" type="danger">
                 开始配送
             </van-button>
-            <van-button size="small" wx:if="{{info.state == 21}}" catch:tap="Close" type="danger">
+            <van-button size="small" wx:if="{{info.state == 21}}" catch:tap="close" type="danger">
                 确认退款
+            </van-button>
+            <van-button size="small" wx:if="{{info.state == 2}}" catch:tap="complete" type="danger">
+                配送完成
             </van-button>
         </view>
     </van-panel>
