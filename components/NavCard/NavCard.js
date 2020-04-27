@@ -21,6 +21,11 @@ Component({
     'o-router'(e) {
       let url = e.currentTarget.dataset.url;
       wx.navigateTo({ url: url });
+    },
+    goOrder(e) {
+      wx.switchTab({
+        url:'/pages/order/order/index'
+      })
     }
   }
 })
