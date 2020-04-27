@@ -20,6 +20,7 @@ class Page {
       stock: 0
     },
     show: false,
+    show1: false,
     classList: []
   }
   computed = {
@@ -133,11 +134,23 @@ class Page {
   }
 
   async upload() {
+
+
     let upload = new Upload(new File());
+ 
     const res = await upload.push();
-    this.setData({
-      ['form.goods_head']: res
-    });
+    wx.showLoading({
+      title: "上传中"
+    })
+    setTimeout(() => {
+      wx.hideLoading();
+      this.setData({
+        ['form.goods_head']: res
+      });
+    }, 2000)
+  
+
+   
   }
 
 

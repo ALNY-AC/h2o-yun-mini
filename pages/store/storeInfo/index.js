@@ -12,22 +12,21 @@ class Page {
    */
   data = {
     form: {
-      name: "",//名称
-      y: "",//经度
-      x: "",//纬度
-      info: "",//描述
-      logo: "",//图片
-      contacts: "",//联系方式
-      phone: '',//手机号
-      qq: "",//QQ号
+      name: "", //名称
+      y: "", //经度
+      x: "", //纬度
+      info: "", //描述
+      logo: "", //图片
+      contacts: "", //联系方式
+      phone: '', //手机号
+      qq: "", //QQ号
       address_wx: '',
       address: '',
     },
     id: '',
     address: null
   }
-  computed = {
-  }
+  computed = {}
   code = null;
   userInfo = null;
   /**
@@ -52,7 +51,9 @@ class Page {
         })
       }
     } else {
-      this.setData({ ['form.phone']: wx.getStorageSync('userInfo').phone });
+      this.setData({
+        ['form.phone']: wx.getStorageSync('userInfo').phone
+      });
       wx.showModal({
         title: '请设置您店铺的地址～',
         showCancel: false,
@@ -91,7 +92,17 @@ class Page {
   async upload() {
     let upload = new Upload(new File());
     const res = await upload.push();
-    this.setData({ ['form.logo']: res });
+    wx.showLoading({
+      title: "上传中"
+    })
+    setTimeout(() => {
+      wx.hideLoading();
+      this.setData({
+        ['form.logo']: res
+      });
+    }, 2000)
+
+
   }
   async httpAddress() {
     wx.chooseLocation({

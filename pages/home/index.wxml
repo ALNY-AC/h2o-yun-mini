@@ -1,23 +1,23 @@
-<view class="data-panel">
+<view class="data-panel" v-if='info'>
   <view class="panel-title">今日业绩</view>
   <div class="value-cell-group">
     <view class="value-cell">
       <view class="title">已完成订单</view>
-      <view class="value">1000</view>
+      <view class="value">{{info.finish_count}}</view>
     </view>
     <view class="value-cell">
       <view class="title">待处理订单</view>
-      <view class="value">1000</view>
+      <view class="value">{{info.wait_count}}</view>
     </view>
   </div>
   <view class="value-cell-group">
     <view class="value-cell">
       <view class="title">访客数</view>
-      <view class="value">1213</view>
+      <view class="value">{{info.volume}}</view>
     </view>
     <view class="value-cell">
       <view class="title">成交额</view>
-      <view class="value">¥2389.99</view>
+      <view class="value">¥{{info.pay_money}}</view>
     </view>
   </view>
 </view>

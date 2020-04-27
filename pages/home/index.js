@@ -6,18 +6,28 @@ const computedBehavior = require('miniprogram-computed')
 class Page {
   behaviors = [computedBehavior]
   data = {
-  
+    info: null
   }
   computed = {
 
   }
-  watch = {
-  }
+  watch = {}
 
   /**
    * 启动函数
    */
   async onStart() {
+
+  }
+  async onShow() {
+    const res = await this.$http.post('/store/data', {
+      store_id: wx.getStorageSync('store_id')
+    });
+    if (res.code >= 0) {
+      this.setData({
+        info: res.data
+      })
+    }
   }
   async update() {
 
