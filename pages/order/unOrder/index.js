@@ -47,7 +47,11 @@ class Page {
         })
         this.setData({
           list: [...this.data.list, ...res.data.list],
-          loading: res.data.list.length < 1 ? false : true
+          loading: res.data.list.length > 0 ? false : true
+        })
+      } else {
+        this.setData({
+          loading: res.data.list.length > 0 ? false : true
         })
       }
       wx.hideLoading()
