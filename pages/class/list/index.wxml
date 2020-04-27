@@ -1,10 +1,11 @@
 <view class="box">
     <view class="list">
+            <view class="title">向左拖拽以删除</view>
         <view class="item" wx:for="{{list}}" wx:key="index">
             <van-swipe-cell right-width="{{ 65 }}">
                 <van-cell-group>
-                    <van-cell title="{{item.name}}" label="{{item.is_up==1?'':'已隐藏'}}">
-                        <van-icon bind:tap="o-router" data-url="/pages/class/edit/index?id={{item.id}}" slot="right-icon" name="edit" class="custom-icon" />
+                    <van-cell size='large' title="{{item.name}}" label="{{item.is_up==1?'':'已隐藏'}}">
+                        <van-icon  size="20" color='#32A1EE' bind:tap="o-router" data-url="/pages/class/edit/index?id={{item.id}}" slot="right-icon" name="edit" class="custom-icon" />
                     </van-cell>
                 </van-cell-group>
                 <view slot="right" style="height:100%" class="van-swipe-cell__right">

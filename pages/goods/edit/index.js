@@ -12,16 +12,18 @@ class Page {
   data = {
     form: {
       title: "",
-      price: 0,
+      price: '',
       store_id: '',
-      sort: 0,
+      sort: '',
       class_id: '',
       goods_head: '',
-      stock: 0
+      stock: '',
+      is_up: 1,
     },
-    show: false,
     show1: false,
-    classList: []
+    classList: [],
+    is_up:true,
+    index:0,
   }
   computed = {
 
@@ -60,7 +62,8 @@ class Page {
       });
       if (res.code >= 0) {
         this.setData({
-          form: res.data
+          form: res.data,
+          is_up:res.data.is_up
         });
       }
     }
@@ -76,6 +79,7 @@ class Page {
       });
     }
   }
+
   onChange(e) {
     this.setData({
       'form.is_up': e.detail
@@ -111,36 +115,22 @@ class Page {
       this.$toast(res.msg);
     }
   }
-  showPopup() {
-    this.setData({
-      show: true
-    })
-  }
+
   onConfirm(e) {
-    this.setData({
-      'form.class_id': e.detail.value.id,
-      show: false
-    })
+   
   }
-  onCancel() {
-    this.setData({
-      show: false
-    })
-  }
-  onClose() {
-    this.setData({
-      show: false
-    })
-  }
+
+
 
   async upload() {
 
 
     let upload = new Upload(new File());
- 
+
     const res = await upload.push();
     wx.showLoading({
-      title: "上传中"
+      title: "上传中",
+      mask: true
     })
     setTimeout(() => {
       wx.hideLoading();
@@ -148,9 +138,9 @@ class Page {
         ['form.goods_head']: res
       });
     }, 2000)
-  
 
-   
+
+
   }
 
 

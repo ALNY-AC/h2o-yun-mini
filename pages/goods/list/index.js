@@ -13,7 +13,9 @@ class Page {
     form: {
       page: 1,
       page_size: 10,
-    }
+      is_up:1
+    },
+    show:1
   }
 
   /**
@@ -21,6 +23,7 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
@@ -30,7 +33,19 @@ class Page {
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
- 
+
+  }
+  hide1(){
+    this.setData({
+      'form.is_up':1
+    })
+    this.updateInit();
+  }
+  hide2(){
+    this.setData({
+      'form.is_up':0
+    })
+    this.updateInit();
   }
   //调用接口
   async update() {

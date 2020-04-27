@@ -3,16 +3,37 @@
     background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
-
+    .tabs{
+        display: flex;
+        background-color: white;
+        padding: 12px 0;
+        font-size: 11px;
+        
+        .tab-item{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #999999;
+        }
+        .active{
+            color: #32A1EE;
+        }
+       
+    }
     .list {
         flex: 1;
         overflow: auto;
 
         .item {
             margin-bottom: 10px;
-
+          .good-desc{
+           color: #999999;
+          }
             .good-card {
                 background-color: #ffffff;
+                padding: 16px;
+                margin:10px 10px 0px;
             }
 
             .btn-height {

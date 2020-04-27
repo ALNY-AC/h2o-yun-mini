@@ -93,7 +93,8 @@ class Page {
     let upload = new Upload(new File());
     const res = await upload.push();
     wx.showLoading({
-      title: "上传中"
+      title: "上传中",
+      mask:true
     })
     setTimeout(() => {
       wx.hideLoading();
