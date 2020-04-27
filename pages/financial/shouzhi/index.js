@@ -26,6 +26,7 @@ class Page {
     this.setData({ list: res.data.list })
   }
   bindDateChange(e) {
+    console.log(e)
     this.setData({
       date: e.detail.value
     });

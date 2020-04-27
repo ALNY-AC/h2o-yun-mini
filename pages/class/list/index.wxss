@@ -1,1 +1,1 @@
-page{background-color:#f6f6f6}.box .list{width:100vw}.box .list .item .btn-height{height:100%}
+page{background-color:#f6f6f6}.box .title{padding:12px 16px 15px;color:#999;font-size:14px}.box .list{width:100vw}.box .list .item .btn-height{height:100%}

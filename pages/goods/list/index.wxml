@@ -1,9 +1,13 @@
 <view class="box">
+    <view class="tabs">
+        <view bind:tap='hide1' class="tab-item {{form.is_up==1?'active':''}} ">上架</view>
+        <view bind:tap='hide2' class="tab-item {{form.is_up==0?'active':''}}">下架</view>
+    </view>
     <view class="list">
         <view class="item" wx:key="index" wx:for="{{list}}">
             <van-swipe-cell right-width="{{ 65 }}">
                 <van-cell-group>
-                    <van-card catch:tap="go" data-id="{{item.id}}" custom-class="good-card" title="{{item.title}}" price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
+                    <van-card catch:tap="go" data-id="{{item.id}}" desc-class='good-desc' thumb-class='good-img' custom-class="good-card" title="{{item.title}}" desc='库存:{{item.stock}}' price="{{item.price}}" thumb="{{$app.url.imageUrl+item.goods_head}}" />
                 </van-cell-group>
                 <view slot="right" style="height:100%" class="van-swipe-cell__right">
                     <van-button type="danger" custom-class='btn-height' data-id="{{item.id}}" bind:tap='del'>
@@ -14,7 +18,7 @@
         </view>
     </view>
     <view>
-        <van-button size='large' color='#32A1EE' block  data-url="/pages/goods/edit/index" bind:tap="o-router" block>
+        <van-button size='large' color='#32A1EE' block data-url="/pages/goods/edit/index" bind:tap="o-router" block>
             添加商品
         </van-button>
     </view>

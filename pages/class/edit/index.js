@@ -7,9 +7,10 @@ class Page {
   data = {
     form: {
       name: "",
-      is_up: 0,
+      is_up: 1,
       store_id:'',
-    }
+    },
+    is_up:true,
   }
 
   /**
@@ -23,7 +24,8 @@ class Page {
       });
       if (res.code >= 0) {
         this.setData({
-          form: res.data
+          form: res.data,
+          is_up:res.data.is_up
         })
       }
     }else{
