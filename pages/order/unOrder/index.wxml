@@ -1,5 +1,14 @@
-<view class="list">
-    <view class="item" >
-      <order-card info='{{item}}' data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}" wx:key='index'></order-card>
-    </view>
+<view class="list" wx:if="{{list.length > 0}}">
+  <view class="item">
+    <order-card info='{{item}}' data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}" wx:key='index'></order-card>
+  </view>
+</view>
+<view class="empty" wx:if="{{!list.length > 0 && !loading}}">
+  <view class="icon">
+    <image class="img" src="../../../assets/images/no_order.png"></image>
+  </view>
+  <view class="title">暂无订单，快去分享店铺获得更多订单吧！</view>
+  <van-button round color="#32A1EE" bind:tap="o-router" data-url="/pages/share/store/store">
+    分享店铺
+  </van-button>
 </view>

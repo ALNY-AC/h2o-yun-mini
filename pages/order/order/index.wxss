@@ -1,1 +1,1 @@
-.list{background-color:#f6f6f6;min-height:100vh}.list .item{padding:10px}
+.order-list{background-color:#f6f6f6;height:100vh;display:flex;flex-direction:column}.order-list .item{flex:1;padding:10px}.order-list .empty{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column}.order-list .empty .icon{margin-bottom:30px}.order-list .empty .icon .img{width:200px;height:200px}.order-list .empty .title{font-size:14px;color:rgba(0,0,0,0.6);margin-bottom:50px}

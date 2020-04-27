@@ -16,6 +16,7 @@ class Page {
       store_id: 0,
       state: ''
     },
+    loading: false
   }
   computed = {
 
@@ -33,6 +34,9 @@ class Page {
   }
   async update() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await this.$http.post('/order/list', this.data.query)
       if (res.code > 0) {
         res.data.list.forEach(el => {
@@ -41,10 +45,15 @@ class Page {
           })
         })
         this.setData({
-          list: [...this.data.list, ...res.data.list]
+          list: [...this.data.list, ...res.data.list],
+          loading: res.data.list.length > 0 ? false : true
         })
-
+      } else {
+        this.setData({
+          loading: res.data.list.length > 0 ? false : true
+        })
       }
+      wx.hideLoading()
       wx.stopPullDownRefresh();
     } catch (error) {
       console.warn(error);
@@ -106,7 +115,8 @@ class Page {
   updateInit() {
     this.setData({
       list: [],
-      ['query.page']: 1
+      ['query.page']: 1,
+      loading: false
     })
     this.update()
   }

@@ -1,4 +1,4 @@
-<view class="list">
+<view class="order-list">
   <van-tabs swipeable bind:click='onChange'>
     <van-tab title="全部"></van-tab>
     <van-tab title="待支付"></van-tab>
@@ -8,7 +8,16 @@
     <van-tab title="订单取消"></van-tab>
     <van-tab title="待取消订单"></van-tab>
   </van-tabs>
-  <view class="item">
-      <order-card info='{{item}}'  data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}"  wx:key='index'></order-card>
+  <view class="item" wx:if="{{list.length > 0}}">
+    <order-card info='{{item}}' data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}" wx:key='index'></order-card>
+  </view>
+  <view class="empty" wx:if="{{loading}}">
+    <view class="icon">
+      <image class="img" src="../../../assets/images/no_order.png"></image>
+    </view>
+    <view class="title">暂无订单，快去分享店铺获得更多订单吧！</view>
+    <van-button round color="#32A1EE" bind:tap="o-router" data-url="/pages/share/store/store">
+      分享店铺
+    </van-button>
   </view>
 </view>
