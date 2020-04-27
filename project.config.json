@@ -60,9 +60,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order/orderInfo/index",
-					"pathName": "pages/order/orderInfo/index",
-					"query": "order_id=ORDER2020042418234274188",
+					"name": "pages/pay/range/range",
+					"pathName": "pages/pay/range/range",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -74,8 +74,8 @@
 				},
 				{
 					"id": 2,
-					"name": "pages/water/list/index",
-					"pathName": "pages/water/list/index",
+					"name": "pages/share/range/range",
+					"pathName": "pages/share/range/range",
 					"query": "",
 					"scene": null
 				},

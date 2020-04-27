@@ -27,7 +27,10 @@
     "pages/feedback/index",
     "pages/water/edit/index",
     "pages/goods/select/index",
-    "pages/share/store/store"
+    "pages/share/store/store",
+    "pages/share/range/range",
+    "pages/pay/range/range",
+    "pages/pay/ranking/ranking"
   ],
   "permission": {
     "scope.userLocation": {

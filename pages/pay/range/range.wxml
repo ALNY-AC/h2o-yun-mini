@@ -1,0 +1,10 @@
+<view class="range">
+  <van-cell-group>
+    <van-field bind:input="o-model" type="digit" title-width="150" data-model="form.distance" label="可见范围(公里)" placeholder="请输入范围" input-align="right" />
+    <van-field bind:input="o-model" type="digit" title-width="150" data-model="form.time" label="持续时间(小时)" placeholder="请输入时间" input-align="right" />
+  </van-cell-group>
+</view>
+<view class="foot-btn">
+  <view class="title">收费模式：（公里数*公里单价）*（时间*时间单价）</view>
+  <van-button type="primary" bind:tap="submit" block color="#32A1EE">提交订单</van-button>
+</view>

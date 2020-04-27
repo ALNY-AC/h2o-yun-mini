@@ -49,5 +49,21 @@
                 <view class="title">推广门店</view>
             </view>
         </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/pay/range/range">
+                <view class="icon">
+                    <van-icon name="bullhorn-o" />
+                </view>
+                <view class="title">范围推广</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/share/store/store">
+                <view class="icon">
+                    <van-icon name="replay" />
+                </view>
+                <view class="title">刷新排名</view>
+            </view>
+        </van-col>
     </van-row>
 </view>

@@ -1,0 +1,14 @@
+<view class="range">
+  <view class="tips-text">
+    使用范围推广服务（公里卡），可以将您的门店推广给用户，实现了类似广告牌的推广功能，您的店铺将会展示在用户端首页。 点击使用后将会立即使用您的公里卡。
+  </view>
+  <view class="in-use">
+    <view class="title">使用中的公里卡（同时仅能使用一张）</view>
+    <view class="panel">
+      <view class="state">使用中</view>
+      <view class="panel-body">
+        <view class="info"></view>
+      </view>
+    </view>
+  </view>
+</view>
