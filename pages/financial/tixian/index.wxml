@@ -1,14 +1,36 @@
 <view class="box">
-    <view class="info">
-        <view>提现金额</view>
-        <view class="input">
-            <view class="position">￥</view>
-          <input type="text" class="inp" bind:input='o-model' data-model="form.money" value='{{form.money}}'/>
-            <view class="yue">可用余额:{{info.money}}</view>
-        </view>
-      <view class="button">
-        <van-button size='large' color='#32A1EE' block bind:tap="httpTixian">提现</van-button>
+  <view class="tixian">
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+      <van-radio custom-class="rad" use-icon-slot value="{{ form.money_type }}" name="1">
+        <van-button  custom-class="{{form.money_type == 1?'active':''}}">微信</van-button>
+      </van-radio>
+      <van-radio  custom-class="rad" use-icon-slot value="{{ form.money_type }}" name="2">
+        <van-button  custom-class="{{form.money_type == 2?'active':''}}">支付宝</van-button>
+      </van-radio>
+      <van-radio  custom-class="rad" use-icon-slot value="{{ form.money_type }}" name="3">
+        <van-button  custom-class="{{form.money_type == 3?'active':''}}">银行卡</van-button>
+      </van-radio>
+    </van-radio-group>
+  </view>
+  <view class="info">
+    <view>卡号/微信号/支付宝账号</view>
+    <view class="input">
+      <input type="text" class="inp1"  placeholder="请填写真实数据，以免打款失败" bind:input='o-model' data-model="form.account" value='{{form.account}}' />
     </view>
-        
+    <view>真实姓名</view>
+    <view class="input">
+      <input type="text" placeholder="请填写真实姓名，以免打款失败" class="inp1" bind:input='o-model' data-model="form.real_name" value='{{form.real_name}}' />
     </view>
+  </view>
+  <view class="info">
+    <view>提现金额</view>
+    <view class="input">
+      <view class="position">￥</view>
+      <input type="text" class="inp" bind:input='o-model' data-model="form.money" value='{{form.money}}' />
+      <view class="yue">可用余额:{{info.money}}</view>
+    </view>
+    <view class="button">
+      <van-button size='large' color='#32A1EE' block bind:tap="httpTixian">提现</van-button>
+    </view>
+  </view>
 </view>
