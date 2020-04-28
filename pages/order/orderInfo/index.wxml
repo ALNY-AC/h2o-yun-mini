@@ -18,7 +18,7 @@
                 <view>
                     <van-cell title="客户名称" custom-class="family" value="{{info.addressInfo.contacts}}" />
                     <van-cell title="联系方式" custom-class="family" value="{{info.addressInfo.phone}}" />
-                    <van-cell title="配送地址" custom-class="family" value="{{info.addressInfo.address}}" />
+                    <van-cell title="配送地址" custom-class="family" bind:tap="goMap" value="{{info.addressInfo.address}}"/>
                     <van-cell title="详细地址" custom-class="family" value="{{info.addressInfo.address_num}}" border="{{ false }}" />
                 </view>
             </van-panel>
@@ -34,7 +34,7 @@
             </van-panel>
         </view>
     </view>
-    <view class="bottom-btn" wx:if="{{info.state !=5}}">
+    <view class="bottom-btn" wx:if="{{info.state !=5&&info.state !=4}}">
         <van-button class="btn" wx:if="{{info.state == 21&&info.type == 'pay_order'}}" bind:tap="close" round plain hairline>
             确认退款
         </van-button>

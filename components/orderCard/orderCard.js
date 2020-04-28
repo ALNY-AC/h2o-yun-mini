@@ -47,6 +47,9 @@ class Banner {
       if (data.info.state == 2) {
         return 'panel-head-2'
       }
+      if (data.info.state == 4) {
+        return 'panel-head-4'
+      }
       if (data.info.state == 5) {
         return 'panel-head-5'
       }
@@ -73,9 +76,13 @@ class Banner {
   }
   async http_delivery() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await http.post('/order/sending', {
         order_id: this.data.info.order_id
       })
+      wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
           title: '开始配送',
@@ -121,10 +128,14 @@ class Banner {
   }
   async http_Close() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await http.post('/order/close_order', {
         order_id: this.data.info.order_id
       });
-      if (this.data.info.state == 21) {
+      wx.hideLoading()
+      if (res.code > 0) {
         wx.showToast({
           title: '退款成功',
           icon: 'none',
@@ -156,9 +167,13 @@ class Banner {
   }
   async http_complete() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await http.post('/order/success', {
         order_id: this.data.info.order_id
       })
+      wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
           title: '配送完成',

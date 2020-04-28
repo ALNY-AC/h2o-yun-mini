@@ -19,7 +19,7 @@
     <van-panel desc="{{info.add_time}}" status="{{orderState}}" header-class="{{head_class}}" footer-class="panel-footer" use-footer-slot>
         <view class="goods-list">
             <block wx:for='{{info.snapshotInfo}}' wx:key="index">
-                <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
+                <van-card thumb-class="img" num="{{item.data.quantity}}" thumb-mode="widthFix" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
             </block>
         </view>
         <view slot="footer">
@@ -28,7 +28,7 @@
             <van-cell title="联系方式" value="{{info.phone}}" />
             <van-cell title="配送地址" value="{{info.address}}" />
             <van-cell title="详细地址" value="{{info.address_num}}" />
-            <view class="footer" wx:if="{{info.state != 5}}">
+            <view class="footer" wx:if="{{info.state != 4&&info.state != 5}}">
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 1}}" catch:tap="http_delivery" color="#32A1EE">
                     开始配送
                 </van-button>

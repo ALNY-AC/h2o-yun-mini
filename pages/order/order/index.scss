@@ -7,10 +7,16 @@ page {
   display: flex;
   flex-direction: column;
 
+  .head-tab {
+    .van-tabs__scroll {
+      background-color: transparent !important;
+    }
+  }
 
   .item {
     flex: 1;
     padding: 15px;
+    padding-top: 10px;
     overflow: auto;
   }
 

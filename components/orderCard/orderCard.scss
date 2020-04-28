@@ -7,6 +7,15 @@
             background-color: transparent;
             margin-bottom: 10px;
         }
+
+        .img {
+            width: 80px;
+            height: 80px;
+            max-width: 80px;
+            max-height: 80px;
+            min-width: 80px;
+            min-height: 80px;
+        }
     }
 
     .footer {
@@ -38,6 +47,13 @@
     .van-cell__value {
         font-weight: bold;
         color: #32A1EE !important;
+    }
+}
+
+.panel-head-4 {
+    .van-cell__value {
+        font-weight: bold;
+        color: #07c160 !important;
     }
 }
 

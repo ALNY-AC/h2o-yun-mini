@@ -22,36 +22,40 @@
   </view>
 </view> -->
 <view class="head-tab">
-  <view class="{{activ == 1 ? 'activ':''}} tab" bind:tap="choice" data-value="{{1}}">今日</view>
-  <view class="{{activ == 2 ? 'activ':''}} tab" bind:tap="choice" data-value="{{2}}">本周</view>
-  <view class="{{activ == 3 ? 'activ':''}} tab" bind:tap="choice" data-value="{{3}}">本月</view>
+  <view class="{{activ == '' ? 'activ':''}} tab" bind:tap="choice" data-value="">今日</view>
+  <view class="{{activ == 'this_week' ? 'activ':''}} tab" bind:tap="choice" data-value="this_week">
+    本周
+  </view>
+  <view class="{{activ == 'this_month' ? 'activ':''}} tab" bind:tap="choice" data-value="this_month">
+    本月
+  </view>
 </view>
 <view class="home-box">
   <view class="tool-box">
     <view class="flow">
-      <view class="money">¥8538.70</view>
+      <view class="money">¥{{info.order_money}}</view>
       <view class="title">订单收入</view>
     </view>
     <view class="flow">
-      <view class="money">¥48.50</view>
+      <view class="money">¥{{info.coupon_money}}</view>
       <view class="title">水票收入</view>
     </view>
   </view>
   <view class="tool-box">
     <view class="data-item">
-      <view class="num">20</view>
+      <view class="num">{{info.wait_count}}</view>
       <view class="title">待处理订单</view>
     </view>
     <view class="data-item">
-      <view class="num">20</view>
+      <view class="num">{{info.finish_count}}</view>
       <view class="title">已完成订单</view>
     </view>
     <view class="data-item">
-      <view class="num">20</view>
+      <view class="num">{{info.refund_count}}</view>
       <view class="title">退款订单</view>
     </view>
     <view class="data-item">
-      <view class="num">20</view>
+      <view class="num">{{info.add_users}}</view>
       <view class="title">新增用户</view>
     </view>
   </view>

@@ -1,5 +1,5 @@
 <view class="order-list">
-  <van-tabs swipeable bind:click='onChange'>
+  <van-tabs swipeable custom-class="head-tab" bind:click='onChange'>
     <van-tab title="全部"></van-tab>
     <!-- <van-tab title="待支付"></van-tab> -->
     <van-tab title="待配送"></van-tab>

@@ -7,7 +7,7 @@ class Page {
   behaviors = [computedBehavior]
   data = {
     info: null,
-    activ: 1
+    activ: ''
   }
   computed = {
 
@@ -24,9 +24,14 @@ class Page {
 
   }
   async update() {
+    wx.showLoading({
+      title: '加载中',
+    })
     const res = await this.$http.post('/store/data', {
-      store_id: wx.getStorageSync('store_id')
+      store_id: wx.getStorageSync('store_id'),
+      times: this.data.activ,
     });
+    wx.hideLoading()
     wx.stopPullDownRefresh()
     if (res.code >= 0) {
       this.setData({
@@ -38,7 +43,7 @@ class Page {
     this.setData({
       activ: e.currentTarget.dataset.value
     })
-
+    this.update()
   }
 
   submit() {

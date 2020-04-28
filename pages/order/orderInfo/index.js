@@ -46,6 +46,9 @@ class Page {
       if (data.info.state == 2) {
         return 'panel-head-2'
       }
+      if (data.info.state == 4) {
+        return 'panel-head-4'
+      }
       if (data.info.state == 5) {
         return 'panel-head-5'
       }
@@ -89,9 +92,13 @@ class Page {
   //   });
   // }
   async update() {
+    wx.showLoading({
+      title: '加载中',
+    })
     const res = await this.$http.post('/order/info', {
       order_id: this.$route.query.order_id
     });
+    wx.hideLoading()
     if (res.code >= 0) {
       res.data.snapshotInfo.forEach(url => {
         url.data.goods_head = this.$getUrl(url.data.goods_head)
@@ -113,7 +120,7 @@ class Page {
           }
           if (res.cancel) {
             wx.showToast({
-              title: '取消操作',
+              title: '已取消',
               icon: 'none'
             })
           }
@@ -134,7 +141,7 @@ class Page {
           }
           if (res.cancel) {
             wx.showToast({
-              title: '取消操作',
+              title: '已取消',
               icon: 'none'
             })
           }
@@ -146,9 +153,13 @@ class Page {
   }
   async http_Close() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await this.$http.post('/order/close_order', {
         order_id: this.$route.query.order_id
       });
+      wx.hideLoading()
       if (res.code > 0) {
         if (this.data.info.state == 21) {
           wx.showToast({
@@ -171,9 +182,13 @@ class Page {
   }
   async http_delivery() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await this.$http.post('/order/sending', {
         order_id: this.$route.query.order_id
       })
+      wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
           title: '开始配送',
@@ -184,6 +199,57 @@ class Page {
     } catch (error) {
       console.warn(error);
     }
+  }
+  complete() {
+    try {
+      wx.showModal({
+        content: '配送是否已完成',
+        cancelText: '否',
+        confirmText: '是',
+        success: (res) => {
+          if (res.confirm) {
+            this.http_complete()
+          }
+          if (res.cancel) {
+            wx.showToast({
+              title: '已取消',
+              icon: 'none'
+            })
+          }
+        }
+      })
+    } catch (error) {
+
+    }
+  }
+  async http_complete() {
+    try {
+      wx.showLoading({
+        title: '加载中',
+      })
+      const res = await this.$http.post('/order/success', {
+        order_id: this.$route.query.order_id
+      });
+      wx.hideLoading()
+      if (res.code > 0) {
+        wx.showToast({
+          title: '配送完成',
+          icon: 'none'
+        })
+        this.setData({
+          ['info.state']: 4
+        })
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+
+  }
+  goMap() {
+    wx.chooseLocation({
+      latitude: this.data.info.addressInfo.x,
+      longitude: this.data.info.addressInfo.y,
+    })
   }
 }
 
