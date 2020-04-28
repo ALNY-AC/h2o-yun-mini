@@ -246,9 +246,10 @@ class Page {
 
   }
   goMap() {
-    wx.chooseLocation({
-      latitude: this.data.info.addressInfo.x,
-      longitude: this.data.info.addressInfo.y,
+    wx.openLocation({
+      latitude: parseFloat(this.data.info.addressInfo.x),
+      longitude: parseFloat(this.data.info.addressInfo.y),
+      address: this.data.info.addressInfo.address,
     })
   }
 }
