@@ -49,9 +49,11 @@ class Page {
           loading: res.data.list.length > 0 ? false : true
         })
       } else {
-        this.setData({
-          loading: res.data.list.length > 0 ? false : true
-        })
+        if (!res.data.total > 0) {
+          this.setData({
+            loading: res.data.list.length > 0 ? false : true
+          })
+        }
       }
       wx.hideLoading()
       wx.stopPullDownRefresh();
@@ -69,17 +71,17 @@ class Page {
     }
     if (e.detail.index == 1) {
       this.setData({
-        'query.state': 0
+        'query.state': 1
       })
     }
     if (e.detail.index == 2) {
       this.setData({
-        'query.state': 1
+        'query.state': 2
       })
     }
     if (e.detail.index == 3) {
       this.setData({
-        'query.state': 2
+        'query.state': 21
       })
     }
     if (e.detail.index == 4) {
@@ -92,11 +94,7 @@ class Page {
         'query.state': 5
       })
     }
-    if (e.detail.index == 6) {
-      this.setData({
-        'query.state': 21
-      })
-    }
+
     this.updateInit();
   }
   //下拉刷新

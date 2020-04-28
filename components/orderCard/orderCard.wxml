@@ -16,25 +16,32 @@
         <van-cell wx:if="{{info.add_time}}" title="下单时间" title-class='order-title' value-class='order-time' value="{{info.add_time}}" size="large" />
         <van-cell wx:if="{{info.remarks}}" title="订单备注" title-class='order-title' value="{{info.remarks}}" size="large" />
     </view> -->
-    <van-panel title="{{orderState}}" desc="{{info.add_time}}" use-footer-slot="{{footerState}}">
+    <van-panel desc="{{info.add_time}}" status="{{orderState}}" header-class="{{head_class}}" footer-class="panel-footer" use-footer-slot>
         <view class="goods-list">
             <block wx:for='{{info.snapshotInfo}}' wx:key="index">
                 <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
             </block>
-            <van-cell-group>
-                <van-cell title="实付金额" value="{{info.price}}" border="{{ false }}" />
-            </van-cell-group>
         </view>
-        <view slot="footer" class="footer">
-            <van-button size="small" wx:if="{{info.state == 1}}" catch:tap="delivery" type="danger">
-                开始配送
-            </van-button>
-            <van-button size="small" wx:if="{{info.state == 21}}" catch:tap="close" type="danger">
-                确认退款
-            </van-button>
-            <van-button size="small" wx:if="{{info.state == 2}}" catch:tap="complete" type="danger">
-                配送完成
-            </van-button>
+        <view slot="footer">
+            <van-cell title="实付金额" value="{{info.price}}" />
+            <van-cell title="客户名称" value="{{info.contacts}}" />
+            <van-cell title="联系方式" value="{{info.phone}}" />
+            <van-cell title="配送地址" value="{{info.address}}" />
+            <van-cell title="详细地址" value="{{info.address_num}}" />
+            <view class="footer" wx:if="{{info.state != 5}}">
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 1}}" catch:tap="http_delivery" color="#32A1EE">
+                    开始配送
+                </van-button>
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 2}}" catch:tap="complete" color="#07c160">
+                    确认收货
+                </van-button>
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state != 21&&info.type == 'pay_order'}}" catch:tap="cancel">
+                    取消订单
+                </van-button>
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 21&&info.type == 'pay_order'}}" catch:tap="close">
+                    确认退款
+                </van-button>
+            </view>
         </view>
     </van-panel>
 </view>

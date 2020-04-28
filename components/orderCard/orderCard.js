@@ -8,6 +8,7 @@ class Banner {
   behaviors = [computedBehavior]
   options = {
     multipleSlots: true, // 在组件定义时的选项中启用多slot支持
+    styleIsolation: 'shared'
   }
   properties = {
     title: String,
@@ -31,12 +32,27 @@ class Banner {
       let order = data.stateArr.find(el => el.state == data.info.state)
       return order.title
     },
-    footerState(data) {
+    // footerState(data) {
+    //   if (!data.info) return false
+    //   if (data.info.state == 1 || data.info.state == 21 || data.info.state == 2 || data.info.state == 5) {
+    //     return true
+    //   }
+    //   return false
+    // },
+    head_class(data) {
       if (!data.info) return false
-      if (data.info.state == 1 || data.info.state == 21 || data.info.state == 2) {
-        return true
+      if (data.info.state == 1) {
+        return 'panel-head-1'
       }
-      return false
+      if (data.info.state == 2) {
+        return 'panel-head-2'
+      }
+      if (data.info.state == 5) {
+        return 'panel-head-5'
+      }
+      if (data.info.state == 21) {
+        return 'panel-head-21'
+      }
     }
   }
 
@@ -54,20 +70,6 @@ class Banner {
   onStart() {
     console.log(info)
     console.warn('Banner');
-  }
-  delivery() {
-    try {
-      wx.showModal({
-        content: '是否开始配送',
-        success: (res) => {
-          if (res.confirm) {
-            this.http_delivery()
-          }
-        }
-      })
-    } catch (error) {
-      console.warn(error);
-    }
   }
   async http_delivery() {
     try {
@@ -90,8 +92,23 @@ class Banner {
   close() {
     try {
       wx.showModal({
-        title: '是否同意退款',
-        content: '退款将返还给用户',
+        title: '是否同意退款？',
+        content: '确认后退款将返还给用户',
+        success: (res) => {
+          if (res.confirm) {
+            this.http_Close()
+          }
+        }
+      })
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+  cancel() {
+    try {
+      wx.showModal({
+        title: '是否取消订单？',
+        content: '确认后钱将立即返回给用户',
         success: (res) => {
           if (res.confirm) {
             this.http_Close()

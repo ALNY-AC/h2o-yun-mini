@@ -37,6 +37,21 @@ class Page {
       if (data.info.type == 'water_order') {
         return '水票支付'
       }
+    },
+    head_class(data) {
+      if (!data.info) return false
+      if (data.info.state == 1) {
+        return 'panel-head-1'
+      }
+      if (data.info.state == 2) {
+        return 'panel-head-2'
+      }
+      if (data.info.state == 5) {
+        return 'panel-head-5'
+      }
+      if (data.info.state == 21) {
+        return 'panel-head-21'
+      }
     }
   }
   onStart() {
@@ -87,6 +102,48 @@ class Page {
       });
     }
   }
+  close() {
+    try {
+      wx.showModal({
+        title: "是否确认退款？",
+        content: "确认后退款将返还给用户",
+        success: (res) => {
+          if (res.confirm) {
+            this.http_Close()
+          }
+          if (res.cancel) {
+            wx.showToast({
+              title: '取消操作',
+              icon: 'none'
+            })
+          }
+        }
+      })
+    } catch (error) {
+
+    }
+  }
+  cancel() {
+    try {
+      wx.showModal({
+        title: "是否取消订单？",
+        content: "确认后钱将立即返回给用户",
+        success: (res) => {
+          if (res.confirm) {
+            this.http_Close()
+          }
+          if (res.cancel) {
+            wx.showToast({
+              title: '取消操作',
+              icon: 'none'
+            })
+          }
+        }
+      })
+    } catch (error) {
+
+    }
+  }
   async http_Close() {
     try {
       const res = await this.$http.post('/order/close_order', {
@@ -111,7 +168,22 @@ class Page {
     } catch (error) {
       console.warn(error);
     }
-
+  }
+  async http_delivery() {
+    try {
+      const res = await this.$http.post('/order/sending', {
+        order_id: this.$route.query.order_id
+      })
+      if (res.code > 0) {
+        wx.showToast({
+          title: '开始配送',
+          icon: 'none'
+        })
+        this.update()
+      }
+    } catch (error) {
+      console.warn(error);
+    }
   }
 }
 

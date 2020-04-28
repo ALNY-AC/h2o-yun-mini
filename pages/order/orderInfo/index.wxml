@@ -4,12 +4,12 @@
 <view class="page">
     <view class="bottom">
         <view class="card">
-            <van-panel title="{{orderState}}" desc="{{info.add_time}}">
+            <van-panel title="{{orderState}}" header-class="{{head_class}}" desc="{{info.add_time}}">
                 <view class="goods-list">
                     <block wx:for='{{info.snapshotInfo}}' wx:key="index">
                         <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
                     </block>
-                    <view class="total-price">合计：￥15</view>
+                    <view class="total-price">合计：￥{{info.price}}</view>
                 </view>
             </van-panel>
         </view>
@@ -33,13 +33,19 @@
                 </view>
             </van-panel>
         </view>
-        <view class="bottom-btn" wx:if="{{info.type == 'pay_order'}}">
-            <van-button block wx:if="{{info.state == 21}}" bind:tap="http_Close" type="danger">
-                确认退款
-            </van-button>
-            <van-button block wx:if="{{info.state !=21&&info.state !=5}}" bind:tap="http_Close" type="danger">
-                取消订单
-            </van-button>
-        </view>
+    </view>
+    <view class="bottom-btn" wx:if="{{info.state !=5}}">
+        <van-button class="btn" wx:if="{{info.state == 21&&info.type == 'pay_order'}}" bind:tap="close" round plain hairline>
+            确认退款
+        </van-button>
+        <van-button class="btn" wx:if="{{info.state !=21&&info.type == 'pay_order'}}" round plain hairline bind:tap="cancel">
+            取消订单
+        </van-button>
+        <van-button class="btn" wx:if="{{info.state == 1}}" round plain hairline catch:tap="http_delivery" color="#32A1EE">
+            开始配送
+        </van-button>
+        <van-button class="btn" round plain hairline wx:if="{{info.state == 2}}" color="#07c160" catch:tap="complete">
+            确认收货
+        </van-button>
     </view>
 </view>
