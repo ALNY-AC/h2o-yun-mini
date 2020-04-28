@@ -261,6 +261,12 @@
 					"pathName": "pages/financial/yue/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/financial/tixian/index",
+					"pathName": "pages/financial/tixian/index",
+					"scene": null
 				}
 			]
 		}

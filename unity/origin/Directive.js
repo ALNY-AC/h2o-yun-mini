@@ -23,6 +23,9 @@ var modelTool = {
             }
             if (typeof e.currentTarget.dataset['value'] != 'undefined') {
                 value = e.currentTarget.dataset['value'];
+
+
+
             }
 
             this.setData({ [key]: value });
@@ -32,11 +35,8 @@ var modelTool = {
 
 
 module.exports = function (methods) {
-
-
     methods['o-model'] = function (e) {
         let dataset = e.currentTarget.dataset;
-
         let modelType = typeof dataset.modelType == 'undefined' ? 'input' : dataset.modelType;
         if (modelTool.OModel[modelType]) {
             modelTool.OModel[modelType].call(this, e);
@@ -52,8 +52,6 @@ module.exports = function (methods) {
             }
         }
     }
-
-
     methods['o-router'] = function (e) {
         let dataset = e.currentTarget.dataset;
         this.$router.push(dataset.url);

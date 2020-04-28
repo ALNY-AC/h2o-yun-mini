@@ -10,8 +10,8 @@ class Page {
       money:0,//多少钱
       store_id:'',
       money_type:1,//提现方式
-      account:"32",//提现账号
-      real_name:"1",//提现姓名
+      account:"",//提现账号
+      real_name:"",//提现姓名
     }
   }
 
@@ -40,6 +40,11 @@ class Page {
     }else{
       this.$tosat(res.msg);
     }
+  }
+  onChange(e){
+    this.setData({
+      'form.money_type':e.detail
+    })
   }
 
 
