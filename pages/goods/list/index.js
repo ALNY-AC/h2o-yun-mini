@@ -13,9 +13,10 @@ class Page {
     form: {
       page: 1,
       page_size: 10,
-      is_up:1
+      is_up: 1
     },
-    show:1
+    show: 1,
+    loading: false
   }
 
   /**
@@ -23,7 +24,7 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    
+
     this.setData({
       'form.store_id': wx.getStorageSync('store_id')
     });
@@ -35,15 +36,15 @@ class Page {
     });
 
   }
-  hide1(){
+  hide1() {
     this.setData({
-      'form.is_up':1
+      'form.is_up': 1
     })
     this.updateInit();
   }
-  hide2(){
+  hide2() {
     this.setData({
-      'form.is_up':0
+      'form.is_up': 0
     })
     this.updateInit();
   }
@@ -53,6 +54,7 @@ class Page {
     if (res.code >= 0) {
       this.setData({
         list: [...this.data.list, ...res.data.list],
+        loading: res.data.list.length > 0 ? false : true
       })
     }
     wx.stopPullDownRefresh();
@@ -66,7 +68,8 @@ class Page {
   updateInit() {
     this.setData({
       list: [],
-      ['form.page']: 1
+      ['form.page']: 1,
+      loading: false,
     })
     this.update()
   }

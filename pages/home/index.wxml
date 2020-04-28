@@ -1,4 +1,4 @@
-<view class="data-panel" v-if='info'>
+<!-- <view class="data-panel" v-if='info'>
   <view class="panel-title">今日业绩</view>
   <div class="value-cell-group">
     <view class="value-cell">
@@ -20,9 +20,44 @@
       <view class="value">¥{{info.pay_money}}</view>
     </view>
   </view>
+</view> -->
+<view class="head-tab">
+  <view class="{{activ == 1 ? 'activ':''}} tab" bind:tap="choice" data-value="{{1}}">今日</view>
+  <view class="{{activ == 2 ? 'activ':''}} tab" bind:tap="choice" data-value="{{2}}">本周</view>
+  <view class="{{activ == 3 ? 'activ':''}} tab" bind:tap="choice" data-value="{{3}}">本月</view>
 </view>
-<view class="tool-box">
-  <nav-card>
-    <view class="h2">推荐工具</view>
-  </nav-card>
+<view class="home-box">
+  <view class="tool-box">
+    <view class="flow">
+      <view class="money">¥8538.70</view>
+      <view class="title">订单收入</view>
+    </view>
+    <view class="flow">
+      <view class="money">¥48.50</view>
+      <view class="title">水票收入</view>
+    </view>
+  </view>
+  <view class="tool-box">
+    <view class="data-item">
+      <view class="num">20</view>
+      <view class="title">待处理订单</view>
+    </view>
+    <view class="data-item">
+      <view class="num">20</view>
+      <view class="title">已完成订单</view>
+    </view>
+    <view class="data-item">
+      <view class="num">20</view>
+      <view class="title">退款订单</view>
+    </view>
+    <view class="data-item">
+      <view class="num">20</view>
+      <view class="title">新增用户</view>
+    </view>
+  </view>
+  <view class="tool-box">
+    <nav-card>
+      <view class="h2">推荐工具</view>
+    </nav-card>
+  </view>
 </view>

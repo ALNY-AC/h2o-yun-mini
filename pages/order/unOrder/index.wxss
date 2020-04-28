@@ -1,1 +1,1 @@
-.list{background-color:#f6f6f6;min-height:100vh}.list .item{padding:10px}
+page{background-color:#f6f6f6}.list{height:100vh}.list .item{padding:10px}.empty{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column}.empty .icon{margin-bottom:30px}.empty .icon .img{width:200px;height:200px}.empty .title{font-size:14px;color:rgba(0,0,0,0.6);margin-bottom:50px}

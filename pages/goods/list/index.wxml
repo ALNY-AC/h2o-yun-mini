@@ -1,9 +1,9 @@
 <view class="box">
-    <view class="tabs">
+    <view class="tabs" wx:if="{{list.length>0}}">
         <view bind:tap='hide1' class="tab-item {{form.is_up==1?'active':''}} ">上架</view>
         <view bind:tap='hide2' class="tab-item {{form.is_up==0?'active':''}}">下架</view>
     </view>
-    <view class="list">
+    <view class="list" wx:if="{{list.length>0}}">
         <view class="item" wx:key="index" wx:for="{{list}}">
             <van-swipe-cell right-width="{{ 65 }}">
                 <van-cell-group>
@@ -17,7 +17,13 @@
             </van-swipe-cell>
         </view>
     </view>
-    <view>
+    <view class="empty" wx:if="{{loading}}">
+        <view class="icon">
+            <image class="img" src="../../../assets/images/goods.png"></image>
+        </view>
+        <view class="title">暂无商品，快去添加商品吧！</view>
+    </view>
+    <view class="f-b">
         <van-button size='large' color='#32A1EE' block data-url="/pages/goods/edit/index" bind:tap="o-router" block>
             添加商品
         </van-button>

@@ -6,7 +6,8 @@ const computedBehavior = require('miniprogram-computed')
 class Page {
   behaviors = [computedBehavior]
   data = {
-    info: null
+    info: null,
+    activ: 1
   }
   computed = {
 
@@ -32,6 +33,12 @@ class Page {
         info: res.data
       })
     }
+  }
+  choice(e) {
+    this.setData({
+      activ: e.currentTarget.dataset.value
+    })
+
   }
 
   submit() {

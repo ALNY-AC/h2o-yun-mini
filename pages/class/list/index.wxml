@@ -1,11 +1,11 @@
 <view class="box">
-    <view class="list">
-            <view class="title">向左拖拽以删除</view>
+    <view class="list" wx:if="{{list.length > 0}}">
+        <view class="title">向左拖拽以删除</view>
         <view class="item" wx:for="{{list}}" wx:key="index">
             <van-swipe-cell right-width="{{ 65 }}">
                 <van-cell-group>
                     <van-cell size='large' title="{{item.name}}" label="{{item.is_up==1?'':'已隐藏'}}">
-                        <van-icon  size="20" color='#32A1EE' bind:tap="o-router" data-url="/pages/class/edit/index?id={{item.id}}" slot="right-icon" name="edit" class="custom-icon" />
+                        <van-icon size="20" color='#32A1EE' bind:tap="o-router" data-url="/pages/class/edit/index?id={{item.id}}" slot="right-icon" name="edit" class="custom-icon" />
                     </van-cell>
                 </van-cell-group>
                 <view slot="right" style="height:100%" class="van-swipe-cell__right">
@@ -17,9 +17,21 @@
         </view>
         <view class="f-b">
             <van-button size='large' color='#32A1EE' data-url='/pages/class/edit/index' bind:tap='o-router' block>
-            添加分类
-        </van-button>
+                添加分类
+            </van-button>
         </view>
-        
+    </view>
+    <view class="empty" wx:if="{{loading}}">
+        <view class="empty-body">
+            <view class="icon">
+                <image class="img" src="../../../assets/images/class.png"></image>
+            </view>
+            <view class="title">暂无分类，快去添加更多分类！</view>
+        </view>
+        <view class="f-b">
+            <van-button size='large' color='#32A1EE' data-url='/pages/class/edit/index' bind:tap='o-router' block>
+                添加分类
+            </van-button>
+        </view>
     </view>
 </view>

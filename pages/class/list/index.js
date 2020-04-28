@@ -1,9 +1,10 @@
 const origin = require('../../../unity/origin/origin')
 
 class Page {
-  
+
   data = {
-    list: []
+    list: [],
+    loading: false
   }
 
   async onStart() {
@@ -18,10 +19,11 @@ class Page {
     });
     if (res.code >= 0) {
       this.setData({
-        list: res.data.list
+        list: res.data.list,
+        loading: res.data.list.length > 0 ? false : true
       });
     }
-   
+
   }
   del(e) {
     wx.showModal({

@@ -3,37 +3,42 @@
     background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
-    .tabs{
+
+    .tabs {
         display: flex;
         background-color: white;
         padding: 12px 0;
         font-size: 11px;
-        
-        .tab-item{
+
+        .tab-item {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #999999;
         }
-        .active{
+
+        .active {
             color: #32A1EE;
         }
-       
+
     }
+
     .list {
         flex: 1;
         overflow: auto;
 
         .item {
             margin-bottom: 10px;
-          .good-desc{
-           color: #999999;
-          }
+
+            .good-desc {
+                color: #999999;
+            }
+
             .good-card {
                 background-color: #ffffff;
                 padding: 16px;
-                margin:10px 10px 0px;
+                margin: 10px 10px 0px;
             }
 
             .btn-height {
@@ -41,5 +46,29 @@
             }
         }
 
+    }
+
+    .f-b {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .empty {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .icon {
+            margin-bottom: 30px;
+
+            .img {
+                width: 200px;
+                height: 200px;
+            }
+        }
     }
 }
