@@ -61,8 +61,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order/unOrder/index",
-					"pathName": "pages/order/unOrder/index",
+					"name": "pages/pay/ranking/ranking",
+					"pathName": "pages/pay/ranking/ranking",
 					"query": "",
 					"scene": null
 				},
@@ -266,6 +266,7 @@
 					"id": -1,
 					"name": "pages/financial/tixian/index",
 					"pathName": "pages/financial/tixian/index",
+					"query": "",
 					"scene": null
 				}
 			]

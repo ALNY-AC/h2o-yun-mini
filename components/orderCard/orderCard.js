@@ -184,8 +184,26 @@ class Banner {
         })
       }
     } catch (error) {
+      wx.showModal({
+        title: '操作失败',
+        content: '请刷新后重试或联系客服',
+        showCancel: false,
+        confirmText: '知道了'
+      })
       console.warn(error);
     }
+  }
+  goMap() {
+    wx.openLocation({
+      latitude: parseFloat(this.data.info.x),
+      longitude: parseFloat(this.data.info.y),
+      address: this.data.info.address,
+    })
+  }
+  goTelephone() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.info.phone
+    })
   }
 }
 

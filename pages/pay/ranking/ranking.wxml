@@ -1,2 +1,3 @@
-<!--pages/pay/ranking/ranking.wxml-->
-<text>pages/pay/ranking/ranking.wxml</text>
+<view class="test">
+  <van-button type="default" bind:tap="test">test</van-button>
+</view>
