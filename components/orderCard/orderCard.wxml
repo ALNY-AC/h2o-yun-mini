@@ -25,12 +25,12 @@
         <view slot="footer">
             <van-cell title="实付金额" wx:if="{{info.type == 'pay_order'}}" value="{{info.price}}" />
             <van-cell title="本单收入" wx:if="{{info.type == 'pay_order'}}" value="{{info.re_price - info.total_royalty}}" />
-            <van-cell title="支付方式" custom-class="family" value="{{payMethod}}" />
+            <van-cell title="支付方式" value="{{payMethod}}" />
             <van-cell title="客户名称" value="{{info.contacts}}" />
             <van-cell title="联系方式" is-link catch:tap="goTelephone" value="{{info.phone}}" />
             <van-cell title="配送地址" is-link catch:tap="goMap" value="{{info.address}}" />
             <van-cell title="详细地址" value="{{info.address_num}}" />
-            <van-cell title="订单备注" custom-class="family" value="{{info.remarks}}" />
+            <van-cell title="订单备注" custom-class="{{info.remarks?'black':''}}" value="{{info.remarks?info.remarks:'无'}}" />
             <view class="footer" wx:if="{{info.state != 4&&info.state != 5}}">
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 1}}" catch:tap="http_delivery" color="#32A1EE">
                     开始配送
