@@ -3,7 +3,7 @@
     <van-image round width="40" height="40" src="{{item.head}}" />
     <view class="info-box">
       <view class="name">{{item.name}}</view>
-      <view class="time">下单时间：{{item.add_time}}</view>
+      <view class="time">注册时间：{{item.add_time}}</view>
     </view>
   </view>
 </view>

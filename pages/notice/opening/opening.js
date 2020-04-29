@@ -10,6 +10,7 @@ class Page {
    */
   data = {
     openingState: false,
+    btn_state: true
   }
 
   /**
@@ -39,7 +40,22 @@ class Page {
     wx.requestSubscribeMessage({
       tmplIds: ['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'],
       success: (res) => {
-        console.warn(res);
+
+        if (res['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'] == 'accept') {
+          wx.showToast({
+            title: '开通成功~',
+            icon: 'none'
+          })
+          this.setData({
+            btn_state: false
+          })
+        }
+        if (res['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'] == 'reject') {
+          wx.showToast({
+            title: '开通失败，请重试',
+            icon: 'none'
+          })
+        }
       }
     })
   }

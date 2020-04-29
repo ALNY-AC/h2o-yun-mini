@@ -32,13 +32,15 @@ class Banner {
       let order = data.stateArr.find(el => el.state == data.info.state)
       return order.title
     },
-    // footerState(data) {
-    //   if (!data.info) return false
-    //   if (data.info.state == 1 || data.info.state == 21 || data.info.state == 2 || data.info.state == 5) {
-    //     return true
-    //   }
-    //   return false
-    // },
+    payMethod(data) {
+      if (!data.info) return false
+      if (data.info.type == 'pay_order') {
+        return '在线支付'
+      }
+      if (data.info.type == 'water_order') {
+        return '水票支付'
+      }
+    },
     head_class(data) {
       if (!data.info) return false
       if (data.info.state == 1) {

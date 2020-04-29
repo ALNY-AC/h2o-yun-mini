@@ -4,5 +4,10 @@
   </view>
   <view class="title" wx:if="{{openingState}}">已开通，您可以即时接收新订单通知！</view>
   <view class="title" wx:if="{{!openingState}}">开通后，您将可以即时接收新订单通知！</view>
-  <van-button round color="#32A1EE" wx:if="{{!openingState}}" bind:tap="opening">开通通知</van-button>
+  <van-button round color="#32A1EE" wx:if="{{!openingState&&btn_state}}" bind:tap="opening">
+    开通通知
+  </van-button>
+  <van-button round color="#32A1EE" wx:if="{{openingState&&btn_state}}" bind:tap="opening">
+    重新开通
+  </van-button>
 </view>
