@@ -5,46 +5,13 @@ class Page {
    * 声明data
    */
   data = {
-    list: [{
-      add_time: "2020-04-25 15:21:48",
-      buy_num: 10,
-      goods_id: "[7764,7765,7766]",
-      id: 51,
-      min: 10,
-      name: "桶装水",
-      price: "0.01",
-      stock: 0,
-      store_id: 28,
-      head: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK0n3ezUoE4kxjsEUALUw9hYuyUUiawQ0YPaibjtEopzb5Qc3MXhsrSCS1KNabmem7eZXFc1ibssV33A/132",
-      name: "PerfectMan Sun",
-      price: "0.10",
-    }, {
-      add_time: "2020-04-25 15:21:48",
-      buy_num: 10,
-      goods_id: "[7764,7765,7766]",
-      id: 51,
-      min: 10,
-      name: "桶装水",
-      price: "0.01",
-      stock: 0,
-      store_id: 28,
-      head: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK0n3ezUoE4kxjsEUALUw9hYuyUUiawQ0YPaibjtEopzb5Qc3MXhsrSCS1KNabmem7eZXFc1ibssV33A/132",
-      name: "PerfectMan Sun",
-      price: "0.10",
-    }, {
-      add_time: "2020-04-25 15:21:48",
-      buy_num: 10,
-      goods_id: "[7764,7765,7766]",
-      id: 51,
-      min: 10,
-      name: "桶装水",
-      price: "0.01",
-      stock: 0,
-      store_id: 28,
-      head: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK0n3ezUoE4kxjsEUALUw9hYuyUUiawQ0YPaibjtEopzb5Qc3MXhsrSCS1KNabmem7eZXFc1ibssV33A/132",
-      name: "PerfectMan Sun",
-      price: "0.10",
-    }]
+    list: [],
+    query: {
+      page: 1,
+      page_size: 10,
+      store_id: wx.getStorageSync('store_id')
+    },
+    loading: false
   }
 
   /**
@@ -52,12 +19,41 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    this.update()
   }
 
   //调用接口
   async update() {
+    try {
+      const res = await this.$http.post('/store/user', this.data.query)
+      if (res.code > 0) {
+        this.setData({
+          list: [...this.data.list, ...res.data.list],
+          ['query.page']: ++this.data.query.page,
+          loading: res.data.list.length > 0 ? true : false
+        })
+      } else {
+        this.setData({
+          loading: res.data.list.length > 0 ? true : false
+        })
+      }
+      wx.stopPullDownRefresh()
+    } catch (error) {
+      console.warn(error);
+    }
   }
   async submit() {
+    console.warn(1);
+  }
+  onPullDownRefresh() {
+    this.setData({
+      list: [],
+      ['query.page']: 1,
+      loading: false
+    })
+    this.update()
+  }
+  onReachBottom() {
     console.warn(1);
 
   }

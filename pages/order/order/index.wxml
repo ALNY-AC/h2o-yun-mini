@@ -1,5 +1,5 @@
-<view class="order-list">
-  <van-tabs swipeable custom-class="head-tab" bind:click='onChange'>
+<view class="head">
+  <van-tabs custom-class="head-tab" bind:click='onChange'>
     <van-tab title="全部"></van-tab>
     <!-- <van-tab title="待支付"></van-tab> -->
     <van-tab title="待配送"></van-tab>
@@ -8,6 +8,8 @@
     <van-tab title="已完成"></van-tab>
     <van-tab title="已取消"></van-tab>
   </van-tabs>
+</view>
+<view class="order-list">
   <view class="item" wx:if="{{list.length > 0}}">
     <order-card info='{{item}}' data-url="/pages/order/orderInfo/index?order_id={{item.order_id}}" bind:tap="o-router" wx:for="{{list}}" wx:key='index'></order-card>
   </view>

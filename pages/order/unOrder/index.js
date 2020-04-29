@@ -51,7 +51,7 @@ class Page {
         })
       } else {
         this.setData({
-          loading: res.data.list.length > 0 ? false : true
+          loading: this.data.list.length > 0 ? false : true
         })
       }
       wx.hideLoading()
@@ -68,7 +68,7 @@ class Page {
   //上拉加载
   onReachBottom() {
     this.setData({
-      ['query.page']: ++this.data.form.page,
+      ['query.page']: ++this.data.query.page,
       ['query.page_size']: 10
     })
     this.update();

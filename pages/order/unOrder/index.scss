@@ -3,16 +3,13 @@ page {
 }
 
 .list {
-    height: 100vh;
-
-
     .item {
         padding: 15px;
     }
 }
 
 .empty {
-    height: 100vh;
+    padding-top: 140px;
     display: flex;
     justify-content: center;
     align-items: center;

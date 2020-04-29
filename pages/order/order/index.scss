@@ -2,26 +2,32 @@ page {
   background-color: #f1f1f1;
 }
 
-.order-list {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 
   .head-tab {
     .van-tabs__scroll {
-      background-color: transparent !important;
+      background-color: #f1f1f1 !important;
     }
   }
+}
+
+
+.order-list {
+  padding-top: 40px;
 
   .item {
-    flex: 1;
     padding: 15px;
     padding-top: 10px;
     overflow: auto;
   }
 
   .empty {
-    height: 100vh;
+    padding-top: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
