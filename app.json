@@ -31,7 +31,8 @@
     "pages/share/range/range",
     "pages/pay/range/range",
     "pages/pay/ranking/ranking",
-    "pages/user/list/list"
+    "pages/user/list/list",
+    "pages/notice/opening/opening"
   ],
   "permission": {
     "scope.userLocation": {

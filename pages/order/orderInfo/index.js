@@ -252,6 +252,11 @@ class Page {
       address: this.data.info.addressInfo.address,
     })
   }
+  goTelephone() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.info.addressInfo.phone
+    })
+  }
 }
 
 origin(Page);

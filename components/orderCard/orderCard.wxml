@@ -24,9 +24,10 @@
         </view>
         <view slot="footer">
             <van-cell title="实付金额" value="{{info.price}}" />
+            <van-cell title="本单收入" value="{{info.re_price - info.total_royalty}}" />
             <van-cell title="客户名称" value="{{info.contacts}}" />
-            <van-cell title="联系方式" value="{{info.phone}}" />
-            <van-cell title="配送地址" value="{{info.address}}" />
+            <van-cell title="联系方式" is-link catch:tap="goTelephone" value="{{info.phone}}" />
+            <van-cell title="配送地址" is-link catch:tap="goMap" value="{{info.address}}" />
             <van-cell title="详细地址" value="{{info.address_num}}" />
             <view class="footer" wx:if="{{info.state != 4&&info.state != 5}}">
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 1}}" catch:tap="http_delivery" color="#32A1EE">

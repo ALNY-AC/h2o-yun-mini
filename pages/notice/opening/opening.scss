@@ -1,0 +1,26 @@
+page {
+  background-color: #fff;
+
+  .empty {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .icon {
+      margin-bottom: 60px;
+
+      .img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    .title {
+      font-size: 14px;
+      color: rgba($color: #000000, $alpha: 0.6);
+      margin-bottom: 50px;
+    }
+  }
+}

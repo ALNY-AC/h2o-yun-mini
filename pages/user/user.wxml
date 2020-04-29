@@ -5,3 +5,4 @@
 <van-cell is-link title="切换店铺" link-type="navigateTo" url="/pages/store/selectStore/index" />
 <van-cell is-link title="我的财务" link-type="navigateTo" url="/pages/financial/yue/index" />
 <van-cell is-link title="意见反馈" link-type="navigateTo" url="/pages/feedback/index" />
+<van-cell is-link title="开通通知" link-type="navigateTo" url="/pages/notice/opening/opening" />

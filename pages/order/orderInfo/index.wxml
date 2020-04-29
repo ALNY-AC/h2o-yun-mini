@@ -10,6 +10,7 @@
                         <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
                     </block>
                     <view class="total-price">合计：￥{{info.price}}</view>
+                    <van-cell title="本单收入" value="{{info.re_price - info.total_royalty}}" border="{{false}}" />
                 </view>
             </van-panel>
         </view>
@@ -17,8 +18,8 @@
             <van-panel title="配送信息">
                 <view>
                     <van-cell title="客户名称" custom-class="family" value="{{info.addressInfo.contacts}}" />
-                    <van-cell title="联系方式" custom-class="family" value="{{info.addressInfo.phone}}" />
-                    <van-cell title="配送地址" custom-class="family" bind:tap="goMap" value="{{info.addressInfo.address}}"/>
+                    <van-cell title="联系方式" custom-class="family" is-link bind:tap="goTelephone" value="{{info.addressInfo.phone}}" />
+                    <van-cell title="配送地址" custom-class="family" is-link bind:tap="goMap" value="{{info.addressInfo.address}}" />
                     <van-cell title="详细地址" custom-class="family" value="{{info.addressInfo.address_num}}" border="{{ false }}" />
                 </view>
             </van-panel>

@@ -1,0 +1,1 @@
+page{background-color:#fff}page .empty{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column}page .empty .icon{margin-bottom:60px}page .empty .icon .img{width:160px;height:160px}page .empty .title{font-size:14px;color:rgba(0,0,0,0.6);margin-bottom:50px}
