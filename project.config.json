@@ -116,10 +116,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "pages/goods/edit/index",
 					"pathName": "pages/goods/edit/index",
-					"query": "",
+					"query": "id=4",
 					"scene": null
 				},
 				{

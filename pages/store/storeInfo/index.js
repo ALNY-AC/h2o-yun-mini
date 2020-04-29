@@ -67,7 +67,7 @@ class Page {
   async save() {
     try {
       const res = await this.$http.post('/store/save', this.data.form);
-      if (res.code >= 0) {
+      if (res.code > 0) {
         this.$toast('保存成功');
         wx.setStorageSync('store', this.data.form);
         wx.setStorageSync('store_id', res.data);
@@ -78,7 +78,6 @@ class Page {
             url: '/pages/home/index'
           });
         }
-
       } else {
         this.$toast(res.msg);
       }
@@ -94,7 +93,7 @@ class Page {
     const res = await upload.push();
     wx.showLoading({
       title: "上传中",
-      mask:true
+      mask: true
     })
     setTimeout(() => {
       wx.hideLoading();

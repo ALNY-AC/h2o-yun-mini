@@ -62,6 +62,7 @@ module.exports = function origin(className) {
         handlePage.handleSetData(this);
         handlePage.handleHttp(this);
         handlePage.handleRouter(this);
+        handlePage.handleWatch(this);
         this.setData({ $app: getApp().globalData });
         if (this.onStart) {
             this.onStart();
@@ -172,7 +173,6 @@ class HandlePage {
         }
         const setData = vm.setData;
         vm.setData = function (opt) {
-
             return new Promise((resolve, reject) => {
                 setData.call(vm, opt, (e) => {
                     resolve(e)

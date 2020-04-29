@@ -1,7 +1,7 @@
 <view class="box">
-    <view class="tabs" wx:if="{{list.length>0}}">
-        <view bind:tap='hide1' class="tab-item {{form.is_up==1?'active':''}} ">上架</view>
-        <view bind:tap='hide2' class="tab-item {{form.is_up==0?'active':''}}">下架</view>
+    <view class="tabs">
+        <view bind:tap='hide1' class="tab-item {{query.is_up==1?'active':''}} ">上架</view>
+        <view bind:tap='hide2' class="tab-item {{query.is_up==0?'active':''}}">下架</view>
     </view>
     <view class="list" wx:if="{{list.length>0}}">
         <view class="item" wx:key="index" wx:for="{{list}}">

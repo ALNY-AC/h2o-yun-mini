@@ -18,12 +18,13 @@ class Page {
       class_id: '',
       goods_head: '',
       stock: '',
-      is_up: 1,
+      is_up: 0,
     },
     show1: false,
     classList: [],
-    is_up:true,
-    index:0,
+    is_up: false,
+    index: 0,
+    goods_head: ''
   }
   computed = {
 
@@ -46,9 +47,7 @@ class Page {
       } else {
         return 0
       }
-    }
-
-
+    },
   }
   /**
    * 声明周期函数
@@ -63,7 +62,8 @@ class Page {
       if (res.code >= 0) {
         this.setData({
           form: res.data,
-          is_up:res.data.is_up
+          goods_head: this.$getUrl(res.data.goods_head),
+          is_up: res.data.is_up === 1 ? true : false
         });
       }
     }
@@ -117,7 +117,7 @@ class Page {
   }
 
   onConfirm(e) {
-   
+
   }
 
 
@@ -135,7 +135,8 @@ class Page {
     setTimeout(() => {
       wx.hideLoading();
       this.setData({
-        ['form.goods_head']: res
+        ['form.goods_head']: res,
+        goods_head: this.$getUrl(res),
       });
     }, 2000)
 

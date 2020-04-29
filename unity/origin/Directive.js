@@ -3,6 +3,9 @@ var modelTool = {
         picker(e) {
         },
         input(e) {
+
+
+
             let key = e.currentTarget.dataset.model;
 
             let value = '';
@@ -27,8 +30,9 @@ var modelTool = {
 
 
             }
-
-            this.setData({ [key]: value });
+            
+            
+        this.setData({ [key]: value });
         }
     }
 }
@@ -36,10 +40,12 @@ var modelTool = {
 
 module.exports = function (methods) {
     methods['o-model'] = function (e) {
+
+
         let dataset = e.currentTarget.dataset;
         let modelType = typeof dataset.modelType == 'undefined' ? 'input' : dataset.modelType;
         if (modelTool.OModel[modelType]) {
-            modelTool.OModel[modelType].call(this, e);
+            modelTool.OModel[modelType].call(this, e,this);
         } else {
             console.warn(`[origin] ${modelType} 是无效的Model方式!`);
         }

@@ -22,7 +22,7 @@ class Page {
       width: 200,
       height: 200,
       canvasId: 'myQrcode',
-      text: `http://h5.h2o.cy-cube.com/pay/ticket?id=${this.$route.query.id}`
+      text: `https://h5.h2o.cy-cube.com/pay/ticket?id=${this.$route.query.id}`
     })
   }
 

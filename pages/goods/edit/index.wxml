@@ -1,14 +1,14 @@
 <view class="box">
     <van-cell-group>
         <van-cell title-class='storeTitle' title="商品图标">
-            <van-image width="100" bind:tap="upload" height="100" src="{{$app.url.imageUrl+form.goods_head}}" />
+            <van-image width="100" bind:tap="upload" height="100" src="{{goods_head}}" />
         </van-cell>
         <van-field bind:input='o-model' data-model="form.title" value='{{form.title}}' clearable label="商品标题" placeholder="请输入价格商品标题" />
         <van-field type='digit' bind:input='o-model' data-model="form.price" value='{{form.price}}' clearable label="价格" placeholder="请输入价格" />
         <van-field type='number' bind:input='o-model' data-model="form.sort" value='{{form.sort}}' clearable label="排序" placeholder="请输入排序" />
         <van-field type='number' bind:input='o-model' data-model="form.stock" value='{{form.stock}}' clearable label="库存" placeholder="请输入库存" />
         <van-cell center title="是否显示">
-            <switch model:checked="{{is_up}}" bindchange="o-model" data-model="form.is_up" data-value="{{is_up===true?0:1}}" />
+            <switch model:checked="{{is_up}}" bindchange="o-model" data-model="form.is_up" data-value="{{is_up === false ? 1:0}}" />
         </van-cell>
     </van-cell-group>
     <picker bindchange="o-model" data-model="form.class_id" model:value="{{index}}" data-value="{{classList[index].id}}" range="{{classList}}" range-key='name'>
