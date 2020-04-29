@@ -10,7 +10,7 @@ class Page {
       img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586957304625&di=00265dca96f1ac4236b3ba1208620fd4&imgtype=0&src=http%3A%2F%2Fimg009.hc360.cn%2Fg6%2FM07%2F5D%2FAB%2FwKhQsVNsW6aEP0DZAAAAAMqPSDE457.jpg'
     },
     list: [],
-    form: {
+    query: {
       page: 1,
       page_size: 10,
       is_up: 1
@@ -26,35 +26,39 @@ class Page {
   async onStart() {
 
     this.setData({
-      'form.store_id': wx.getStorageSync('store_id')
+      'query.store_id': wx.getStorageSync('store_id')
     });
     this.updateInit();
   }
   onShow() {
     this.setData({
-      'form.store_id': wx.getStorageSync('store_id')
+      'query.store_id': wx.getStorageSync('store_id')
     });
 
   }
   hide1() {
     this.setData({
-      'form.is_up': 1
+      'query.is_up': 1
     })
     this.updateInit();
   }
   hide2() {
     this.setData({
-      'form.is_up': 0
+      'query.is_up': 0
     })
     this.updateInit();
   }
   //调用接口
   async update() {
-    const res = await this.$http.post('/goods/list', this.data.form);
-    if (res.code >= 0) {
+    const res = await this.$http.post('/goods/list', this.data.query);
+    if (res.code > 0) {
       this.setData({
         list: [...this.data.list, ...res.data.list],
         loading: res.data.list.length > 0 ? false : true
+      })
+    } else {
+      this.setData({
+        loading: this.data.list.length > 0 ? false : true
       })
     }
     wx.stopPullDownRefresh();
@@ -68,7 +72,7 @@ class Page {
   updateInit() {
     this.setData({
       list: [],
-      ['form.page']: 1,
+      ['query.page']: 1,
       loading: false,
     })
     this.update()
@@ -103,8 +107,8 @@ class Page {
   //上拉加载
   onReachBottom() {
     this.setData({
-      ['form.page']: ++this.data.query.page,
-      ['form.page_size']: 10
+      ['query.page']: ++this.data.query.page,
+      ['query.page_size']: 10
     })
     this.update();
   }

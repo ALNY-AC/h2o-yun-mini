@@ -7,3 +7,12 @@
     </view>
   </view>
 </view>
+<view class="empty" wx:if="{{loading}}">
+  <view class="icon">
+    <image class="img" src="../../../assets/images/user.png"></image>
+  </view>
+  <view class="title">暂无用户，快去分享店铺给更多用户吧！</view>
+  <van-button round color="#32A1EE" bind:tap="o-router" data-url="/pages/share/store/store">
+    分享店铺
+  </van-button>
+</view>

@@ -29,11 +29,15 @@ class Page {
   //调用接口
   async update() {
     const res = await this.$http.post('/water_coupon/list', this.data.query);
-    if (res.code >= 0) {
+    if (res.code > 0) {
       this.setData({
         ['query.page']: ++this.data.query.page,
         list: [...this.data.list, ...res.data.list],
-        loading: res.data.list.length > 0 || this.data.list.length > 0 ? false : true
+        loading: res.data.list.length > 0 ? false : true
+      })
+    } else {
+      this.setData({
+        loading: this.data.list.length > 0 ? false : true
       })
     }
     wx.stopPullDownRefresh();

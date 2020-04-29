@@ -8,14 +8,13 @@ page {
 }
 
 .empty-box {
-    height: 100vh;
-    width: 100vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    padding-top: 150px;
+    align-items: center;
 
     .btn-box {
+        margin-top: 10%;
         width: 80%;
     }
 }

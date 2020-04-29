@@ -1,14 +1,18 @@
 .box {
-    height: 100vh;
     background-color: #f6f6f6;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 60px;
+    padding-top: 40px;
 
     .tabs {
         display: flex;
         background-color: white;
         padding: 12px 0;
         font-size: 11px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
 
         .tab-item {
             flex: 1;
@@ -29,7 +33,7 @@
         overflow: auto;
 
         .item {
-            margin-bottom: 10px;
+            // margin-bottom: 10px;
 
             .good-desc {
                 color: #999999;
@@ -56,7 +60,7 @@
     }
 
     .empty {
-        flex: 1;
+        padding-top: 140px;
         display: flex;
         justify-content: center;
         align-items: center;

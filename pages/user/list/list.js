@@ -25,18 +25,24 @@ class Page {
   //调用接口
   async update() {
     try {
+      wx.showLoading({
+        title: '加载中',
+      })
       const res = await this.$http.post('/store/user', this.data.query)
       if (res.code > 0) {
         this.setData({
           list: [...this.data.list, ...res.data.list],
           ['query.page']: ++this.data.query.page,
-          loading: res.data.list.length > 0 ? true : false
+          loading: res.data.list.length > 0 ? false : true
         })
       } else {
+        console.warn();
+
         this.setData({
-          loading: res.data.list.length > 0 ? true : false
+          loading: this.data.list.length > 0 ? false : true
         })
       }
+      wx.hideLoading()
       wx.stopPullDownRefresh()
     } catch (error) {
       console.warn(error);
@@ -54,8 +60,7 @@ class Page {
     this.update()
   }
   onReachBottom() {
-    console.warn(1);
-
+    this.update()
   }
 
 }
