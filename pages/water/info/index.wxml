@@ -4,11 +4,11 @@
         <view class="value-cell-group">
             <view class="value-cell">
                 <view class="title">已收入</view>
-                <view class="value">1000￥</view>
+                <view class="value">{{info.coupon_money}}￥</view>
             </view>
             <view class="value-cell">
                 <view class="title">历史售出</view>
-                <view class="value">2389</view>
+                <view class="value">{{info.coupon_num}}</view>
             </view>
         </view>
     </view>
