@@ -1,0 +1,15 @@
+module.exports = function (state) {
+  // 状态0待审核1通过2驳回3处理中
+  if (state == 0) {
+    return '待审核'
+  }
+  if (state == 1) {
+    return '通过'
+  }
+  if (state == 2) {
+    return '驳回'
+  }
+  if (state == 3) {
+    return '处理中'
+  }
+}

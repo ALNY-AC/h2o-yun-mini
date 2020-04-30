@@ -84,6 +84,7 @@ class Banner {
       const res = await http.post('/order/sending', {
         order_id: this.data.info.order_id
       })
+      this.httpSucces();
       wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
@@ -136,6 +137,7 @@ class Banner {
       const res = await http.post('/order/close_order', {
         order_id: this.data.info.order_id
       });
+      this.httpSucces();
       wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
@@ -175,6 +177,7 @@ class Banner {
       const res = await http.post('/order/success', {
         order_id: this.data.info.order_id
       })
+      this.httpSucces();
       wx.hideLoading()
       if (res.code > 0) {
         wx.showToast({
@@ -207,6 +210,9 @@ class Banner {
       phoneNumber: this.data.info.phone
     })
   }
+  httpSucces(){
+    this.triggerEvent('on-state')
+  } 
 }
 
 origin(Banner)

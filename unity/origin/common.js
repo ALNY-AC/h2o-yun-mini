@@ -18,7 +18,7 @@ Array.prototype.last = function (num = 1) {
 // // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
 // // 例子：
 // // new Date().Format("yyyy-MM-dd.S") ==> 2006-07-02 08:09:04.423
-// // new Date().Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+// // new Date().Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18fd
 // // new Date().Format("yyyy-MM-dd hh:mm:ss")      ==> 0000-00-00 00:00:00
 Date.prototype.Format = function (fmt = 'yyyy-MM-dd hh:mm:ss') { //author: meizz
     const o = {

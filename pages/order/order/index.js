@@ -41,19 +41,24 @@ class Page {
     })
     this.update()
   }
+  async updateTotal() {
+    const total = await this.$http.post('/order/list_count', {
+      store_id: this.data.query.store_id
+    })
+    console.warn('updateTotal');
+
+    if (total.code > 0) {
+      this.setData({
+        totalinfo: total.data
+      })
+    }
+  }
   async update() {
     try {
       wx.showLoading({
         title: '加载中',
-      })
-      const total = await this.$http.post('/order/list_count', {
-        store_id: this.data.query.store_id
-      })
-      if (total.code > 0) {
-        this.setData({
-          totalinfo: total.data
-        })
-      }
+      });
+      this.updateTotal();
       const res = await this.$http.post('/order/list', this.data.query)
       if (res.code > 0) {
         res.data.list.forEach(el => {

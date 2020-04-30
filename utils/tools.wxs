@@ -1,4 +1,6 @@
 var indexOf = require("./wxs/indexOf.wxs");
+var budgetTypeState = require("./wxs/budgetTypeState.wxs");
 module.exports = {
-    indexOf: indexOf
+    indexOf: indexOf,
+    budgetTypeState: budgetTypeState
 };
