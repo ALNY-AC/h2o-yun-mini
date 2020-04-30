@@ -7,10 +7,10 @@ class Page {
   data = {
     form: {
       name: "",
-      is_up: 1,
-      store_id:'',
+      is_up: 0,
+      store_id: '',
     },
-    is_up:true,
+    is_up: false,
   }
 
   /**
@@ -25,13 +25,13 @@ class Page {
       if (res.code >= 0) {
         this.setData({
           form: res.data,
-          is_up:res.data.is_up
+          is_up: res.data.is_up === 1 ? true : false
         })
       }
-    }else{
-        this.setData({
-          'form.store_id': wx.getStorageSync('store_id')
-        });
+    } else {
+      this.setData({
+        'form.store_id': wx.getStorageSync('store_id')
+      });
     }
   }
   onChange(e) {

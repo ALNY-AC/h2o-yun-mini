@@ -7,6 +7,7 @@
     </view>
   </view>
 </view>
+
 <view class="empty" wx:if="{{loading}}">
   <view class="icon">
     <image class="img" src="../../../assets/images/user.png"></image>

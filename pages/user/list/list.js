@@ -9,9 +9,10 @@ class Page {
     query: {
       page: 1,
       page_size: 10,
-      store_id: wx.getStorageSync('store_id')
+      store_id: ''
     },
-    loading: false
+    total: 0,
+    loading: false,
   }
 
   /**
@@ -19,6 +20,10 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
+    this.setData({
+      ['query.store_id']: wx.getStorageSync('store_id')
+    })
+
     this.update()
   }
 
@@ -28,30 +33,28 @@ class Page {
       wx.showLoading({
         title: '加载中',
       })
-      const res = await this.$http.post('/store/user', this.data.query)
+      const res = await this.$http.post('/store/user', this.data.query);
       if (res.code > 0) {
         this.setData({
           list: [...this.data.list, ...res.data.list],
           ['query.page']: ++this.data.query.page,
-          loading: res.data.list.length > 0 ? false : true
+          loading: res.data.total > 0 ? false : true
         })
       } else {
-        console.warn();
-
         this.setData({
-          loading: this.data.list.length > 0 ? false : true
+          loading: this.data.total > 0 ? false : true
         })
       }
       wx.hideLoading()
       wx.stopPullDownRefresh()
     } catch (error) {
-      console.warn(error);
     }
   }
   async submit() {
     console.warn(1);
   }
   onPullDownRefresh() {
+
     this.setData({
       list: [],
       ['query.page']: 1,
