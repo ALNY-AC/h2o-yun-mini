@@ -1,12 +1,12 @@
 <view class="head">
   <van-tabs custom-class="head-tab" bind:click='onChange'>
-    <van-tab title="全部"></van-tab>
+    <van-tab title="全部" info="{{totalinfo.total > 0?totalinfo.total:''}}"></van-tab>
     <!-- <van-tab title="待支付"></van-tab> -->
-    <van-tab title="待配送"></van-tab>
-    <van-tab title="配送中"></van-tab>
-    <van-tab title="退款/售后"></van-tab>
-    <van-tab title="已完成"></van-tab>
-    <van-tab title="已取消"></van-tab>
+    <van-tab title="待配送" info="{{totalinfo.wait_send > 0?totalinfo.wait_send:''}}"></van-tab>
+    <van-tab title="配送中" info="{{totalinfo.sending > 0?totalinfo.sending:''}}"></van-tab>
+    <van-tab title="售后" info="{{totalinfo.refund > 0?totalinfo.refund:''}}"></van-tab>
+    <van-tab title="已完成" info="{{totalinfo.finish > 0?totalinfo.finish:''}}"></van-tab>
+    <van-tab title="已取消" info="{{totalinfo.off > 0?totalinfo.off:''}}"></van-tab>
   </van-tabs>
 </view>
 <view class="order-list">

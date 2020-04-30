@@ -8,6 +8,9 @@ const computedBehavior = require('miniprogram-computed')
  */
 class Page {
   behaviors = [computedBehavior]
+  options = {
+    styleIsolation: 'shared'
+  }
   data = {
     list: [],
     query: {
@@ -16,10 +19,16 @@ class Page {
       store_id: 0,
       state: ''
     },
-    loading: false
+    loading: false,
+    totalinfo: null,
   }
   computed = {
-
+    tab_total(data) {
+      if (data.total > 100) {
+        return '99+'
+      }
+      return data.total
+    }
   }
   watch = {}
 
@@ -37,6 +46,14 @@ class Page {
       wx.showLoading({
         title: '加载中',
       })
+      const total = await this.$http.post('/order/list_count', {
+        store_id: this.data.query.store_id
+      })
+      if (total.code > 0) {
+        this.setData({
+          totalinfo: total.data
+        })
+      }
       const res = await this.$http.post('/order/list', this.data.query)
       if (res.code > 0) {
         res.data.list.forEach(el => {
@@ -49,11 +66,9 @@ class Page {
           loading: res.data.list.length > 0 ? false : true
         })
       } else {
-        if (!res.data.total > 0) {
-          this.setData({
-            loading: res.data.list.length > 0 ? false : true
-          })
-        }
+        this.setData({
+          loading: this.data.list.length > 0 ? false : true,
+        })
       }
       wx.hideLoading()
       wx.stopPullDownRefresh();
