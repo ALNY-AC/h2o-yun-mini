@@ -13,7 +13,8 @@ class Page {
     query: {
       page: 1,
       page_size: 10,
-      is_up: 1
+      is_up: 1,
+      store_id: '',
     },
     show: 1,
     loading: false
@@ -24,17 +25,15 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-
     this.setData({
       'query.store_id': wx.getStorageSync('store_id')
     });
-    this.updateInit();
   }
   onShow() {
     this.setData({
       'query.store_id': wx.getStorageSync('store_id')
     });
-
+    this.updateInit();
   }
   hide1() {
     this.setData({

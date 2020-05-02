@@ -5,8 +5,8 @@ class Page {
    * 声明data
    */
   data = {
-    id: '',
-    pwd: ''
+    account: '',
+    password: ''
   }
 
   /**
@@ -14,28 +14,26 @@ class Page {
    * 在onLoad后立即调用
    */
   onStart() {
-    let key = 'id2';
-
-    console.warn({
-        id: '1',
-        type: 'text',
-        [key]: 1
-      });
-
-
   }
 
   async submit() {
+
     const res = await this.$http.post('/auth/pwd/login', {
-      id: this.data.id,
-      pwd: this.data.pwd
+      account: this.data.account,
+      password: this.data.password
     });
+    console.warn(res);
+
+    wx.setStorageSync('jwt', res.jwt);
+    wx.setStorageSync('userInfo', res.userInfo);
+
     if (res.code >= 0) {
-      wx.switchTab({
-        url: '/pages/order/unOrder/index'
-      });
+      this.$toast('登陆成功～');
+      wx.reLaunch({
+        url: '/pages/store/selectStore/index'
+      })
     } else {
-      this.$toast(res.msg);
+      this.$toast('登陆失败，请检查账户或密码！');
     }
   }
 

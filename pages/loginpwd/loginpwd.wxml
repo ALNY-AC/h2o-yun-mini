@@ -4,8 +4,8 @@
 </view>
 <view class="form-box">
     <view class="title">账户：</view>
-    <input type="text" bindinput="o-model" placeholder="请输入账户" data-model="id" />
+    <input type="text" bindinput="o-model" value="{{account}}" placeholder="请输入账户" data-model="account" />
     <view class="title">密码：</view>
-    <input type="password" bindinput="o-model" placeholder="请输入密码" data-model="pwd" />
+    <input type="password" bindinput="o-model" value="{{password}}" placeholder="请输入密码" data-model="password" />
     <van-button bind:tap="submit" block>登陆</van-button>
 </view>

@@ -10,5 +10,8 @@
         <button wx:if="{{userInfo}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type="primary">
             绑定手机号
         </button>
+        <view class="login-model2" bind:tap="o-router" data-url="/pages/loginpwd/loginpwd">
+            或账户密码登陆>
+        </view>
     </view>
 </view>
