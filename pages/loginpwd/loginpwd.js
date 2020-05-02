@@ -22,7 +22,6 @@ class Page {
       account: this.data.account,
       password: this.data.password
     });
-    console.warn(res);
 
     wx.setStorageSync('jwt', res.jwt);
     wx.setStorageSync('userInfo', res.userInfo);

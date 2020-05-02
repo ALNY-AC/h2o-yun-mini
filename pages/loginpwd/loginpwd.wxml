@@ -1,6 +1,14 @@
-<view class="login-head">
-    <view class="title">欢迎使用云水管理系统</view>
-    <view class="sub-title">登陆以管理您的订单</view>
+<view class="zr">
+    <view class="login-head">
+        <view class="title">欢迎使用云水管理系统</view>
+        <view class="sub-title">登陆以管理您的订单</view>
+    </view>
+    <view class="water">
+        <view class="water-c">
+            <view class="water-1"></view>
+            <view class="water-2"></view>
+        </view>
+    </view>
 </view>
 <view class="form-box">
     <view class="title">账户：</view>
