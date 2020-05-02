@@ -6,3 +6,4 @@
 <van-cell is-link title="我的财务" link-type="navigateTo" url="/pages/financial/yue/index" />
 <van-cell is-link title="意见反馈" link-type="navigateTo" url="/pages/feedback/index" />
 <van-cell is-link title="通知配置" link-type="navigateTo" url="/pages/notice/opening/opening" />
+<van-cell is-link title="重新登陆" bind:tap="reLogin" />

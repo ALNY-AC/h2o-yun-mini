@@ -36,6 +36,12 @@ class Page {
   update() {
 
   }
+  reLogin() {
+    wx.clearStorageSync();
+    wx.reLaunch({
+      url: '/pages/login/login'
+    })
+  }
 
   onPageScroll({
     scrollTop
