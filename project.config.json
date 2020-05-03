@@ -61,8 +61,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/pay/ranking/ranking",
-					"pathName": "pages/pay/ranking/ranking",
+					"name": "pages/goods/select/index",
+					"pathName": "pages/goods/select/index",
 					"query": "",
 					"scene": null
 				},
@@ -273,6 +273,7 @@
 					"id": -1,
 					"name": "pages/login/login",
 					"pathName": "pages/login/login",
+					"query": "",
 					"scene": null
 				}
 			]

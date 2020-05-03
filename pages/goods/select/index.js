@@ -33,6 +33,11 @@ class Page {
   async update() {
     const res = await this.$http.post('/goods/list', this.data.form);
     if (res.code >= 0) {
+      // if (res.data.list.length < 1) {
+      //   if (this.data.list.length < 1) {
+
+      //   }
+      // }
       this.setData({
         list: [...this.data.list, ...res.data.list],
       })
