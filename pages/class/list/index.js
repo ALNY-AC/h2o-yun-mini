@@ -7,10 +7,7 @@ class Page {
     loading: false
   }
 
-  async onStart() {
-    this.update();
-  }
-  onShow() {
+  onStart() {
     this.update();
   }
   async update() {
@@ -23,6 +20,7 @@ class Page {
         loading: res.data.list.length > 0 ? false : true
       });
     }
+    wx.stopPullDownRefresh()
 
   }
   del(e) {
@@ -34,19 +32,21 @@ class Page {
           const res1 = await this.$http.post('/class/del', {
             id: e.currentTarget.dataset.id
           });
-          if (res1.code >= 0) {
+          if (res1.code > 0) {
             this.$toast('删除成功');
-            this.updateInit();
           } else {
             this.$toast(res1.msg);
           }
+          this.update();
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
       }
     })
-
-
+  }
+  onPullDownRefresh() {
+    console.warn(1);
+    this.update()
   }
 }
 

@@ -67,16 +67,29 @@ class Page {
         });
       }
     }
+
+  }
+  onShow() {
     this.httpClass();
   }
   async httpClass() {
     const res = await this.$http.post('/class/list', {
       store_id: wx.getStorageSync('store_id')
     });
-    if (res.code >= 0) {
-      this.setData({
-        classList: res.data.list
-      });
+    if (res.code > 0) {
+      if (res.data.list.length > 0) {
+        this.setData({
+          classList: res.data.list
+        });
+      } else {
+        wx.showModal({
+          title: '请先创建分类',
+          showCancel: false,
+          success: () => {
+            this.$router.push('/pages/class/edit/index')
+          }
+        })
+      }
     }
   }
 
