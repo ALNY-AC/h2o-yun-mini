@@ -18,8 +18,8 @@
                 <view class="info-value">{{info.coupon_num}}</view>
             </view>
         </view>
-        <view class="bottom-border">
+        <!-- <view class="bottom-border">
             <view style="background-color:{{rb}}" class="border-radius" wx:for="{{number}}" wx:key="index"></view>
-        </view>
+        </view> -->
     </view>
 </view>

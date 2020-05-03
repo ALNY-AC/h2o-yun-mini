@@ -8,10 +8,11 @@ page {
 }
 
 .empty-box {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 150px;
     align-items: center;
+    justify-content: center;
 
     .btn-box {
         margin-top: 10%;
