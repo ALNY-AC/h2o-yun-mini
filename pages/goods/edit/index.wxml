@@ -14,7 +14,7 @@
     <picker bindchange="o-model" data-model="form.class_id" model:value="{{index}}" data-value="{{classList[index].id}}" range="{{classList}}" range-key='name'>
         <van-cell title="商品分类" is-link value="{{className}}" />
     </picker>
-    <view class="f-b">
+    <view style="padding:15px">
         <van-button size='large' color='#32A1EE' block bind:tap="save">保存</van-button>
     </view>
 </view>

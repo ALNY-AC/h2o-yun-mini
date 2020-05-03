@@ -1,28 +1,32 @@
 $color:#666666;
 $padding: 10px 16px;
-page{
-    background-color: #f6f6f6;
-}
-.box{
 
-    .stroeInfo{
-        .title{
-            padding:$padding;
+page {
+    background-color: #f6f6f6;
+    padding-bottom: 100px;
+}
+
+.box {
+
+    .stroeInfo {
+        .title {
+            padding: $padding;
             color: $color;
         }
-        .storeTitle{
+
+        .storeTitle {
             display: flex;
             align-items: center;
         }
-        .right-value{
-            
-        }
+
+        .right-value {}
     }
-    .userInfo{
-        .title{
-            padding:$padding;
+
+    .userInfo {
+        .title {
+            padding: $padding;
             color: $color;
         }
     }
- 
+
 }

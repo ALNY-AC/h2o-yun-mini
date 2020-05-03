@@ -1,1 +1,1 @@
-page{background-color:#f6f6f6}.box .stroeInfo .title{padding:10px 16px;color:#666}.box .stroeInfo .storeTitle{display:flex;align-items:center}.box .userInfo .title{padding:10px 16px;color:#666}
+page{background-color:#f6f6f6;padding-bottom:100px}.box .stroeInfo .title{padding:10px 16px;color:#666}.box .stroeInfo .storeTitle{display:flex;align-items:center}.box .userInfo .title{padding:10px 16px;color:#666}
