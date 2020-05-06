@@ -39,13 +39,16 @@
         <van-button class="btn" wx:if="{{info.state == 21&&info.type == 'pay_order'}}" bind:tap="close" round plain hairline>
             确认退款
         </van-button>
+        <van-button class="btn" wx:if="{{info.state == 21&&info.type == 'pay_order'}}" bind:tap="o-router" data-url="/pages/order/cancelorder/cancelorder?order_id={{info.order_id}}" round plain hairline>
+            取消退款申请
+        </van-button>
         <van-button class="btn" wx:if="{{info.state !=21&&info.type == 'pay_order'}}" round plain hairline bind:tap="cancel">
             取消订单
         </van-button>
         <van-button class="btn" wx:if="{{info.state == 1}}" round plain hairline catch:tap="http_delivery" color="#32A1EE">
             开始配送
         </van-button>
-        <van-button class="btn" round plain hairline wx:if="{{info.state == 2}}" color="#07c160" catch:tap="complete">
+        <van-button class="btn" round plain hairline wx:if="{{info.state == 2||info.state == 22}}" color="#07c160" catch:tap="complete">
             确认收货
         </van-button>
     </view>

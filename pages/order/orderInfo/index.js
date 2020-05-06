@@ -59,6 +59,9 @@ class Page {
     }
   }
   onStart() {
+    // this.update();
+  }
+  onShow(){
     this.update();
   }
   // onUnload() {

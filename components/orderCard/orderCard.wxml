@@ -35,7 +35,7 @@
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 1}}" catch:tap="http_delivery" color="#32A1EE">
                     开始配送
                 </van-button>
-                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 2}}" catch:tap="complete" color="#07c160">
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 2||info.state == 22}}" catch:tap="complete" color="#07c160">
                     确认收货
                 </van-button>
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state != 21&&info.type == 'pay_order'}}" catch:tap="cancel">
