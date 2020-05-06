@@ -26,6 +26,7 @@ class Page {
     wx.getSetting({
       withSubscriptions: true,
       success: (res) => {
+        console.warn(res);
         this.setData({
           openingState: res.subscriptionsSetting.mainSwitch
         })
@@ -38,10 +39,9 @@ class Page {
   }
   opening() {
     wx.requestSubscribeMessage({
-      tmplIds: ['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'],
+      tmplIds: ['vJY7NVaVRgldafpF54RFPxCRMGZFwfNTzJ9w0Umu6Io'],
       success: (res) => {
-
-        if (res['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'] == 'accept') {
+        if (res['vJY7NVaVRgldafpF54RFPxCRMGZFwfNTzJ9w0Umu6Io'] == 'accept') {
           wx.showToast({
             title: '开通成功~',
             icon: 'none'
@@ -50,7 +50,7 @@ class Page {
             btn_state: false
           })
         }
-        if (res['TLLU__S0M0pYP0v8gf-0REPC3Ou5PJo1RnMUsRg-TaA'] == 'reject') {
+        if (res['vJY7NVaVRgldafpF54RFPxCRMGZFwfNTzJ9w0Umu6Io'] == 'reject') {
           wx.showToast({
             title: '开通失败，请重试',
             icon: 'none'

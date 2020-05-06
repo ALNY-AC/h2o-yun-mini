@@ -44,6 +44,9 @@
                 <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 21&&info.type == 'pay_order'}}" catch:tap="close">
                     确认退款
                 </van-button>
+                <van-button size="small" class="btn" plain hairline wx:if="{{info.state == 21&&info.type == 'pay_order'}}" catch:tap="go">
+                    取消退款申请
+                </van-button>
             </view>
         </view>
     </van-panel>

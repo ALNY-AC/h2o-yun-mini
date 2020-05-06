@@ -11,7 +11,8 @@ class Page {
       { title: '已完成', state: 4 },
       { title: '订单取消', state: 5 },
       { title: '订单异常', state: 9 },
-      { title: '退款申请', state: 21 }
+      { title: '退款申请', state: 21 },
+      { title: '已拒绝退款', state: 22 }
     ]
   }
   computed = {

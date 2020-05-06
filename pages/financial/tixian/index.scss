@@ -11,13 +11,14 @@ page {
 
         .rad {
             display: inline-block;
-            .active{
-                background-color: rgba(50,161,238, $alpha: 0.3);
+
+            .active {
+                background-color: rgba(50, 161, 238, $alpha: 0.3);
                 color: #32a1ee;
-                border:1px solid  rgba(50,161,238, $alpha: 1);
+                border: 1px solid rgba(50, 161, 238, $alpha: 1);
             }
         }
-       
+
     }
 
     .info {
@@ -62,7 +63,15 @@ page {
                 font-size: 11px;
                 margin-top: 4px;
                 color: #999999;
+                margin-bottom: 5px;
             }
+
+            .fee {
+                font-size: 10px;
+                color: #c7c4c4;
+            }
+
+
         }
 
         .button {}

@@ -1,0 +1,9 @@
+<view class="head">
+  <view class="title">取消退款申请</view>
+  <view class="textarea-box">
+    <textarea bind:input="o-model" data-model="explain" placeholder="请输入取消退款申请说明"></textarea>
+  </view>
+</view>
+<view class="btn">
+  <van-button color="#32A1EE" disabled="{{!explain}}" bind:click="submit" block>取消退款申请</van-button>
+</view>

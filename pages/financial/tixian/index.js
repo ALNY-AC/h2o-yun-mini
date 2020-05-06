@@ -1,6 +1,8 @@
 const origin = require('../../../unity/origin/origin')
+const computedBehavior = require('miniprogram-computed')
 
 class Page {
+  behaviors = [computedBehavior]
   /**
    * 声明data
    */
@@ -12,6 +14,17 @@ class Page {
       money_type: 1,//提现方式
       account: "",//提现账号
       real_name: "",//提现姓名
+    },
+    feelu: ''
+  }
+  computed = {
+    fee(data) {
+      if (!data.feelu && !data.form.money) return ''
+      return parseFloat(data.feelu) * data.form.money
+    },
+    btnState(data) {
+      if (data.form.account && data.form.money && data.form.real_name) return false
+      return true
     }
   }
 
@@ -22,6 +35,7 @@ class Page {
   async onStart() {
     this.data.form.store_id = wx.getStorageSync('store_id');
     this.update();
+    this.http_fee()
   }
   async update() {
     const res = await this.$http.post('/store/profile/info', {
@@ -69,6 +83,21 @@ class Page {
     this.setData({
       'form.money_type': e.detail
     })
+  }
+  async http_fee() {
+    try {
+      const res = await this.$http.post('/budget/store_profile', {
+        store_id: wx.getStorageSync('store_id'),
+      })
+      if (res.code > 0) {
+        this.setData({
+          feelu: res.data.money_royalty
+        })
+
+      }
+    } catch (error) {
+
+    }
   }
 
 

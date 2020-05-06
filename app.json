@@ -32,7 +32,8 @@
     "pages/pay/range/range",
     "pages/pay/ranking/ranking",
     "pages/user/list/list",
-    "pages/notice/opening/opening"
+    "pages/notice/opening/opening",
+    "pages/order/cancelorder/cancelorder"
   ],
   "permission": {
     "scope.userLocation": {

@@ -27,10 +27,13 @@
     <view class="input">
       <view class="position">￥</view>
       <input type="text" class="inp" bind:input='o-model' data-model="form.money" value='{{form.money}}' />
-      <view class="yue">可用余额:{{info.money}}</view>
+      <view class="yue">可用余额：{{info.money}}</view>
+      <view class="fee">本次提现手续费：{{fee}}</view>
     </view>
     <view class="button">
-      <van-button size='large' color='#32A1EE' block bind:tap="httpTixian">提交申请</van-button>
+      <van-button size='large' disabled="{{btnState}}" color='#32A1EE' block bind:click="httpTixian">
+        提交申请
+      </van-button>
     </view>
   </view>
 </view>
