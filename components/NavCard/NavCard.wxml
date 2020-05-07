@@ -65,5 +65,21 @@
                 <view class="title">用户列表</view>
             </view>
         </van-col>
+        <van-col span="6">
+            <view class="store-item" bind:tap="o-router" data-url="/pages/user/staff/edit/edit">
+                <view class="icon">
+                    <van-icon name="contact" />
+                </view>
+                <view class="title">添加员工</view>
+            </view>
+        </van-col>
+        <van-col span="6">
+            <view class="store-item" wx:if="{{user_id == store_user}}" bind:tap="o-router" data-url="/pages/user/staff/list/list">
+                <view class="icon">
+                    <van-icon name="manager-o" />
+                </view>
+                <view class="title">员工管理</view>
+            </view>
+        </van-col>
     </van-row>
 </view>

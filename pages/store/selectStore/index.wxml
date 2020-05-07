@@ -1,12 +1,20 @@
 <view class="h2">请选择您要管理的店铺</view>
+<view class="h3">长按以解除绑定</view>
 <view class="list">
-    <view class="card" wx:for="{{list}}" wx:key="index" bind:tap="select" data-item="{{item}}">
+    <view class="card" wx:for="{{list}}" wx:key="index" bind:tap="select" bind:longpress="del" data-item="{{item}}">
         <van-image class="img" width="60" height="60" src="{{$app.url.imageUrl+item.logo}}" />
         <view class="title">{{item.name}}</view>
     </view>
 </view>
 <view style="padding:10px">
-    <van-button color="#32A1EE" block bind:tap="o-router" data-url="/pages/store/storeInfo/index">
-        新增门店
-    </van-button>
+    <van-row gutter="20">
+        <van-col span="12">
+            <van-button color="#32A1EE" block bind:tap="o-router" data-url="/pages/store/storeInfo/index">
+                新增门店
+            </van-button>
+        </van-col>
+        <van-col span="12">
+            <van-button icon="scan" block bind:tap="binding">扫码绑定</van-button>
+        </van-col>
+    </van-row>
 </view>

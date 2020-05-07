@@ -1,0 +1,35 @@
+page {
+  background-color: #f6f6f6;
+  height: 100vh;
+}
+
+.box {
+  padding: 30px;
+
+  .erweima {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 58px;
+    margin-bottom: 128px;
+
+    .ma {
+      margin-bottom: 23px;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 15px;
+
+      .img {
+        width: 265px;
+        height: 265px;
+      }
+    }
+
+    .text {
+      color: #666666;
+      font-size: 14px;
+      text-align: center;
+    }
+
+  }
+}

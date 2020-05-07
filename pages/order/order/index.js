@@ -35,7 +35,9 @@ class Page {
   /**
    * 启动函数
    */
-  async onStart() {
+  onStart() {
+  }
+  onShow() {
     this.setData({
       ['query.store_id']: wx.getStorageSync('store_id')
     })
@@ -112,6 +114,11 @@ class Page {
     if (e.detail.index == 5) {
       this.setData({
         'query.state': 5
+      })
+    }
+    if (e.detail.index == 6) {
+      this.setData({
+        'query.state': 22
       })
     }
 

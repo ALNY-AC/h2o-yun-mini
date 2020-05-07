@@ -11,7 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    user_id: '',
+    store_user: ''
   },
 
   /**
@@ -24,8 +25,14 @@ Component({
     },
     goOrder(e) {
       wx.switchTab({
-        url:'/pages/order/order/index'
+        url: '/pages/order/order/index'
       })
     }
+  },
+  attached() {
+    this.setData({
+      user_id: wx.getStorageSync('userInfo').id,
+      store_user: wx.getStorageSync('store').user_id,
+    })
   }
 })

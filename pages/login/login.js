@@ -61,24 +61,25 @@ class Page {
     });
     wx.setStorageSync('jwt', res.jwt);
     wx.setStorageSync('userInfo', res.userInfo);
+    wx.reLaunch({
+      url: '/pages/store/selectStore/index'
+    })
 
-    if (res.storeCount <= 0) {
-      wx.showModal({
-        showCancel: false,
-        title: '您还没有店铺，请先创建',
-        success: (res) => {
-          if (res.confirm) {
-            wx.reLaunch({
-              url: '/pages/store/storeInfo/index'
-            })
-          }
-        }
-      })
-    } else {
-      wx.reLaunch({
-        url: '/pages/store/selectStore/index'
-      })
-    }
+    // if (res.storeCount <= 0) {
+    //   wx.showModal({
+    //     showCancel: false,
+    //     title: '您还没有店铺，请先创建',
+    //     success: (res) => {
+    //       if (res.confirm) {
+    //         wx.reLaunch({
+    //           url: '/pages/store/storeInfo/index'
+    //         })
+    //       }
+    //     }
+    //   })
+    // } else {
+
+    // }
 
     // console.warn(res);
 

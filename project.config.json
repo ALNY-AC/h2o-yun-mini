@@ -61,8 +61,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/order/cancelorder/cancelorder",
-					"pathName": "pages/order/cancelorder/cancelorder",
+					"name": "pages/user/staff/edit/edit",
+					"pathName": "pages/user/staff/edit/edit",
 					"query": "",
 					"scene": null
 				},

@@ -1,0 +1,27 @@
+<!-- pages/user/staff/list/list.wxml -->
+<view class="staff-list" wx:if="{{list.length>0}}">
+  <van-swipe-cell wx:for="{{list}}" wx:key="index" right-width="{{ 65 }}" data-item="{{item}}" async-close bind:close="onClose">
+    <view class="user-card">
+      <van-image round width="40" height="40" src="{{item.head}}" />
+      <view class="info-box">
+        <view class="name">{{item.name}}</view>
+        <view class="time">注册时间：{{item.add_time}}</view>
+      </view>
+    </view>
+    <view slot="right" class="swipe-right">解除</view>
+  </van-swipe-cell>
+</view>
+<view class="foot-btn">
+  <van-button color="#32A1EE" size="large" block bind:tap="o-router" data-url="/pages/user/staff/edit/edit">
+    添加新员工
+  </van-button>
+</view>
+<view class="empty" wx:if="{{loading}}">
+  <view class="icon">
+    <image class="img" src="../../../../assets/images/user.png"></image>
+  </view>
+  <view class="title">暂无员工</view>
+  <!-- <van-button round color="#32A1EE" bind:tap="o-router" data-url="/pages/share/store/store">
+    分享店铺
+  </van-button> -->
+</view>

@@ -10,6 +10,7 @@
     <van-tab title="已取消" info="{{totalinfo.off > 0?totalinfo.off:''}}"></van-tab> -->
     <van-tab title="已完成"></van-tab>
     <van-tab title="已取消"></van-tab>
+    <van-tab title="已拒绝"></van-tab>
   </van-tabs>
 </view>
 <view class="order-list">

@@ -27,7 +27,9 @@ class Page {
   /**
    * 启动函数
    */
-  async onStart() {
+  onStart() {
+  }
+  onShow() {
     this.setData({
       ['query.store_id']: wx.getStorageSync('store_id')
     })

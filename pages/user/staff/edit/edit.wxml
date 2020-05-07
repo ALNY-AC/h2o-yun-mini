@@ -1,0 +1,10 @@
+<view class="box">
+  <view class="erweima">
+    <view class="ma">
+      <!-- <image class="img" src="{{url}}"></image> -->
+      <canvas class="img" canvas-id="myQrcode"></canvas>
+    </view>
+    <view class="text">在（选择门店页面）使用扫码功能扫描以上二维码</view>
+  </view>
+  <van-button color="#32A1EE" custom-class='btn' bind:tap='save' block>保存至相册</van-button>
+</view>
