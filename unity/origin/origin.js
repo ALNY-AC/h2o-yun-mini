@@ -27,7 +27,7 @@ module.exports = function origin(className) {
     /**
      * 启动后处理
      */
-    methods.onLoad = function () {
+    methods.onLoad = function (option) {
         let pages = getCurrentPages();
         pages = pages[pages.length - 1];
 
@@ -65,7 +65,7 @@ module.exports = function origin(className) {
         handlePage.handleWatch(this);
         this.setData({ $app: getApp().globalData });
         if (this.onStart) {
-            this.onStart();
+            this.onStart(option);
         }
 
     }

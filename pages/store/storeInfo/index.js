@@ -34,8 +34,6 @@ class Page {
    * 在onLoad后立即调用
    */
   async onStart() {
-    console.warn('store edit');
-
     if (this.$route.query.id) {
 
       this.setData({
@@ -54,16 +52,95 @@ class Page {
       this.setData({
         ['form.phone']: wx.getStorageSync('userInfo').phone
       });
-      wx.showModal({
-        title: '请设置您店铺的地址～',
-        showCancel: false,
-        complete: () => {
-          this.httpAddress();
-        }
-      })
+    }
+  }
+
+  async onShow() {
+
+    try {
+      // await this.isSetting();
+      if (!this.$route.query.id) {
+        this.vAddress();
+        // 新增
+      }
+    } catch (error) {
+
     }
 
   }
+  vAddress() {
+    if (!this.data.form.x || !this.data.form.x) {
+      wx.showModal({
+        title: '必须配置地址后才可使用',
+        showCancel: false,
+        complete: () => {
+          this.openAddress();
+        }
+      })
+    }
+  }
+
+  openAddress() {
+    wx.getSetting({
+      success: (res) => {
+        console.warn();
+        if (typeof res.authSetting['scope.userLocation'] == 'undefined') {
+          // 用户开了权限
+          wx.chooseLocation({
+            success: (res) => {
+              this.setData({
+                ['form.address_wx']: res.address + res.name,
+                ['form.x']: res.latitude,
+                ['form.y']: res.longitude,
+              })
+            },
+            fail: (e) => {
+              this.vAddress();
+            }
+          });
+          return;
+        }
+        if (res.authSetting['scope.userLocation'] == true) {
+          // 用户开了权限
+          wx.chooseLocation({
+            success: (res) => {
+              this.setData({
+                ['form.address_wx']: res.address + res.name,
+                ['form.x']: res.latitude,
+                ['form.y']: res.longitude,
+              })
+            },
+            fail: (e) => {
+              this.vAddress();
+            }
+          })
+        } else {
+          wx.openSetting({
+            success: () => { }
+          })
+
+        }
+      }
+    })
+  }
+
+  isSetting() {
+
+    return new Promise((success, error) => {
+      wx.getSetting({
+        success: () => {
+          if (res.authSetting['scope.userLocation']) {
+            success()
+          } else {
+            error()
+          }
+        },
+        fail: error
+      })
+    });
+
+  }
+
   async save() {
     try {
       const res = await this.$http.post('/store/save', this.data.form);
@@ -104,28 +181,7 @@ class Page {
 
 
   }
-  async httpAddress() {
-    wx.chooseLocation({
-      success: (res) => {
-        this.setData({
-          ['form.address_wx']: res.address + res.name,
-          ['form.x']: res.latitude,
-          ['form.y']: res.longitude,
-        })
-      },
-      fail: (e) => {
-        if (!this.data.form.x || !this.data.form.x) {
-          wx.showModal({
-            title: '请选择地址',
-            showCancel: false,
-            complete: () => {
-              this.httpAddress();
-            }
-          })
-        }
-      }
-    })
-  }
+
 
 }
 

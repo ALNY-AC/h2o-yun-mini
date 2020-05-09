@@ -275,6 +275,27 @@
 					"pathName": "pages/login/login",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "普通的码",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "长按二维码",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": 1048
+				},
+				{
+					"id": -1,
+					"name": "pages/home/index",
+					"pathName": "pages/login/login",
+					"query": "scene=30",
+					"scene": null
 				}
 			]
 		}

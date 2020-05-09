@@ -17,7 +17,7 @@ class Page {
   /**
    * 启动函数
    */
-  async onStart() {
+  async onStart(res) {
     this.update()
   }
   async onShow() {

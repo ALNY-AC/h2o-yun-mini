@@ -7,6 +7,7 @@ class Page {
   data = {
     msg: '',
     userInfo: null,
+    share_id: ''
   }
 
   code = null;
@@ -27,8 +28,12 @@ class Page {
    * 声明周期函数
    * 在onLoad后立即调用
    */
-  onStart() {
-
+  onStart(res) {
+    if (res.scene) {
+      this.setData({
+        share_id: res.scene
+      })
+    }
     wx.removeStorageSync('jwt');
 
 
@@ -57,7 +62,8 @@ class Page {
     const res = await this.$http.post('/auth/login', {
       phone_info: e.detail,
       user_info: this.userInfo,
-      code: this.code
+      code: this.code,
+      share_id: this.data.share_id
     });
     wx.setStorageSync('jwt', res.jwt);
     wx.setStorageSync('userInfo', res.userInfo);
