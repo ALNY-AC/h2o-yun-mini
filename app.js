@@ -15,9 +15,9 @@ App({
     }
 
     if (!wx.getStorageSync('jwt')) {
-      // wx.reLaunch({
-      //   url: '/pages/login/login'
-      // });
+      wx.reLaunch({
+        url: '/pages/login/login'
+      });
       return;
     }
 
@@ -56,9 +56,9 @@ App({
   },
   onShow() {
     if (!wx.getStorageSync('jwt')) {
-      // wx.reLaunch({
-      //   url: '/pages/login/login'
-      // });
+      wx.reLaunch({
+        url: '/pages/login/login'
+      });
       return;
     }
     if (!wx.getStorageSync('store') || !wx.getStorageSync('store_id')) {
