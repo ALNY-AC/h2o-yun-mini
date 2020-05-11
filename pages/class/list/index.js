@@ -8,6 +8,9 @@ class Page {
   }
 
   onStart() {
+
+  }
+  onShow() {
     this.update();
   }
   async update() {

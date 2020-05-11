@@ -28,6 +28,9 @@ class Page {
   }
   //调用接口
   async update() {
+    wx.showLoading({
+      title: '加载中',
+    })
     const res = await this.$http.post('/water_coupon/list', this.data.query);
     if (res.code > 0) {
       this.setData({
@@ -40,6 +43,7 @@ class Page {
         loading: this.data.list.length > 0 ? false : true
       })
     }
+    wx.hideLoading()
     wx.stopPullDownRefresh();
   }
   updateInit() {
