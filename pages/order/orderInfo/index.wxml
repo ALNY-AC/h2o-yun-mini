@@ -10,7 +10,8 @@
                         <van-card num="{{item.data.quantity}}" custom-class="item" price="{{item.data.price}}" desc="{{item.data.sub_title}}" title="{{item.title}}" thumb="{{ item.data.goods_head }}" />
                     </block>
                     <view class="total-price">合计：￥{{info.price}}</view>
-                    <van-cell title="本单收入" value="{{info.re_price - info.total_royalty}}" border="{{false}}" />
+                    <van-cell title="本单收入" value="{{info.re_price - info.total_royalty}}" />
+                    <van-cell title="是否首单" custom-class="{{info.is_first ? 'red' : ''}}" value="{{info.is_first?'是':'否'}}" border="{{false}}" />
                 </view>
             </van-panel>
         </view>
@@ -19,8 +20,9 @@
                 <view>
                     <van-cell title="客户名称" custom-class="family" value="{{info.addressInfo.contacts}}" />
                     <van-cell title="联系方式" custom-class="family" is-link bind:tap="goTelephone" value="{{info.addressInfo.phone}}" />
-                    <van-cell title="配送地址" custom-class="family" is-link bind:tap="goMap" value="{{info.addressInfo.address}}" />
-                    <van-cell title="详细地址" custom-class="family" value="{{info.addressInfo.address_num}}" border="{{ false }}" />
+                    <van-cell title="配送时间" custom-class="family {{info.send_time ? 'red' : ''}}" value="{{info.send_time ? info.send_time : '无'}}" />
+                    <van-cell title="配送地址" custom-class="family {{info.addressInfo.address ? 'red' : ''}}" is-link bind:tap="goMap" value="{{info.addressInfo.address}}" />
+                    <van-cell title="详细地址" custom-class="family {{info.addressInfo.address_num ? 'red' : ''}}" value="{{info.addressInfo.address_num}}" border="{{ false }}" />
                 </view>
             </van-panel>
         </view>
@@ -30,7 +32,7 @@
                     <van-cell title="订单号" custom-class="family" value="{{info.order_id}}" />
                     <van-cell title="下单时间" custom-class="family" value="{{info.add_time}}" />
                     <van-cell title="支付方式" custom-class="family" value="{{payMethod}}" />
-                    <van-cell title="订单备注" custom-class="family" value="{{info.remarks}}" border="{{ false }}" />
+                    <van-cell title="订单备注" custom-class="family {{info.remarks ? 'red' : ''}}" value="{{info.remarks}}" border="{{ false }}" />
                 </view>
             </van-panel>
         </view>

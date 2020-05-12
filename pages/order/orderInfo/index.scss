@@ -35,10 +35,15 @@ page {
             .van-cell__value {
                 color: var(--cell-text-color, #323233);
             }
+
+            &.red {
+                .van-cell__value {
+                    color: var(--cell-text-color, #ff0000);
+                }
+            }
         }
+
     }
-
-
 }
 
 .bottom-btn {

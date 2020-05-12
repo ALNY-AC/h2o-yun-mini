@@ -61,7 +61,7 @@ class Page {
   onStart() {
     // this.update();
   }
-  onShow(){
+  onShow() {
     this.update();
   }
   // onUnload() {

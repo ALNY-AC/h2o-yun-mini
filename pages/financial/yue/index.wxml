@@ -5,7 +5,7 @@
             <view class="info">¥{{info.money}}</view>
         </view>
         <view class="data">
-            <view class="title">冻结金额</view>
+            <view class="title">提现审核中</view>
             <view class="info">¥{{info.freeze_money}}</view>
         </view>
     </view>
