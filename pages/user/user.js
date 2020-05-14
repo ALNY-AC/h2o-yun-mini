@@ -19,20 +19,27 @@ class Page {
   async onStart() {
 
     if (wx.getStorageSync('jwt')) {
-      this.setData({
-        userInfo: wx.getStorageSync('wx_userInfo')
-      })
+      // this.setData({
+      //   userInfo: wx.getStorageSync('wx_userInfo')
+      // })
+      this.update()
     }
   }
   onShow() {
     this.setData({
-      userInfo: this.data.$app.userInfo,
+      // userInfo: this.data.$app.userInfo,
       store_user: wx.getStorageSync('store').user_id
     })
 
   }
 
-  update() {
+  async update() {
+    const res = await this.$http.post('/user/info', {})
+    if (res.code > 0) {
+      this.setData({
+        userInfo: res.data
+      })
+    }
 
   }
   reLogin() {
